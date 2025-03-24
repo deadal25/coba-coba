@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Redirect ke login jika belum login
     if (!localStorage.getItem("loggedInUser") && 
-        !window.location.pathname.includes("login.html") && 
+        !window.location.pathname.includes("index.html") && 
         !window.location.pathname.includes("register.html")) {
         window.location.href = "login.html";
     }
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (logoutBtn) {
         logoutBtn.addEventListener("click", function () {
             localStorage.removeItem("loggedInUser");
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         });
     }
 
