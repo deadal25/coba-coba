@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!localStorage.getItem("loggedInUser") && 
         !window.location.pathname.includes("index.html") && 
         !window.location.pathname.includes("register.html")) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 
     // Registrasi - Simpan akun ke localStorage
