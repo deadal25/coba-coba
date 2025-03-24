@@ -1,0 +1,374 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pelayanan KPPN Majene</title>
+    <!-- <meta name="description" content="Sufee Admin - HTML5 Admin Template"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    function navigatePage() {
+        var selectElement = document.getElementById("pageSelect");
+        var selectedValue = selectElement.value;
+
+        const pages = {
+            "1a-CP": "tabelnomor1.html",
+            "1b-N": "tabelnomor2.html",
+            "2a-N": "tabelnomor3.html",
+            "3a-N": "tabelnomor4.html",
+            "3b-N": "tabelnomor5.html",
+            "4a-CP": "tabelnomor6.html",
+            "4b-N": "tabelnomor7.html",
+            "5a-CP": "tabelnomor8.html",
+            "5b-N": "tabelnomor9.html",
+            "6a-N": "tabelnomor10.html",
+            "7a-N": "tabelnomor11.html",
+            "8a-N": "tabelnomor12.html",
+            "8b-N": "tabelnomor13.html",
+            "8c-N": "tabelnomor14.html",
+            "9a-CP": "tabelnomor15.html",
+            "9b-N": "tabelnomor16.html"
+        };
+
+        if (selectedValue in pages) {
+            window.location.href = pages[selectedValue];
+        }
+    }
+</script>
+
+<body>
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="tabelnomor11.html"><img src="logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="tabelnomor11.html"><img src="logo2.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="login.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+
+                    <li class="menu-item-has-children active dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="tables-basic.html">New Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Table</a></li>
+                            <li class="active">Data table</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">RAW DATA IKU KEMENKEU</strong>
+                                <!-- <label for="pageSelect">Pilih kategori:</label> -->
+                                <select id="pageSelect" onchange="navigatePage()">
+                                    <option value="" disabled selected>-- Pilih --</option>
+                                    <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
+                                    <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
+                                    <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
+                                    <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
+                                    <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
+                                    <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
+                                    <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
+                                    <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
+                                </select>
+
+                                <body>
+
+                                    <div id="7a-N" class="content">
+                                        <br>
+                                        <h3><b>Tingkat Implementasi penajaman tugas Financial Advisory</b></h3>
+                                            <label for="cg">Nilai CG (Central Government Advisory):</label>
+                                            <input type="number" id="cg" min="0" max="100" value="100" oninput="hitungNilai11()">
+                                
+                                            <label for="lg">Nilai LG (Local Government Advisory):</label>
+                                            <input type="number" id="lg" min="0" max="100" value="100" oninput="hitungNilai11()">
+                                
+                                            <label for="sm">Nilai SM (Special Mission Advisory):</label>
+                                            <input type="number" id="sm" min="0" max="100" value="100" oninput="hitungNilai11()">
+                                
+                                            <div style="text-align: right; margin-bottom: 10px;">
+                                                <button onclick="submitData11()" class="btn-simpan">
+                                                    <img src="C:\Users\USER\Videos\login-project\images\savedata.png"
+                                                        alt="save"> Simpan </button>
+                                            </div>
+                                            <table>
+                                            <tbody>
+                                                <tr>
+                                                    <th rowspan="1" class="hal2">No</th>
+                                                    <th colspan="2" class="hal2">Uraian IKU</th>
+                                                    <th rowspan="1" width="200px" class="hal2">DATA YANG DIPERLUKAN</th>
+                                                    <th colspan="3" class="hal2">DATA</th>
+                                                    <th rowspan="1" class="hal2">KETERANGAN</th>
+                                                </tr>
+                                                </tbody>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="5" valign="top">11</td>
+                                                        <td rowspan="5" valign="top"> 7a-N </td>
+                                                        <td rowspan="5" valign="top" class="left-align">Tingkat implementasi 
+                                                            penajaman tugas 
+                                                            <i>Financial Advisory</i> </td>
+                                                        <td><b>Komponen</b></td>
+                                                        <td ><b>Persentase</b></td>
+                                                        <td colspan="2"><b>Indeks</b></td>
+                                                        <td>Triwulan/Average</td>      
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Implementasi Central 
+                                                        Government Advisory  </td>
+                                                    <td >50%</td>
+                                                    <td colspan="2" id="nilaiCG">50,00</td>
+                                                    <td rowspan="3" valign="top" class="left-align">FORMULA = (Nilai rata2 CG x 50%) + (Nilai rata2 LG x 30%) 
+                                                        + (Implementasi SM x 20%) 
+                                                         
+                                                        *Formula bagi KPPN yang tidak melakukan penyaluran TKD 
+                                                        (tidak melakukan LG) 
+                                                        =((Nilai rata2 CG x 50%) + (Implementasi SM x 20%)):70 x 
+                                                        100 
+                                                         
+                                                        IMPLEMENTASI CENTRAL GOVERNMENT ADVISORY 
+                                                        (CG): 
+                                                        Nilai rata-rata  "Kertas Kerja Monitoring dan Evaluasi Central 
+                                                        Government Advisory" sebagaimana tertuang dalam 
+                                                        "Rekapitulasi Kertas Kerja Monitoring Financial Advisor" 
+                                                        sesuai dengan detil pelaporan dan ruang lingkup yang diatur 
+                                                        dalam petunjuk teknis/naskah dinas Pedoman Pelaksanaan 
+                                                        Financial Advisor Pada Kantor Pelayanan Perbendaharaan 
+                                                        Negara. 
+                                                         
+                                                        IMPLEMENTASI LOCAL GOVERNMENT ADVISORY (LG): 
+                                                        Nilai rata-rata "Kertas Kerja Monitoring Local Government 
+                                                        Advisory" dan "Rekapitulasi Kertas Kerja Monitoring Financial 
+                                                        Advisor" sesuai dengan detil pelaporan dan ruang lingkup 
+                                                        yang diatur dalam petunjuk teknis/naskah dinas Pedoman 
+                                                        Pelaksanaan Financial Advisor Pada Kantor Pelayanan 
+                                                        Perbendaharaan Negara. 
+                                                         
+                                                        IMPLEMENTASI SPECIAL MISSION ADVISORY (SM): 
+                                                        Pelaksanaan rangkaian kegiatan special mission advisory 
+                                                        oleh KPPN dalam memetakan potensi dengan kriteria 
+                                                        penilaian sebagai berikut : 
+                                                        100% = dilakukan penyampaian, pengisian, dan pemetaan  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Implementasi Local 
+                                                        Government Advisory  </td>
+                                                    <td >30%</td>
+                                                    <td colspan="2" id="nilaiLG">30,00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Implementasi Special 
+                                                        Mission Advisory  </td>
+                                                    <td >20%</td>
+                                                    <td colspan="2" id="nilaiSM">20,00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Persentase</b></td>
+                                                    <td colspan="3" id="totalNilai11"><b>100</b></td>
+                                                    <td></td>
+                                                </tr>
+                                        </tbody>
+                                        </table>
+                                
+                                    <script>
+                                        function hitungNilai11() {
+                                            let nilaiCG = parseFloat(document.getElementById('cg').value) || 0;
+                                            let nilaiLG = parseFloat(document.getElementById('lg').value) || 0;
+                                            let nilaiSM = parseFloat(document.getElementById('sm').value) || 0;
+                                
+                                            // Perhitungan dengan bobot
+                                            let nilaiTertimbangCG = (nilaiCG * 50) / 100;
+                                            let nilaiTertimbangLG = (nilaiLG * 30) / 100;
+                                            let nilaiTertimbangSM = (nilaiSM * 20) / 100;
+                                
+                                            let totalNilai11 = nilaiTertimbangCG + nilaiTertimbangLG + nilaiTertimbangSM;
+                                
+                                            // Menampilkan nilai di tabel
+                                            document.getElementById('nilaiCG').innerText = nilaiTertimbangCG.toFixed(2);
+                                            document.getElementById('nilaiLG').innerText = nilaiTertimbangLG.toFixed(2);
+                                            document.getElementById('nilaiSM').innerText = nilaiTertimbangSM.toFixed(2);
+                                            document.getElementById('totalNilai11').innerText = totalNilai11.toFixed(2);
+                                            // document.getElementById('hasilAkhir').innerText = totalNilai.toFixed(2);
+                                        }
+                                
+                                        // Jalankan saat halaman pertama kali dimuat
+                                        hitungNilai11();
+                                    </script>
+                                    <script>
+                                        function submitData11() {
+                                            let nilaiTertimbangCG = document.getElementById("nilaiCG").innerText;
+                                            let nilaiTertimbangLG = document.getElementById("nilaiLG").innerText;
+                                            let nilaiTertimbangSM = document.getElementById("nilaiSM").innerText;
+                                            let totalNilai11 = document.getElementById("totalNilai11").innerText;
+                                    
+                                            // Cek apakah ada data lama di localStorage
+                                            let storedData = localStorage.getItem("indeks_data");
+                                            let data = storedData ? JSON.parse(storedData) : {};
+                                    
+                                            // Update hanya bagian halaman 15
+                                            data.nilaiTertimbangCG = nilaiTertimbangCG;
+                                            data.nilaiTertimbangLG = nilaiTertimbangLG;
+                                            data.nilaiTertimbangSM = nilaiTertimbangSM;
+                                            data.totalNilai11 = totalNilai11;
+                                    
+                                            // Simpan kembali ke localStorage
+                                            localStorage.setItem("indeks_data", JSON.stringify(data));
+                                    
+                                            alert("Data dari halaman 11 berhasil disimpan!");
+                                        }
+                                    </script>
+                                    <!-- <button onclick="submitData11()">Simpan Data Halaman 11</button> -->
+                                </div>
+
+                                </body>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendors/jszip/dist/jszip.min.js"></script>
+    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+
+
+</body>
+
+</html>

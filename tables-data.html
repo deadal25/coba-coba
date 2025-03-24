@@ -1,0 +1,1244 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pelayanan KPPN Majene</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="tables-data.html"><img src="logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="tables-data.html"><img src="logo2.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+
+                    <li class="menu-item-has-children active dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="tables-basic.html">New Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                        <!-- <script>
+                            function logout() {
+                                // Hapus session storage atau local storage jika ada
+                                sessionStorage.clear();
+                                // localStorage.clear();
+                        
+                                // Arahkan ke halaman login
+                                window.location.href = "login.html";
+                            }
+                        </script> -->
+                        
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Table</a></li>
+                            <li class="active">Data table</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <!-- <strong class="card-title">RAW DATA IKU KEMENKEU</strong> -->
+                                <div style="text-align: right; ">
+                                    <button class="btn-simpan" onclick="downloadWord()">
+                                        <img src="word.png" alt="download">
+                                        Download </button>
+
+                                    <script>
+                                        function downloadWord() {
+                                            var content = document.getElementById("tabel-kpi").innerHTML;
+                                            var preHtml = `
+                                            <html xmlns:o='urn:schemas-microsoft-com:office:office' 
+                                                  xmlns:w='urn:schemas-microsoft-com:office:word' 
+                                                  xmlns='http://www.w3.org/TR/REC-html40'>
+                                            <head><meta charset='utf-8'>
+                                            <title>Dokumen KPI</title>
+                                            <style>
+                                                /* Layout Halaman Landscape */
+                                                @page Section1 { 
+                                                    size: 841.95pt 595.35pt; /* Ukuran A4 Landscape */
+                                                    margin: 1in; 
+                                                }
+                                                div.Section1 { 
+                                                    page: Section1; 
+                                                }
+                                                body { font-family: Arial, sans-serif; }
+                                                table { width: 100%; border-collapse: collapse; }
+                                                th, td { border: 1px solid black; padding: 2px; text-align: center; }
+                                                th { background-color: #f2f2f2; }
+                                                td.left-align {
+                                                text-align: left;
+                                                text-align: top;
+                                                }
+                                            </style>
+                                            </head><body>
+                                            <div class="Section1">`;  // Section1 digunakan untuk memastikan landscape
+
+                                            var postHtml = `</div></body></html>`;
+
+                                            var blob = new Blob(['\ufeff' + preHtml + content + postHtml], { type: 'application/msword' });
+                                            var url = URL.createObjectURL(blob);
+                                            var link = document.createElement("a");
+                                            link.href = url;
+                                            link.download = "Laporan_KPI.doc";
+                                            document.body.appendChild(link);
+                                            link.click();
+                                            document.body.removeChild(link);
+                                        }
+                                    </script>
+                                </div>
+                                <div class="card-body" id="tabel-kpi">
+                                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+
+                                        <h2 align="center">RAW DATA IKU KEMENKEU THREE TRIWULAN IV TAHUN 2024<br>
+                                            KPPN MAJENE </h2>
+                                        <!-- <table> -->
+                                        <tbody>
+                                            <tr>
+                                                <th rowspan="1" class="hal2">No</th>
+                                                <th colspan="2" class="hal2">Uraian IKU</th>
+                                                <th rowspan="1" width="200px" class="hal2">DATA YANG DIPERLUKAN</th>
+                                                <th colspan="3" class="hal2">DATA</th>
+                                                <th rowspan="1" class="hal2">KETERANGAN</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="font-size" class="hal2">1</th>
+                                                <th colspan="2" class="font-size" class="hal2">2</th>
+                                                <th class="font-size" class="hal2">3</th>
+                                                <th class="font-size" class="hal2">4</th>
+                                                <th class="font-size" class="hal2">5</th>
+                                                <th class="font-size" class="hal2">6</th>
+                                                <th class="font-size" class="hal2">7</th>
+                                            </tr>
+                                        </tbody>
+                                        <tbody valign="top">
+                                            <tr>
+                                                <td rowspan="10" valign="top">1</td>
+                                                <td rowspan="10" valign="top"> 1a-CP </td>
+                                                <td rowspan="10" valign="top" class="left-align">Nilai kinerja
+                                                    pelaksanaan anggaran K/L</td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Nilai</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td><b>Akhir</b></td>
+                                                <td>Triwulan/TLK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Revisi DIPA</td>
+                                                <td id="rdValue">122,23%</td>
+                                                <td>10%</td>
+                                                <td id="rdScore">48,89</td>
+                                                <td rowspan="9" valign="top" class="left-align" ;>Hasil penilaian IKPA
+                                                    tingkat Nasional sebagai BUN
+                                                    pada Aplikasi OMSPAN = <span id="totalNilaiSpan1">95.16</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Deviasi Hal. III DIPA</td>
+                                                <td id="dhValue">188,31%</td>
+                                                <td>15%</td>
+                                                <td id="dhScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Penyerapan Anggaran</td>
+                                                <td id="paValue">188,31%</td>
+                                                <td>20%</td>
+                                                <td id="paScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Belanja Kontraktual</td>
+                                                <td id="bkValue">188,31%</td>
+                                                <td>10%</td>
+                                                <td id="bkScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Penyelesaian Tagihan</td>
+                                                <td id="ptValue">188,31%</td>
+                                                <td>10%</td>
+                                                <td id="ptScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Pengelolaan UP dan TUP</td>
+                                                <td id="putValue">188,31%</td>
+                                                <td>10%</td>
+                                                <td id="putScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Capaian Output</td>
+                                                <td id="coValue">188,31%</td>
+                                                <td>25%</td>
+                                                <td id="coScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Dispensasi SPM</td>
+                                                <td id="dsValue">0%</td>
+                                                <td>0%</td>
+                                                <td id="dsScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Nilai</b></td>
+                                                <td colspan="3" align="right" id="totalCapaian1"><b>95,16</b></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4" valign="top">2</td>
+                                                <td rowspan="4" valign="top" width="50px"> 1b-N </td>
+                                                <td rowspan="4" valign="top" class="left-align">Indeks kualitas LK
+                                                    Kuasa BUN KPPN</td>
+                                                <td><b>Komponen</b></td>
+                                                <td colspan="3"><b>Nilai</b></td>
+                                                <td>Triwulan/TLK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">A: Indeks Kualitas pelaksanaan Rekonsiliasi
+                                                    Tingkat UAKPA</td>
+                                                <td colspan="3" id="indeksA"><b>0</b></td>
+                                                <td rowspan="3" valign="top" class="left-align">A. Indeks kualitas
+                                                    pelaksanaan Rekonsilias tingkat
+                                                    UAKPA diperoleh dari persentase jumlah satker aktif yang diterbitkan
+                                                    SHR (Surat Hasil Rekonsiliasi) tepat waktu dibandingkan
+                                                    jumlah satker aktif yang wajib rekonsiliasi. <br>
+                                                    September: 64/64*100 = 99,4 <br>
+                                                    Oktober : 64/64*100 = 100 <br>
+                                                    November: 64/64*100 = 100 <br>
+                                                    100 = Indeks 5 (91-100%)<br>
+                                                    <br>
+                                                    <br>
+                                                    <p>B. Indeks penilaian kualitas LKBUN KPPN yang dilakukan
+                                                        oleh Kanwil DJPb
+                                                        Kualitas LKBUN KPPN ( Rekonsiliasi, To do List, Tutup
+                                                        Permanen)
+                                                        September: 64/64*100 = 99,4
+                                                        Oktober : 64/64*100 = 100
+                                                        November: 64/64*100 = 100
+                                                        100 = Indeks 5 (91-100%) </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">B: Indeks penilaian kualitas LKBUN KPPN yang
+                                                    dilakukan oleh Kanwil DJPb</td>
+                                                <td colspan="3" id="indeksB"><b>5</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Nilai</b></td>
+                                                <td colspan="3" id="totalIndeks"><b>5</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="3" valign="top">3</td>
+                                                <td rowspan="3" valign="top" width="50px"> 2a-N </td>
+                                                <td rowspan="3" valign="top" class="left-align">Indeks kepuasan
+                                                    satker terhadap
+                                                    layanan KPPN </td>
+                                                <td><b>Komponen</b></td>
+                                                <td colspan="3"><b>Nilai</b></td>
+                                                <td>Triwulan/TLK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Indeks kepuasan
+                                                    stakeholder terhadap
+                                                    layanan KPPN </td>
+                                                <td colspan="3" id="ikplValue3">4,91</td>
+                                                <td rowspan="2" valign="top" class="left-align">
+                                                    Persentase Penyelesaian Tindak Lanjut
+                                                    Rekomendasi/Rencana Aksi Hasil Survei semester
+                                                    sebelumnya <br>
+                                                    Indeks 5 : 100% rekomendasi hasil survei tahun 2023 telah
+                                                    ditindaklanjuti <br>
+                                                    Indeks 4,5 : 90- 99% rekomendasi hasil survei tahun 2023
+                                                    telah ditindaklanjuti <br>
+                                                    Indeks 4 : 80- 89% rekomendasi hasil survei tahun 2023 telah
+                                                    ditindaklanjuti <br>
+                                                    Indeks 3,5 : 70- 79% rekomendasi hasil survei tahun 2023
+                                                    telah ditindaklanjuti <br>
+                                                    Indeks 3 : 60- 69% rekomendasi hasil survei tahun 2023 telah
+                                                    ditindaklanjuti <br>
+                                                    Indeks 2,5 : 50- 59% rekomendasi hasil survei tahun 2023
+                                                    telah ditindaklanjuti <br>
+                                                    Indeks 2 : 40- 49% rekomendasi hasil survei tahun 2023 telah
+                                                    ditindaklanjuti <br>
+                                                    Indeks 1 : <40% rekomendasi hasil survei tahun 2023 telah
+                                                        ditindaklanjuti <br>
+                                                        <br>
+                                                        Triwulan IV 2024 nilai indeks kepuasan memiliki
+                                                        capaian 4.91 dengan indeks 5, sebagaimana laporan yang
+                                                        telah disampaikan melalui Nota Dinas No: ND
+                                                        15/KPN.2602/2025; Tgl: 4 Januari 2025
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Indeks</b></td>
+                                                <td colspan="3" id="indeks3"><b>5</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="6" valign="top">4</td>
+                                                <td rowspan="6" valign="top"> 3a-N </td>
+                                                <td rowspan="6" valign="top" class="left-align">Indeks implementasi
+                                                    standardisasi
+                                                    kompetensi pejabat
+                                                    perbendaharaan pada
+                                                    satker lingkup KPPN</td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>% dari target</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td><b>Nilai</b></td>
+                                                <td>Triwulan/TLK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Akselerasi
+                                                    Penyelenggaraan
+                                                    Refreshment oleh Unit
+                                                    Pelaksana Penilaian
+                                                    Kompetensi PPK/PPSPM </td>
+                                                <td id="refreshmentValue">122,23%</td>
+                                                <td>40%</td>
+                                                <td id="refreshmentScore">48,89</td>
+                                                <td rowspan="5" valign="top" class="left-align">Capaian Impelementasi =
+                                                    (persentase akselerasi
+                                                    refreshment
+                                                    x 40%) + (persentase pemenuhan PNT dan SNT x 30%) +
+                                                    (persentase pemenuhan BNT x 30%) </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Pemenuhan Sertifikat PNT
+                                                    dan SNT bagi Pejabat Pembuat Komitmen dan
+                                                    Pejabat Penantanganan
+                                                    SPM </td>
+                                                <td id="pnTsntValue">188,31%</td>
+                                                <td>30%</td>
+                                                <td id="pnTsntScore">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Pemenuhan Sertifikat BNT</td>
+                                                <td id="bntValue">100%</td>
+                                                <td>30%</td>
+                                                <td id="bntScore">30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Jumlah</b></td>
+                                                <td colspan="3" id="totalCapaian"> <b>135,39</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Indeks</b></td>
+                                                <td colspan="3" id="indeksIKI"> <b>5</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="4" valign="top">5</td>
+                                                <td rowspan="4" valign="top">3b-N</td>
+                                                <td rowspan="4" valign="top" class="left-align">Tingkat efektivitas
+                                                    edukasi di bidang
+                                                    pengelolaan
+                                                    perbendaharaan</td>
+                                                <td><b>Komponen</b></td>
+                                                <td colspan="3"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nilai Kuisioner</td>
+                                                <td colspan="3" id="nilaiKuisioner">100</td>
+                                                <td rowspan="3" valign="top" class="left-align">Nilai Efektivitas
+                                                    Edukasi dan Komunikasi
+
+                                                    Indeks 5 : 95 < x <=100 Indeks 4,5 : 85 < x <=95 Indeks 4 : 80 < x
+                                                        <=85 Indeks 3,5 : 70 < x <=80 Indeks 3 : 60 < x <=70 Indeks 2,5
+                                                        :50 < x <=59 Indeks 2 : 40 < x <=49 Indeks 1 : nilai edukom <40
+                                                        </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nilai Rata-rata Post Test </td>
+                                                <td colspan="3" id="nilaiPostTest">92,94</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Indeks</b></td>
+                                                <td colspan="3" id="indeks">5</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="5" valign="top">6</td>
+                                                <td rowspan="5" valign="top">4a-CP</td>
+                                                <td rowspan="5" valign="top" class="left-align">
+                                                    Persentase akurasi
+                                                    perencanaan kas </td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td colspan="2"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Rata - Rata Deviasi Unit
+                                                    RPD harian KPPN per
+                                                    periode </td>
+                                                <td>0,3</td>
+                                                <td colspan="2" id="nilaiDeviasiUnit6">0</td>
+                                                <td rowspan="4" valign="top" class="left-align">(100% - ((Rata - Rata
+                                                    Deviasi Unit RPD harian KPPN per
+                                                    periode*0,3) + ((Rata - Rata Deviasi Nilai RPD harian KPPN
+                                                    per periode*0,7))) - (Rasio Dispensasi RPD harian KPPN per
+                                                    periode))
+
+                                                    Keterangan :
+                                                    1. Data perhitungan deviasi hanya menggunakan data
+                                                    tagihan yang memiliki RPD Harian
+                                                    2. RPD Harian manual yang disampaikan oleh Satker akses
+                                                    langsung SPAN dikecualikan dari perhitungan.
+                                                    3. Perhitungan IKU diperoleh dari Aplikasi MONSAKTI
+                                                    4. Nilai rasio dispensasi RPD Harian yang diperhitungkan
+                                                    maksimal 0,01 (1%)
+
+                                                    Pada triwulan IV, didapatkan rata-rata reviasi unit RPD harian
+                                                    KPPN per periode dengan pembobotan 30% yaitu 0,38.
+                                                    Kemudian untuk rata – rata deviasi nilai RPD harian KPPN
+                                                    per periode dengan pembobotan 70% yaitu yaitu 0,14.
+                                                    Selanjutnya untuk rasio dispensasi RPD harian KPPN per
+                                                    periode pada triwulan IV sebesar 0,45.
+
+                                                    Maka didapatkan persentase akurasi rencana kas yaitu 100 –
+                                                    0,38 – 0,14 – 0,45 = 99,04 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Rata - Rata Deviasi Nilai
+                                                    RPD harian KPPN per
+                                                    periode </td>
+                                                <td>0,7</td>
+                                                <td colspan="2" id="nilaiDeviasiNilai6">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Rasio Dispensasi RPD
+                                                    harian KPPN per periode </td>
+                                                <td></td>
+                                                <td colspan="2" id="nilaiDispensasi6">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Jumlah</b></td>
+                                                <td colspan="3" id="hasil6">0</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="5" valign="top">7</td>
+                                                <td rowspan="5" valign="top"> 4b-N </td>
+                                                <td rowspan="5" valign="top" class="left-align">Tingkat kualitas
+                                                    penyelesaian SP2D </td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td colspan="2"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">A: Penyelesaian SP2D
+                                                    secara tepat waktu </td>
+                                                <td>33,33%</td>
+                                                <td colspan="2" id="indeksA7">5,00</td>
+                                                <td rowspan="4" valign="top" class="left-align">(Indeks Penyelesaian
+                                                    SP2D secara tepat waktu +
+                                                    Indeks
+                                                    Efektivitas Penyaluran dana SP2D yang akurat + Indeks
+                                                    Efektivitas kecepatan penyelesaian retur SP2D) / 3 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">B: Efektivitas Penyaluran
+                                                    dana SP2D yang akurat </td>
+                                                <td>33,33%</td>
+                                                <td colspan="2" id="indeksB7">5,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">C: Efektivitas kecepatan
+                                                    penyelesaian retur SP2D </td>
+                                                <td>33,33%</td>
+                                                <td colspan="2" id="indeksC7">5,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Jumlah</b></td>
+                                                <td colspan="3" id="averageIndex7">5</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="8" valign="top">8</td>
+                                                <td rowspan="8" valign="top"> 5a-CP </td>
+                                                <td rowspan="8" valign="top" class="left-align">Nilai kinerja penyaluran
+                                                    Dana Transfer ke
+                                                    Daerah </td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td colspan="2"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Syarat </td>
+                                                <td>15%</td>
+                                                <td colspan="2" id="syaratScore">14,50</td>
+                                                <td rowspan="7" valign="top" class="left-align">Hasil Penilaian dari
+                                                    Kantor Pusat (Nota Dinas
+                                                    Direktorat
+                                                    Pelaksanaan Anggaran nomor ND-35/PB.2/2025 tanggal
+                                                    10 Januari 2025)
+
+                                                    Nilai Kualitas Kinerja penyaluran Dana Transfer ke Daerah
+                                                    pada KPPN diukur dengan menggunakan beberapa variabel
+                                                    Nilai Kinerja Penyaluran sebagai berikut :
+                                                    1. Ketepatan waktu penyampaian dokumen persyaratan oleh
+                                                    pemda dhi. syarat penyaluran DAK Fisik dan Dana Desa.
+                                                    (SYARAT)
+                                                    2. Tingkat akurasi penyusunan proyeksi penyaluran dana
+                                                    Transfer Ke Daerah oleh KPPN. (PROYEKSI)
+                                                    3. Ketepatan dan keakuratan penyelesaian SPP dan SPM
+                                                    penyaluran dana Transfer ke Daerah hingga menjadi SP2D
+                                                    oleh KPPN. (AKURASI)
+                                                    4. Ketepatan waktu penyampaian laporan pemantauan dan
+                                                    evaluasi penyaluran DAK dan Dana Desa. (MONEV)
+                                                    5. Kelengkapan dan Ketepatan waktu penyampaian LK
+                                                    tingkat UAKPA BUN TKD. (LK-UAKPA)
+                                                    6. Nilai Penyaluran dana transfer ke daerah dan ketepatan
+                                                    waktu perekaman capaian rincian output Transfer Ke Daerah
+                                                    yang telah memperhitungkan nilai output. (REAL) </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Proyeksi</td>
+                                                <td>15%</td>
+                                                <td colspan="2" id="proyeksiScore">15,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Akurasi</td>
+                                                <td>20%</td>
+                                                <td colspan="2" id="akurasiScore">20,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Monev</td>
+                                                <td>10%</td>
+                                                <td colspan="2" id="monevScore">10,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">LK-UAKPA</td>
+                                                <td>20%</td>
+                                                <td colspan="2" id="lkuakpaScore">20,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Realisasi</td>
+                                                <td>20%</td>
+                                                <td colspan="2" id="realisasiScore">20,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Jumlah</b></td>
+                                                <td colspan="3" id="totalCapaian8"> <b>135,39</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="5" valign="top">9</td>
+                                                <td rowspan="5" valign="top"> 5b-N </td>
+                                                <td rowspan="5" valign="top" class="left-align">Indeks Digitalisasi
+                                                    Pengelolaan Keuangan
+                                                    KPPN</td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Persentase</b></td>
+                                                <td colspan="2"><b>Indeks</b></td>
+                                                <td>Triwulan/TLK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Indeks Digipay </td>
+                                                <td id="indigipayvalue">122,23%</td>
+                                                <td colspan="2" id="indeksindigipay">48,89</td>
+                                                <td rowspan="4" valign="top" class="left-align">IKU terdiri dari 3
+                                                    komponen yaitu:
+                                                    A. Implementasi Digipay
+                                                    B. Implementasi CMS
+                                                    C. Implementasi KKP
+
+                                                    A. Implementasi Digipay
+                                                    1. Indeks 5 jika jumlah Transaksi pada Aplikasi Digipay Satu
+                                                    dibandingkan dengan target >100%
+                                                    2. Indeks 4 jika jumlah Transaksi pada Aplikasi Digipay Satu
+                                                    dibandingkan dengan target > 70% s.d. <100% 3. Indeks 3 jika jumlah
+                                                        Transaksi pada Aplikasi Digipay Satu dibandingkan dengan target
+                                                        antara < 70% s.d.> 50%
+                                                        4. Indeks 2 jika jumlah Transaksi pada Aplikasi Digipay Satu
+                                                        dibandingkan dengan target antara < 50% s.d.> 30%
+                                                            5. Indeks 1 jika jumlah Transaksi pada Aplikasi Digipay Satu
+                                                            dibandingkan dengan target < 30% Pada triwulan IV,
+                                                                implementasi digipay telah terealisasi sebesar 335
+                                                                transaksi dari target 55 sehingga capaiannya 609,09%
+                                                                atau indeks 5. B. Implementasi CMS 1. Indeks 5 jika
+                                                                persentase Transaksi CMS>
+                                                                100% dari
+                                                                target trajectory
+                                                                2. Indeks 4 jika persentase Transaksi CMS > 85% s.d.
+                                                                ≤100% dari target trajectory
+                                                                3. Indeks 3 jika persentase Transaksi CMS > 70% s.d.
+                                                                ≤85%
+                                                                dari target trajectory
+                                                                4. Indeks 2 jika persentase Transaksi CMS > 40% s.d.
+                                                                ≤70%
+                                                                dari target trajectory
+                                                                5. Indeks 1 jika persentase Transaksi CMS ≤ 40% dari
+                                                                target
+                                                                trajectory
+
+                                                                Pada triwulan IV, implementasi transaksi CMS telah
+                                                                terealisasi sebesar 36.249 transaksi dari target
+                                                                sehingga
+                                                                capaian ini sebesar 90,58% atau indeks 5 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Pemenuhan Sertifikat PNT
+                                                    dan SNT bagi Pejabat Pembuat Komitmen dan
+                                                    Pejabat Penantanganan
+                                                    SPM </td>
+                                                <td id="incmsvalue">188,31%</td>
+                                                <td colspan="2" id="indeksincms">56,5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Pemenuhan Sertifikat BNT</td>
+                                                <td id="inkkpvalue">100%</td>
+                                                <td colspan="2" id="indeksinkkp">30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Indeks</b></td>
+                                                <td colspan="3" id="indeksTotal9"> <b>5</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="4" valign="top">10</td>
+                                                <td rowspan="4" valign="top"> 6a-N </td>
+                                                <td rowspan="4" valign="top" class="left-align">Indeks kualitas
+                                                    Laporan
+                                                    Pertanggungjawaban
+                                                    Bendahara K/L</td>
+                                                <td><b>Komponen</b></td>
+                                                <td colspan="3"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">∑ LPJ Bendahara yang
+                                                    andal dan tepat waktu </td>
+                                                <td colspan="3" id="indeksSept">4</td>
+                                                <td rowspan="3" valign="top" class="left-align">Seluruh LPJ telah
+                                                    disampaikan tepat waktu dan telah
+                                                    divalidasi Indeks kualitas LPJ Bendahara K/L sebagai berikut:
+
+                                                    Indeks 4: Jika memperoleh nilai 99,5% < x ≤ 100% LPJ Bendahara yang
+                                                        divalidasi KPPN tepat waktu Indeks 3,5: Jika memperoleh nilai
+                                                        99% < x ≤ 99,5% LPJ Bendahara yang divalidasi KPPN tepat waktu
+                                                        Indeks 3: Jika memperoleh nilai 98,5% ≤ x ≤ 99% LPJ Bendahara
+                                                        yang divalidasi KPPN tepat waktu Indeks 2,5: Jika memperoleh
+                                                        nilai 95% < x < 98,5% LPJ Bendahara yang divalidasi KPPN tepat
+                                                        waktu Indeks 2: Jika memperoleh nilai 90% < x ≤ 95% LPJ
+                                                        Bendahara yang divalidasi KPPN tepat waktu Indeks 1: Jika
+                                                        memperoleh nilai ≤ 90% LPJ Bendahara yang divalidasi KPPN tepat
+                                                        waktu September: LPJ pengeluaran 63 dari 63 wajib LPJ LPJ
+                                                        Penerimaan 18 dari 18 wajib LPJ Oktober: LPJ pengeluaran 63 dari
+                                                        63 wajib LPJ LPJ Penerimaan 17 dari 17 wajib LPJ November: LPJ
+                                                        pengeluaran 63 dari 63 wajib LPJ LPJ Penerimaan 17 dari 17 wajib
+                                                        LPJ </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">∑ LPJ Bendahara yang
+                                                    seharusnya disampaikan
+                                                    ke KPPN </td>
+                                                <td colspan="3" id="indeksOkt">4</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Indeks</b></td>
+                                                <td colspan="3" id="indeksTotal10"><b>4</b></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="5" valign="top">11</td>
+                                                <td rowspan="5" valign="top"> 7a-N </td>
+                                                <td rowspan="5" valign="top" class="left-align">Tingkat implementasi
+                                                    penajaman tugas
+                                                    <i>Financial Advisory</i>
+                                                </td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Persentase</b></td>
+                                                <td colspan="2"><b>Indeks</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Implementasi Central
+                                                    Government Advisory </td>
+                                                <td>50%</td>
+                                                <td colspan="2" id="nilaiCG">50,00</td>
+                                                <td rowspan="3" valign="top" class="left-align">FORMULA = (Nilai rata2
+                                                    CG x 50%) + (Nilai rata2 LG x
+                                                    30%)
+                                                    + (Implementasi SM x 20%)
+
+                                                    *Formula bagi KPPN yang tidak melakukan penyaluran TKD
+                                                    (tidak melakukan LG)
+                                                    =((Nilai rata2 CG x 50%) + (Implementasi SM x 20%)):70 x
+                                                    100
+
+                                                    IMPLEMENTASI CENTRAL GOVERNMENT ADVISORY
+                                                    (CG):
+                                                    Nilai rata-rata "Kertas Kerja Monitoring dan Evaluasi Central
+                                                    Government Advisory" sebagaimana tertuang dalam
+                                                    "Rekapitulasi Kertas Kerja Monitoring Financial Advisor"
+                                                    sesuai dengan detil pelaporan dan ruang lingkup yang diatur
+                                                    dalam petunjuk teknis/naskah dinas Pedoman Pelaksanaan
+                                                    Financial Advisor Pada Kantor Pelayanan Perbendaharaan
+                                                    Negara.
+
+                                                    IMPLEMENTASI LOCAL GOVERNMENT ADVISORY (LG):
+                                                    Nilai rata-rata "Kertas Kerja Monitoring Local Government
+                                                    Advisory" dan "Rekapitulasi Kertas Kerja Monitoring Financial
+                                                    Advisor" sesuai dengan detil pelaporan dan ruang lingkup
+                                                    yang diatur dalam petunjuk teknis/naskah dinas Pedoman
+                                                    Pelaksanaan Financial Advisor Pada Kantor Pelayanan
+                                                    Perbendaharaan Negara.
+
+                                                    IMPLEMENTASI SPECIAL MISSION ADVISORY (SM):
+                                                    Pelaksanaan rangkaian kegiatan special mission advisory
+                                                    oleh KPPN dalam memetakan potensi dengan kriteria
+                                                    penilaian sebagai berikut :
+                                                    100% = dilakukan penyampaian, pengisian, dan pemetaan </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Implementasi Local
+                                                    Government Advisory </td>
+                                                <td>30%</td>
+                                                <td colspan="2" id="nilaiLG">30,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Implementasi Special
+                                                    Mission Advisory </td>
+                                                <td>20%</td>
+                                                <td colspan="2" id="nilaiSM">20,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Persentase</b></td>
+                                                <td colspan="3" id="totalNilai11"><b>100</b></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="4" valign="top">12</td>
+                                                <td rowspan="4" valign="top"> 8a-N </td>
+                                                <td rowspan="4" valign="top" class="left-align">Tingkat kualitas
+                                                    pengelolaan kinerja
+                                                    organisasi </td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td colspan="2"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">indeks capaian komponen
+                                                    nilai LHPS </td>
+                                                <td>50%</td>
+                                                <td colspan="2" id="nilaiLHPS1">54,16%</td>
+                                                <td rowspan="2" valign="top" class="left-align">Triwulan IV = (50% x
+                                                    indeks capaian komponen SFO) +
+                                                    (50%
+                                                    x indeks capaian komponen nilai LHPS)
+
+                                                    Nilai SFO target 85
+                                                    *Jika menjadi unit sampel maka penilaian dari Kantor Pusat
+                                                    DJPb
+                                                    *Jika tidak menjadi unit sampel maka penilaian dari Kanwil
+                                                    DJPb
+                                                    Nilai kinerja KPPN hasil pembinaan Kanwil DJPb
+                                                    Target = 8.9
+
+                                                    indeks capaian komponen nilai LHPS
+                                                    (50% x Nilai LHPS Semester 2 2023) + (50% x Nilai LHPS
+                                                    Semester 1 2024)/target (8,9)
+                                                    Berdasarkan Nota Dinas Kepala Kantor Wilayah Direktorat
+                                                    Jenderal Perbendaharaan Provinsi Sulawesi Barat nomor
+                                                    ND-409/WPB.26/2024 tentang Penyampaian Laporan Hasil
+                                                    Pembinaan dan Supervisi (LHPS) Kanwil Ditjen
+                                                    Perbendaharaan Provinsi Sulawesi Barat Periode Semester I
+                                                    Tahun 2024
+                                                    Nilai LHPS Semester 2 2023 : 9,56
+                                                    Nilai LHPS Semester I 2024 : 9,71
+                                                    Nilai capaian IKU: (50%* 9,56) + (50%* 9,71) / 8,9 =108,26%
+                                                    Indeks capaian komponen SFO
+
+                                                    Nota Dinas Kepala Bagian Organisasi dan Tata Laksana
+                                                    nomor ND-162/PB.11/2025 tanggal 17 Januari 2025</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">indeks capaian ketepatan
+                                                    waktu penyampaian
+                                                    laporan SFO </td>
+                                                <td>50%</td>
+                                                <td colspan="2" id="nilaiLHPS2">52,98</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Nilai</b></td>
+                                                <td colspan="3" id="totalIKU12"><b>108,26%</b></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="4" valign="top">13</td>
+                                                <td rowspan="4" valign="top"> 8b-N </td>
+                                                <td rowspan="4" valign="top" class="left-align">Nilai kualitas
+                                                    pengelolaan SDM </td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td colspan="2"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Indeks Capaian Learning
+                                                    Organization </td>
+                                                <td>50%</td>
+                                                <td colspan="2" id="nilaiLO">58,1%</td>
+                                                <td rowspan="2" valign="top" class="left-align">Capaian = (50% x Indeks
+                                                    Capaian Implementasi LO) +
+                                                    (50%
+                                                    x Indeks Capaian Pelaksanaan Kebintalan)
+
+                                                    a. Implementasi LOFormula:
+                                                    Nilai Tingkat Implementasi Learning Organization
+                                                    =(∑𝑁𝑖𝑙𝑎𝑖 𝑆𝑢𝑏𝑘𝑜𝑚𝑝𝑜𝑛𝑒𝑛)/8
+                                                    Capaian s.d. 9 Januari 2025 dari Aplikasi Training:
+                                                    Komponen 1: 70
+                                                    Komponen 2: 100
+                                                    Komponen 3: 166.67
+                                                    Komponen 4: 100
+                                                    Komponen 5: 100
+                                                    Komponen 6: 100
+                                                    Komponen 7: 100
+                                                    Komponen 8: 100
+
+                                                    Niali capaian Implementasi LO sebesar 104,58.
+
+                                                    b. Pelaksanaan Program/KegiataN Kebintalan
+
+                                                    Formula:Triwulan I s.d. III = (80% x pelaksanaan
+                                                    kegiatan) + (20% x nilai kepatuhan pelaporan)
+                                                    Triwulan IV = (60% x pelaksanaan kegiatan) + (30%
+                                                    feedback peserta) + (10% x nilai kepatuhan pelaporan).
+                                                    Nilai Pelaksanaan Kegiatan: - 4 kegiatan = 120 - 3 kegiatan = 110 -
+                                                    2 kegiatan = 80 - 1 kegiatan
+                                                    = 70
+                                                    Nilai Kepatuhan Pelaporan: - Sebelum batas waktu = 110 - Sesuai
+                                                    batas waktu = 100 - 1-3 hari
+                                                    setelah batas waktu = 80 - lebih dari 3 hari setelah batas waktu =
+                                                    50Capaian = (50% x Indeks
+                                                    Capaian Implementasi LO) + (50%
+                                                    x Indeks Capaian Pelaksanaan Kebintalan)
+
+                                                    a. Implementasi LOFormula:
+                                                    Nilai Tingkat Implementasi Learning Organization
+                                                    =(∑𝑁𝑖𝑙𝑎𝑖 𝑆𝑢𝑏𝑘𝑜𝑚𝑝𝑜𝑛𝑒𝑛)/8
+                                                    Capaian s.d. 9 Januari 2025 dari Aplikasi Training:
+                                                    Komponen 1: 70
+                                                    Komponen 2: 100
+                                                    Komponen 3: 166.67
+                                                    Komponen 4: 100
+                                                    Komponen 5: 100
+                                                    Komponen 6: 100
+                                                    Komponen 7: 100
+                                                    Komponen 8: 100
+
+                                                    Niali capaian Implementasi LO sebesar 104,58.
+
+                                                    b. Pelaksanaan Program/KegiataN Kebintalan
+
+                                                    Formula:Triwulan I s.d. III = (80% x pelaksanaan
+                                                    kegiatan) + (20% x nilai kepatuhan pelaporan)
+                                                    Triwulan IV = (60% x pelaksanaan kegiatan) + (30%
+                                                    feedback peserta) + (10% x nilai kepatuhan pelaporan).
+                                                    Nilai Pelaksanaan Kegiatan: - 4 kegiatan = 120 - 3 kegiatan = 110 -
+                                                    2 kegiatan = 80 - 1 kegiatan
+                                                    = 70
+                                                    Nilai Kepatuhan Pelaporan: - Sebelum batas waktu = 110 - Sesuai
+                                                    batas waktu = 100 - 1-3 hari
+                                                    setelah batas waktu = 80 - lebih dari 3 hari setelah batas waktu =
+                                                    50</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Indeks Capaian
+                                                    Pelaksanaan Kebintalan </td>
+                                                <td>50%</td>
+                                                <td colspan="2" id="nilaiPK">58,50</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Nilai</b></td>
+                                                <td colspan="3" id="totalNilai13"><b>116,60</b></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="5" valign="top">14</td>
+                                                <td rowspan="5" valign="top"> 8c-N </td>
+                                                <td rowspan="5" valign="top" class="left-align">Nilai hasil evaluasi
+                                                    pelaksanaan tugas
+                                                    kepatuhan internal </td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td colspan="2"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Penerapan Manajemen
+                                                    Risiko </td>
+                                                <td><b>35%</b></td>
+                                                <td colspan="2" id="nilaiMR">34,48</td>
+                                                <td rowspan="3" valign="top" class="left-align">Unsur-unsur penilaian
+                                                    pelaksanaan tugas kepatuhan
+                                                    internal
+                                                    pada KPPN, terdiri atas:
+                                                    1. Penerapan manajemen risiko (bobot: 35%)
+                                                    2. Pelaksanaan Pemantauan Pengendalian Intern,
+                                                    Pengendalian Gratifikasi, Pelaporan LHKPN, serta
+                                                    Pemantauan Penegakan Integritas dan Nilai Etika (PPINE)
+                                                    (bobot: 55%)
+                                                    3. Pengelolaan Pengaduan dan Tindak Lanjut Rekomendasi atas Laporan
+                                                    Hasil Audit (LHA) Aparat
+                                                    Pengawas Fungsional
+                                                    bobot: 10%
+                                                    Berdasarkan Keputusan Kepala Kantor Wilayah Direktorat
+                                                    Jenderal Perbendaharaan nomor KEP-124/WPB.26/2024
+                                                    tentang Penetapan Nilai Hasil Evaluasi Pelaksanaan Tugas
+                                                    Kepatuhan Internal Pada Unit Kepatuhan Internal (UKI)
+                                                    Tingkat Kantor Pelayanan Perbendaharaan Negara (KPPN)
+                                                    Di Lingkungan Kantor Wilayah Direktorat Jenderal
+                                                    Perbendaharaan Provinsi Sulawesi Barat Periode Triwulan IV
+                                                    Tahun 2024 dengan rincian sebagai berikut:
+                                                    1.Penerapan manajemen risiko : 34,48
+                                                    2.Pelaksanaan pemantauan Pengendalian Intern,
+                                                    Pengendalian Gratifikasi, Pelaporan LHKPN, serta
+                                                    pemantauan penegakan integritas dan Nilai Etika : 55
+                                                    3.Pengelolaan pengaduan dan rekomendasi Laporan Hasil
+                                                    Audit (LHA) Aparat Pengawas Fungsional : 10
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Pelaksanaan pemantauan
+                                                    Pengendalian Intern,
+                                                    Pengendalian Gratifikasi,
+                                                    Pelaporan LHKPN, serta
+                                                    pemantauan penegakan
+                                                    integritas dan Nilai Etika </td>
+                                                <td><b>55%</b></td>
+                                                <td colspan="2" id="nilaiPP">55</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Pengelolaan pengaduan
+                                                    dan rekomendasi Laporan
+                                                    Hasil Audit (LHA) Aparat
+                                                    Pengawas Fungsional </td>
+                                                <td><b>10%</b></td>
+                                                <td colspan="2" id="nilaiPR">10</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Nilai</b></td>
+                                                <td colspan="3" id="totalNilai14"><b>99,48</b></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="4" valign="top">15</td>
+                                                <td rowspan="4" valign="top">9a-CP </td>
+                                                <td rowspan="4" valign="top" class="left-align">
+                                                    Persentase kualitas
+                                                    pelaksanaan anggaran
+                                                    KPPN</td>
+                                                <td><b>Komponen</b></td>
+                                                <td><b>Bobot</b></td>
+                                                <td colspan="2"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">IKPA</td>
+                                                <td>60%</td>
+                                                <td colspan="2" id="nilaiNKA">47,94</td>
+                                                <td rowspan="2" valign="top" class="left-align">Formula: (60% x IKKPA) +
+                                                    (40% x LK tingkat UAPPA-W
+                                                    dan
+                                                    UAPPB-W)
+                                                    a.IKKPA
+                                                    Nilai capaian berasal dari nilai SMART sebesar 80,57, nilai
+                                                    IKPA sebesar 68,6
+                                                    NKA =50%*Nilai SMART + 50%*Nilai IKKPA
+                                                    = 50%*80,57 + 50%*68,6*= 74,4
+                                                    (NKA < 80 dikonversi menjadi 79,9) b. LK UAKPA UAKPB Nilai LK UAKPA
+                                                        UAKPB=91=91/85=107,06 Capaian IKU Persentase Kualitas
+                                                        Pengelolaan Keuangan KPPN=60%*79,9 + 40%*107,06=90,76</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">LK UAKPA UAKPB </td>
+                                                <td>40%</td>
+                                                <td colspan="2" id="nilaiLK">43</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Nilai</b></td>
+                                                <td colspan="3" id="totalNilai15"><b>90,76</b></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td rowspan="4" valign="top">16</td>
+                                                <td rowspan="4" valign="top"> 9b-N </td>
+                                                <td rowspan="4" valign="top" class="left-align">Persentase kualitas
+                                                    pengelolaan BMN dan
+                                                    Pengadaan </td>
+                                                <td><b>Komponen</b></td>
+                                                <td colspan="3"><b>Nilai</b></td>
+                                                <td>Triwulan/Average</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Indeks Pengelolaan Aset </td>
+                                                <td>60%</td>
+                                                <td colspan="2" id="hasil-aset">66</td>
+                                                <td rowspan="2" valign="top" class="left-align">Hasil Penilaian IPA dan
+                                                    ITKP
+                                                    Nota Dinas Sekretaris Ditjen Perbendaharaan nomor ND
+                                                    275/PB.1/2025 tanggal 17 Januari 2025
+                                                    Nilai Indeks Pengelolaan Aset sebesar 104
+                                                    Nilai Indeks Tata Kelola Pengadaan sebesar 120
+                                                    Capaian realisasi IKU : 60%*104 + 40%*120 = 111
+                                                    Indeks Capaian IKU = 111 / 84,10 = 120 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-align">Indeks Tata Kelola
+                                                    Pengadaan</td>
+                                                <td>40%</td>
+                                                <td colspan="2" id="hasil-pengadaan">48</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Nilai</b></td>
+                                                <td colspan="3" id="indeks-iku16"><b>120</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function () {
+                                            let data = localStorage.getItem("indeks_data");
+
+                                            if (data) {
+                                                let parsedData = JSON.parse(data);
+                                                document.getElementById("hasil-aset").innerText = parsedData.aset || "-";
+                                                document.getElementById("hasil-pengadaan").innerText = parsedData.pengadaan || "-";
+                                                document.getElementById("indeks-iku16").innerText = parsedData.indeks || "-";
+                                                document.getElementById("nilaiNKA").innerText = parsedData.Ikpa || "-";
+                                                document.getElementById("nilaiLK").innerText = parsedData.LKfix || "-";
+                                                document.getElementById("totalNilai15").innerText = parsedData.Nilai15 || "-"; ''
+                                                document.getElementById("nilaiMR").innerText = parsedData.nilaiMR || "-";
+                                                document.getElementById("nilaiPP").innerText = parsedData.nilaiPP || "-";
+                                                document.getElementById("nilaiPR").innerText = parsedData.nilaiPR || "-";
+                                                document.getElementById("totalNilai14").innerText = parsedData.totalNilai14 || "-"; ''
+                                                document.getElementById("nilaiLO").innerText = parsedData.nilaiLO || "-";
+                                                document.getElementById("nilaiPK").innerText = parsedData.nilaiPK || "-";
+                                                document.getElementById("totalNilai13").innerText = parsedData.totalNilai13 || "-"; ''
+                                                document.getElementById("nilaiLHPS1").innerText = parsedData.nilaiTab1 || "-";
+                                                document.getElementById("nilaiLHPS2").innerText = parsedData.nilaiTab2 || "-";
+                                                document.getElementById("totalIKU12").innerText = parsedData.totalIKU12 || "-"; ''
+                                                document.getElementById("nilaiCG").innerText = parsedData.nilaiTertimbangCG || "-"; ''
+                                                document.getElementById("nilaiLG").innerText = parsedData.nilaiTertimbangLG || "-";
+                                                document.getElementById("nilaiSM").innerText = parsedData.nilaiTertimbangSM || "-";
+                                                document.getElementById("totalNilai11").innerText = parsedData.totalNilai11 || "-"; ''
+                                                document.getElementById("indeksSept").innerText = parsedData.indeksSept || "-";
+                                                document.getElementById("indeksOkt").innerText = parsedData.indeksOkt || "-";
+                                                document.getElementById("indeksTotal10").innerText = parsedData.indeksTotal10 || "-"; ''
+                                                document.getElementById("indigipayvalue").innerText = parsedData.indigipay || "-"; ''
+                                                document.getElementById("incmsvalue").innerText = parsedData.incms || "-";
+                                                document.getElementById("inkkpvalue").innerText = parsedData.inkkp || "-";
+                                                document.getElementById("indeksindigipay").innerText = parsedData.indeksindigipay || "-"; ''
+                                                document.getElementById("indeksincms").innerText = parsedData.indeksincms || "-";
+                                                document.getElementById("indeksinkkp").innerText = parsedData.indeksinkkp || "-";
+                                                document.getElementById("indeksTotal9").innerText = parsedData.indeksTotal9 || "-"; ''
+                                                document.getElementById("syaratScore").innerText = parsedData.syaratScore || "-"; ''
+                                                document.getElementById("proyeksiScore").innerText = parsedData.proyeksiScore || "-";
+                                                document.getElementById("akurasiScore").innerText = parsedData.akurasiScore || "-";
+                                                document.getElementById("monevScore").innerText = parsedData.monevScore || "-"; ''
+                                                document.getElementById("lkuakpaScore").innerText = parsedData.lkuakpaScore || "-";
+                                                document.getElementById("realisasiScore").innerText = parsedData.realisasiScore || "-";
+                                                document.getElementById("totalCapaian8").innerText = parsedData.totalCapaian8 || "-"; ''
+                                                document.getElementById("indeksA7").innerText = parsedData.indeksA7 || "-"; ''
+                                                document.getElementById("indeksB7").innerText = parsedData.indeksB7 || "-";
+                                                document.getElementById("indeksC7").innerText = parsedData.indeksC7 || "-";
+                                                document.getElementById("averageIndex7").innerText = parsedData.average7 || "-"; ''
+                                                document.getElementById("nilaiDeviasiUnit6").innerText = parsedData.nilaiDeviasiUnit6 || "-"; ''
+                                                document.getElementById("nilaiDeviasiNilai6").innerText = parsedData.nilaiDeviasiNilai6 || "-";
+                                                document.getElementById("nilaiDispensasi6").innerText = parsedData.nilaiDispensasi6 || "-";
+                                                document.getElementById("hasil6").innerText = parsedData.hasil6 || "-"; ''
+                                                document.getElementById("nilaiKuisioner").innerText = parsedData.kuisioner || "-";
+                                                document.getElementById("nilaiPostTest").innerText = parsedData.postTest || "-";
+                                                document.getElementById("indeks").innerText = parsedData.indeks || "-"; ''
+                                                document.getElementById("refreshmentValue").innerText = parsedData.refreshment || "-"; ''
+                                                document.getElementById("pnTsntValue").innerText = parsedData.pnTsnt || "-"; ''
+                                                document.getElementById("bntValue").innerText = parsedData.bnt || "-";
+                                                document.getElementById("refreshmentScore").innerText = parsedData.refreshmentScore || "-";
+                                                document.getElementById("pnTsntScore").innerText = parsedData.pnTsntScore || "-"; ''
+                                                document.getElementById("bntScore").innerText = parsedData.bntScore || "-";
+                                                document.getElementById("totalCapaian").innerText = parsedData.totalCapaian || "-";
+                                                document.getElementById("indeksIKI").innerText = parsedData.indeksIKI || "-"; ''
+                                                document.getElementById("ikplValue3").innerText = parsedData.ikpl || "-";
+                                                document.getElementById("indeks3").innerText = parsedData.indeks3 || "-"; ''
+                                                document.getElementById("indeksA").innerText = parsedData.indeksA || "-"; ''
+                                                document.getElementById("indeksB").innerText = parsedData.indeksB || "-";
+                                                document.getElementById("totalIndeks").innerText = parsedData.totalIndeks || "-"; ''
+
+                                                document.getElementById("rdValue").innerText = parsedData.rdValue || "-"; ''
+                                                document.getElementById("dhValue").innerText = parsedData.dhValue || "-";
+                                                document.getElementById("paValue").innerText = parsedData.paValue || "-";
+                                                document.getElementById("bkValue").innerText = parsedData.bkValue || "-"; ''
+                                                document.getElementById("ptValue").innerText = parsedData.ptValue || "-"; ''
+                                                document.getElementById("putValue").innerText = parsedData.putValue || "-"; ''
+                                                document.getElementById("coValue").innerText = parsedData.coValue || "-";
+
+                                                document.getElementById("dsValue").innerText = parsedData.dsValue || "-";
+                                                document.getElementById("rdScore").innerText = parsedData.rdScore || "-"; ''
+                                                document.getElementById("dhScore").innerText = parsedData.dhScore || "-";
+                                                document.getElementById("paScore").innerText = parsedData.paScore || "-";
+                                                document.getElementById("bkScore").innerText = parsedData.bkScore || "-"; ''
+                                                document.getElementById("ptScore").innerText = parsedData.ptScore || "-";
+                                                document.getElementById("putScore").innerText = parsedData.putScore || "-";
+                                                document.getElementById("coScore").innerText = parsedData.coScore || "-"; ''
+                                                document.getElementById("dsScore").innerText = parsedData.dsScore || "-"; ''
+                                                document.getElementById("totalCapaian1").innerText = parsedData.totalCapaian1 || "-";
+                                                document.getElementById("totalNilaiSpan1").innerText = parsedData.totalNilaiSpan1 || "-";
+
+
+                                            } else {
+                                                alert("Tidak ada data tersimpan!");
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div><!-- .animated -->
+            </div><!-- .content -->
+
+
+        </div><!-- /#right-panel -->
+
+        <!-- Right Panel -->
+
+
+        <script src="vendors/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+        <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+
+        <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+        <script src="vendors/jszip/dist/jszip.min.js"></script>
+        <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+        <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+        <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+        <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!-- settings.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Settings</h2>
+<p><strong>Email:</strong> <span id="userEmail"></span></p>
+<p><strong>Nama Lengkap:</strong> <span id="userFullName"></span></p>
+
+<h3>Ubah Password</h3>
+<form id="changePasswordForm">
+    <label for="newPassword">Password Baru:</label>
+    <input type="password" id="newPassword" required>
+    <button type="submit">Simpan</button>
+</form>
+<p id="passwordMessage"></p>
+
+<button id="logout">Logout</button>
+
+    </div>
+
+    
+</body>
+</html>

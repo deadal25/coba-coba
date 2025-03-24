@@ -1,0 +1,454 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pelayanan KPPN Majene</title>
+    <!-- <meta name="description" content="Sufee Admin - HTML5 Admin Template"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    function navigatePage() {
+        var selectElement = document.getElementById("pageSelect");
+        var selectedValue = selectElement.value;
+
+        const pages = {
+            "1a-CP": "tabelnomor1.html",
+            "1b-N": "tabelnomor2.html",
+            "2a-N": "tabelnomor3.html",
+            "3a-N": "tabelnomor4.html",
+            "3b-N": "tabelnomor5.html",
+            "4a-CP": "tabelnomor6.html",
+            "4b-N": "tabelnomor7.html",
+            "5a-CP": "tabelnomor8.html",
+            "5b-N": "tabelnomor9.html",
+            "6a-N": "tabelnomor10.html",
+            "7a-N": "tabelnomor11.html",
+            "8a-N": "tabelnomor12.html",
+            "8b-N": "tabelnomor13.html",
+            "8c-N": "tabelnomor14.html",
+            "9a-CP": "tabelnomor15.html",
+            "9b-N": "tabelnomor16.html"
+        };
+
+        if (selectedValue in pages) {
+            window.location.href = pages[selectedValue];
+        }
+    }
+</script>
+
+<body>
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="tabelnomor1.html"><img src="logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="tabelnomor1.html"><img src="logo2.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="login.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+
+                    <li class="menu-item-has-children active dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="tables-basic.html">New Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Table</a></li>
+                            <li class="active">Data table</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">RAW DATA IKU KEMENKEU</strong>
+                                <!-- <label for="pageSelect">Pilih kategori:</label> -->
+                                <select id="pageSelect" onchange="navigatePage()">
+                                    <option value="" disabled selected>-- Pilih --</option>
+                                    <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
+                                    <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
+                                    <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
+                                    <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
+                                    <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
+                                    <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
+                                    <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
+                                    <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
+                                </select>
+
+                                <body>
+
+                                    <div id="1a-CP" class="content">
+                                        <br>
+                                        <h3><b>Nilai Kinerja Pelaksanaan Anggaran K/L</b></h3>
+
+                                        <label for="rd">Revisi DIPA (%) :</label>
+                                        <input type="number" id="rd" oninput="updateCapaian1()" step="0.01" min="0">
+                                        <label for="dh">Deviasi Hal. III DIPA (%) :</label>
+                                        <input type="number" id="dh" oninput="updateCapaian1()" step="0.01" min="0">
+                                        <label for="pa">Penyerapan Anggaran (%) :</label>
+                                        <input type="number" id="pa" oninput="updateCapaian1()" step="0.01" min="0">
+                                        <label for="bk">Belanja Kontraktual (%) :</label>
+                                        <input type="number" id="bk" oninput="updateCapaian1()" step="0.01" min="0">
+                                        <label for="pt">Penyelesaian Tagihan (%) :</label>
+                                        <input type="number" id="pt" oninput="updateCapaian1()" step="0.01" min="0">
+                                        <label for="put">Pengelolaan UP dan TUP (%) :</label>
+                                        <input type="number" id="put" oninput="updateCapaian1()" step="0.01" min="0">
+                                        <label for="co">Capaian Output (%) :</label>
+                                        <input type="number" id="co" oninput="updateCapaian1()" step="0.01" min="0">
+                                        <label for="ds">Dispensasi SPM (%) :</label>
+                                        <input type="number" id="ds" oninput="updateCapaian1()" step="0.01" min="0">
+
+                                        <div style="text-align: right; margin-bottom: 10px;">
+                                            <button onclick="submitData1()" class="btn-simpan">
+                                                <img src="C:\Users\USER\Videos\login-project\images\savedata.png"
+                                                    alt="save"> Simpan </button>
+                                        </div>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <th rowspan="1" class="hal2">No</th>
+                                                    <th colspan="2" class="hal2">Uraian IKU</th>
+                                                    <th rowspan="1" width="200px" class="hal2">DATA YANG DIPERLUKAN</th>
+                                                    <th colspan="3" class="hal2">DATA</th>
+                                                    <th rowspan="1" class="hal2">KETERANGAN</th>
+                                                </tr>
+                                                </tbody>
+                                            <tbody>
+                                                <tr>
+                                                    <th rowspan="1" class="hal2">No</th>
+                                                    <th colspan="2" class="hal2">Uraian IKU</th>
+                                                    <th rowspan="1" width="180px" class="hal2">DATA YANG DIPERLUKAN</th>
+                                                    <th colspan="3" class="hal2">DATA</th>
+                                                    <th rowspan="1" class="hal2">KETERANGAN</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="font-size" class="hal2">1</th>
+                                                    <th colspan="2" class="font-size" class="hal2">2</th>
+                                                    <th class="font-size" class="hal2">3</th>
+                                                    <th class="font-size" class="hal2">4</th>
+                                                    <th class="font-size" class="hal2">5</th>
+                                                    <th class="font-size" class="hal2">6</th>
+                                                    <th class="font-size" class="hal2">7</th>
+                                                </tr>
+                                            </tbody>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="10" valign="top">1</td>
+                                                    <td rowspan="10" valign="top"> 1a-CP </td>
+                                                    <td rowspan="10" valign="top" class="left-align">Nilai kinerja
+                                                        pelaksanaan anggaran K/L</td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td><b>Nilai</b></td>
+                                                    <td><b>Bobot</b></td>
+                                                    <td><b>Akhir</b></td>
+                                                    <td>Triwulan/TLK</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Revisi DIPA</td>
+                                                    <td id="rdValue">122,23%</td>
+                                                    <td>10%</td>
+                                                    <td id="rdScore">48,89</td>
+                                                    <td rowspan="9" valign="top" class="left-align" ;>Hasil penilaian
+                                                        IKPA tingkat Nasional sebagai BUN pada Aplikasi OMSPAN = <span
+                                                            id="totalNilaiSpan1">95.16</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Deviasi Hal. III DIPA</td>
+                                                    <td id="dhValue">188,31%</td>
+                                                    <td>15%</td>
+                                                    <td id="dhScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Penyerapan Anggaran</td>
+                                                    <td id="paValue">188,31%</td>
+                                                    <td>20%</td>
+                                                    <td id="paScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Belanja Kontraktual</td>
+                                                    <td id="bkValue">188,31%</td>
+                                                    <td>10%</td>
+                                                    <td id="bkScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Penyelesaian Tagihan</td>
+                                                    <td id="ptValue">188,31%</td>
+                                                    <td>10%</td>
+                                                    <td id="ptScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Pengelolaan UP dan TUP</td>
+                                                    <td id="putValue">188,31%</td>
+                                                    <td>10%</td>
+                                                    <td id="putScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Capaian Output</td>
+                                                    <td id="coValue">188,31%</td>
+                                                    <td>25%</td>
+                                                    <td id="coScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Dispensasi SPM</td>
+                                                    <td id="dsValue">0%</td>
+                                                    <td>0%</td>
+                                                    <td id="dsScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Nilai</b></td>
+                                                    <td colspan="3" align="right" id="totalCapaian1"><b>95,16</b></td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <script>
+                                            function updateCapaian1() {
+                                                let rd = parseFloat(document.getElementById("rd").value) || 0;
+                                                let dh = parseFloat(document.getElementById("dh").value) || 0;
+                                                let pa = parseFloat(document.getElementById("pa").value) || 0;
+                                                let bk = parseFloat(document.getElementById("bk").value) || 0;
+                                                let pt = parseFloat(document.getElementById("pt").value) || 0;
+                                                let put = parseFloat(document.getElementById("put").value) || 0;
+                                                let co = parseFloat(document.getElementById("co").value) || 0;
+                                                let ds = parseFloat(document.getElementById("ds").value) || 0;
+
+                                                let rdScore = (rd * 10) / 100;
+                                                let dhScore = (dh * 15) / 100;
+                                                let paScore = (pa * 20) / 100;
+                                                let bkScore = (bk * 10) / 100;
+                                                let ptScore = (pt * 10) / 100;
+                                                let putScore = (put * 10) / 100;
+                                                let coScore = (co * 25) / 100;
+                                                let dsScore = (dh * 0) / 100;
+
+                                                let totalCapaian1 = rdScore + dhScore + paScore + bkScore + ptScore + putScore + coScore + dsScore;
+                                                let totalNilaiSpan1 = rdScore + dhScore + paScore + bkScore + ptScore + putScore + coScore + dsScore;
+                                                document.getElementById("rdValue").innerText = rd + "%";
+                                                document.getElementById("dhValue").innerText = dh + "%";
+                                                document.getElementById("paValue").innerText = pa + "%";
+                                                document.getElementById("bkValue").innerText = bk + "%";
+                                                document.getElementById("ptValue").innerText = pt + "%";
+                                                document.getElementById("putValue").innerText = put + "%";
+                                                document.getElementById("coValue").innerText = co + "%";
+                                                document.getElementById("dsValue").innerText = ds + "%";
+
+                                                document.getElementById("rdScore").innerText = rdScore.toFixed(2);
+                                                document.getElementById("dhScore").innerText = dhScore.toFixed(2);
+                                                document.getElementById("paScore").innerText = paScore.toFixed(2);
+                                                document.getElementById("bkScore").innerText = bkScore.toFixed(2);
+                                                document.getElementById("ptScore").innerText = ptScore.toFixed(2);
+                                                document.getElementById("putScore").innerText = putScore.toFixed(2);
+                                                document.getElementById("coScore").innerText = coScore.toFixed(2);
+                                                document.getElementById("dsScore").innerText = dsScore.toFixed(2);
+
+
+                                                document.getElementById("totalCapaian1").innerText = totalCapaian1.toFixed(2);
+                                                document.getElementById("totalNilaiSpan1").innerText = totalNilaiSpan1.toFixed(2);
+
+                                            }
+                                        </script>
+                                        <script>
+                                            function submitData1() {
+                                                let rdValue = document.getElementById("rdValue").innerText;
+                                                let dhValue = document.getElementById("dhValue").innerText;
+                                                let paValue = document.getElementById("paValue").innerText;
+                                                let bkValue = document.getElementById("bkValue").innerText;
+                                                let ptValue = document.getElementById("ptValue").innerText;
+                                                let putValue = document.getElementById("putValue").innerText;
+                                                let coValue = document.getElementById("coValue").innerText;
+                                                let dsValue = document.getElementById("dsValue").innerText;
+                                                let rdScore = document.getElementById("rdScore").innerText;
+                                                let dhScore = document.getElementById("dhScore").innerText;
+                                                let paScore = document.getElementById("paScore").innerText;
+                                                let bkScore = document.getElementById("bkScore").innerText;
+                                                let ptScore = document.getElementById("ptScore").innerText;
+                                                let putScore = document.getElementById("putScore").innerText;
+                                                let coScore = document.getElementById("coScore").innerText;
+                                                let dsScore = document.getElementById("dsScore").innerText;
+                                                let totalCapaian1 = document.getElementById("totalCapaian1").innerText;
+                                                let totalNilaiSpan1 = document.getElementById("totalNilaiSpan1").innerText;
+
+
+                                                // Cek apakah ada data lama di localStorage
+                                                let storedData = localStorage.getItem("indeks_data");
+                                                let data = storedData ? JSON.parse(storedData) : {};
+
+                                                // Update hanya bagian halaman 1
+                                                data.rdValue = rdValue;
+                                                data.dhValue = dhValue;
+                                                data.paValue = paValue;
+                                                data.bkValue = bkValue;
+                                                data.ptValue = ptValue;
+                                                data.putValue = putValue;
+                                                data.coValue = coValue;
+                                                data.dsValue = dsValue;
+                                                data.rdScore = rdScore;
+                                                data.dhScore = dhScore;
+                                                data.paScore = paScore;
+                                                data.bkScore = bkScore;
+                                                data.ptScore = ptScore;
+                                                data.putScore = putScore;
+                                                data.coScore = coScore;
+                                                data.dsScore = dsScore;
+                                                data.totalCapaian1 = totalCapaian1;
+                                                data.totalNilaiSpan1 = totalNilaiSpan1;
+
+                                                // Simpan kembali ke localStorage
+                                                localStorage.setItem("indeks_data", JSON.stringify(data));
+
+                                                alert("Data dari halaman 1 berhasil disimpan!");
+                                            }
+                                        </script>
+                                        <!-- <button class="btn-simpan" align-items="center" onclick="submitData1()">
+                                            <img src="C:\Users\USER\Videos\login-project\images\savedata.png" alt="Save Icon">Simpan Data Halaman 1</button> -->
+                                    </div>
+
+                                </body>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendors/jszip/dist/jszip.min.js"></script>
+    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+
+
+</body>
+
+</html>
