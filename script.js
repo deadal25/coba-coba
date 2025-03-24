@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Redirect ke login jika belum login
     if (!localStorage.getItem("loggedInUser") && 
-        !window.location.pathname.includes("index.html") && 
+        !window.location.pathname.includes("login.html") && 
         !window.location.pathname.includes("register.html")) {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
 
     // Registrasi - Simpan akun ke localStorage
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (users[username] && users[username].password === password) {
                 localStorage.setItem("loggedInUser", username);
-                window.location.href = "index.html";
+                window.location.href = "login.html";
             } else {
                 document.getElementById("message").innerText = "Username atau password salah!";
                 document.getElementById("message").style.color = "red";
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (logoutBtn) {
         logoutBtn.addEventListener("click", function () {
             localStorage.removeItem("loggedInUser");
-            window.location.href = "index.html";
+            window.location.href = "login.html";
         });
     }
 
