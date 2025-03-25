@@ -10,26 +10,28 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="logo">
-            <img src="logo.png" alt="KPPN Majene">
-        </div>
-        <div class="text-center mt-4 name">
-        </div>
-        <form id="loginForm" class="p-3 mt-3">
-            <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="userName" id="userName" placeholder="Username (Email)" required>
+    <div class="container">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="logo.png" alt="KPPN Majene">
+            </div><br>
+            <div class="text-center mt-4 name">
             </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password" required>
+            <form id="loginForm" class="p-3 mt-3">
+                <div class="form-field d-flex align-items-center">
+                    <span class="far fa-user"></span>
+                    <input type="text" name="userName" id="userName" placeholder="Username (Email)" required>
+                </div>
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input type="password" name="password" id="pwd" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn mt-3">Login</button>
+                <p id="message"></p>
+            </form>        
+            <div class="text-center fs-6">
+                <a href="forgotpassword.html">Forgot password?</a> or <a href="register.html">Sign up</a>
             </div>
-            <button type="submit" class="btn mt-3">Login</button>
-            <p id="message"></p>
-        </form>        
-        <div class="text-center fs-6">
-            <a href="forgotpassword.html">Forgot password?</a> or <a href="register.html">Sign up</a>
         </div>
     </div>
 </body>
