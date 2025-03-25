@@ -198,6 +198,18 @@
                                             <label for="lhps2">Nilai LHPS Semester 1 2024:</label>
                                             <input type="number" id="lhps2" min="0" max="100" value="9.71" oninput="hitungNilai12()">
                                         
+                                            <label for="keterangan12">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea12" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan12()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan12() {
+                                                    let inputText12 = document.getElementById("inputArea12").value;
+                                                    document.getElementById("keterangan12").innerHTML = inputText12.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                            
                                             <div style="text-align: right; margin-bottom: 10px;">
                                                 <button onclick="submitData12()" class="btn-simpan">
                                                     <img src="savedata.png"
@@ -230,7 +242,7 @@
                                                         nilai LHPS   </td>
                                                     <td >50%</td>
                                                     <td colspan="2" id="nilaiLHPS1">54,16%</td>
-                                                    <td rowspan="2" valign="top" class="left-align">Triwulan IV = (50% x indeks capaian komponen SFO) + (50% 
+                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan12">Triwulan IV = (50% x indeks capaian komponen SFO) + (50% 
                                                         x indeks capaian komponen nilai LHPS) 
                                                          
                                                         Nilai SFO target 85 
@@ -296,7 +308,8 @@
                                             let nilaiTab1 = document.getElementById("nilaiLHPS1").innerText;
                                             let nilaiTab2 = document.getElementById("nilaiLHPS2").innerText;
                                             let totalIKU12 = document.getElementById("totalIKU12").innerText;
-                                    
+                                            let keterangan12hasil = document.getElementById("keterangan12").innerText;   
+                                            
                                             // Cek apakah ada data lama di localStorage
                                             let storedData = localStorage.getItem("indeks_data");
                                             let data = storedData ? JSON.parse(storedData) : {};
@@ -305,11 +318,11 @@
                                             data.nilaiTab1 = nilaiTab1;
                                             data.nilaiTab2 = nilaiTab2;
                                             data.totalIKU12 = totalIKU12;
-                                    
+                                            data.keterangan12 = keterangan12hasil;
                                             // Simpan kembali ke localStorage
                                             localStorage.setItem("indeks_data", JSON.stringify(data));
                                     
-                                            alert("Data dari halaman 12 berhasil disimpan!");
+                                            alert("Data dari Tingkat kualitas pengelolaan kinerja organisasi berhasil disimpan!");
                                         }
                                     </script>
                                     <!-- <button onclick="submitData12()">Simpan Data Halaman 12</button> -->

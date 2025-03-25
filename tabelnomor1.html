@@ -210,21 +210,30 @@
                                         <label for="ds">Dispensasi SPM (%) :</label>
                                         <input type="number" id="ds" oninput="updateCapaian1()" step="0.01" min="0">
 
+                                        
+                                        <label for="keterangan1">Masukkan Keterangan: </label>
+                                            <textarea id="inputArea1" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan1()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan1() {
+                                                    let inputText = document.getElementById("inputArea1").value;
+                                                    let keteranganCell = document.getElementById("keterangan1");
+                                                    let totalNilaiSpan = document.getElementById("totalNilaiSpan1");
+                                            
+                                                    // Menampilkan teks yang diinput dengan paragraf sesuai format
+                                                    keteranganCell.innerHTML = inputText.replace(/\n/g, "<br>")+
+                                                                               "<span id='totalNilaiSpan1'>" + "</span><br>";
+                                                }
+                                            </script>
+                                            
+                                        
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData1()" class="btn-simpan">
                                                 <img src="savedata.png"
                                                     alt="save"> Simpan </button>
                                         </div>
                                         <table>
-                                            <tbody>
-                                                <tr>
-                                                    <th rowspan="1" class="hal2">No</th>
-                                                    <th colspan="2" class="hal2">Uraian IKU</th>
-                                                    <th rowspan="1" width="200px" class="hal2">DATA YANG DIPERLUKAN</th>
-                                                    <th colspan="3" class="hal2">DATA</th>
-                                                    <th rowspan="1" class="hal2">KETERANGAN</th>
-                                                </tr>
-                                                </tbody>
+                    
                                             <tbody>
                                                 <tr>
                                                     <th rowspan="1" class="hal2">No</th>
@@ -260,7 +269,7 @@
                                                     <td id="rdValue">122,23%</td>
                                                     <td>10%</td>
                                                     <td id="rdScore">48,89</td>
-                                                    <td rowspan="9" valign="top" class="left-align" ;>Hasil penilaian
+                                                    <td rowspan="9" valign="top" class="left-align" id="keterangan1">Hasil penilaian
                                                         IKPA tingkat Nasional sebagai BUN pada Aplikasi OMSPAN = <span
                                                             id="totalNilaiSpan1">95.16</span></td>
                                                 </tr>
@@ -379,7 +388,8 @@
                                                 let dsScore = document.getElementById("dsScore").innerText;
                                                 let totalCapaian1 = document.getElementById("totalCapaian1").innerText;
                                                 let totalNilaiSpan1 = document.getElementById("totalNilaiSpan1").innerText;
-
+                                                let keterangan1hasil = document.getElementById("keterangan1").innerText;   
+                                            
 
                                                 // Cek apakah ada data lama di localStorage
                                                 let storedData = localStorage.getItem("indeks_data");
@@ -404,6 +414,7 @@
                                                 data.dsScore = dsScore;
                                                 data.totalCapaian1 = totalCapaian1;
                                                 data.totalNilaiSpan1 = totalNilaiSpan1;
+                                                data.keterangan1 = keterangan1hasil;
 
                                                 // Simpan kembali ke localStorage
                                                 localStorage.setItem("indeks_data", JSON.stringify(data));

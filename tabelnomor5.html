@@ -198,7 +198,19 @@
                                         <label>Nilai Post Test: </label>
                                             <input type="number" id="post_test">
                                         
-                                        <div style="text-align: right; margin-bottom: 10px;">
+                                            <label for="keterangan5">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea5" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan5()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan5() {
+                                                    let inputText5 = document.getElementById("inputArea5").value;
+                                                    document.getElementById("keterangan5").innerHTML = inputText5.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                        
+                                            <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData5()" class="btn-simpan">
                                                 <img src="savedata.png"
                                                     alt="save"> Simpan </button>
@@ -228,7 +240,7 @@
                                                 <tr>
                                                     <td>Nilai Kuisioner</td>
                                                     <td colspan="3" id="nilaiKuisioner">100</td>
-                                                    <td rowspan="3" valign="top" class="left-align">Nilai Efektivitas Edukasi dan Komunikasi 
+                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan5">Nilai Efektivitas Edukasi dan Komunikasi 
                                     
                                                         Indeks 5 : 95 < x <= 100 
                                                         Indeks 4,5 : 85 < x <= 95 
@@ -280,7 +292,8 @@
                                                 let kuisioner = document.getElementById("nilaiKuisioner").innerText;
                                                 let postTest = document.getElementById("nilaiPostTest").innerText;
                                                 let indeks = document.getElementById("indeks").innerText;
-                                        
+                                                let keterangan5hasil = document.getElementById("keterangan5").innerText;   
+                                            
                                                 // Cek apakah ada data lama di localStorage
                                                 let storedData = localStorage.getItem("indeks_data");
                                                 let data = storedData ? JSON.parse(storedData) : {};
@@ -289,11 +302,11 @@
                                                 data.kuisioner = kuisioner;
                                                 data.postTest = postTest;
                                                 data.indeks = indeks;
-                                        
+                                                data.keterangan5 = keterangan5hasil;
                                                 // Simpan kembali ke localStorage
                                                 localStorage.setItem("indeks_data", JSON.stringify(data));
                                         
-                                                alert("Data dari halaman 5 berhasil disimpan!");
+                                                alert("Data dari Tingkat efektivitas edukasi di bidang pengelolaan perbendaharaan berhasil disimpan!");
                                             }
                                         </script>
                                         <!-- <button onclick="submitData5()">Simpan Data Halaman 5</button> -->

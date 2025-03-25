@@ -198,6 +198,20 @@
                                         <label for="persentaseB">Nilai Persentase B:</label>
                                         <input type="number" id="persentaseB" oninput="updateIndex()" min="0" max="100">
                                         
+                                        <label for="keterangan2">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea2" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan2()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan2() {
+                                                    let inputText2 = document.getElementById("inputArea2").value;
+                                                    document.getElementById("keterangan2").innerHTML = inputText2.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                        
+                                        
+                                        
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData2()" class="btn-simpan">
                                                 <img src="savedata.png"
@@ -227,7 +241,7 @@
                                                 <tr>
                                                     <td class="left-align">A: Indeks Kualitas pelaksanaan Rekonsiliasi Tingkat UAKPA</td>
                                                     <td colspan="3" id="indeksA"><b>0</b></td>
-                                                    <td rowspan="3" valign="top" class="left-align">A. Indeks kualitas pelaksanaan Rekonsilias tingkat UAKPA 
+                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan2">A. Indeks kualitas pelaksanaan Rekonsilias tingkat UAKPA 
                                                         diperoleh dari persentase jumlah satker aktif yang diterbitkan 
                                                         SHR (Surat Hasil Rekonsiliasi) tepat waktu dibandingkan 
                                                         jumlah satker aktif yang wajib rekonsiliasi.  
@@ -300,6 +314,7 @@
                                                     let indeksA = document.getElementById("indeksA").innerText;
                                                     let indeksB = document.getElementById("indeksB").innerText;
                                                     let totalIndeks = document.getElementById("totalIndeks").innerText;
+                                                    let keterangan2hasil = document.getElementById("keterangan2").innerText;   
                                             
                                                     // Cek apakah ada data lama di localStorage
                                                     let storedData = localStorage.getItem("indeks_data");
@@ -309,11 +324,12 @@
                                                     data.indeksA = indeksA;
                                                     data.indeksB = indeksB;
                                                     data.totalIndeks = totalIndeks;
+                                                    data.keterangan2 = keterangan2hasil;
                                             
                                                     // Simpan kembali ke localStorage
                                                     localStorage.setItem("indeks_data", JSON.stringify(data));
                                             
-                                                    alert("Data dari halaman 2 berhasil disimpan!");
+                                                    alert("Data dari Indeks Kualitas LK Kuasa BUN KPPN berhasil disimpan!");
                                                 }
                                             </script>
                                             <!-- <button onclick="submitData2()">Simpan Data Halaman 2</button> -->

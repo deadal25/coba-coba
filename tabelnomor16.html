@@ -198,6 +198,18 @@
                                             <label for="pengadaan">Nilai Indeks Tata Kelola Pengadaan:</label>
                                             <input type="number" id="pengadaan" value="0" oninput="hitung16()">
                                 
+                                            <label for="keterangan16">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea16" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan16()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan16() {
+                                                    let inputText16 = document.getElementById("inputArea16").value;
+                                                    document.getElementById("keterangan16").innerHTML = inputText16.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                            
                                             <div style="text-align: right; margin-bottom: 10px;">
                                                 <button onclick="submitData16()" class="btn-simpan">
                                                     <img src="savedata.png"
@@ -229,7 +241,7 @@
                                                     <td class="left-align">Indeks Pengelolaan Aset </td>
                                                     <td >60%</td>
                                                     <td colspan="2" id="hasil-aset">66</td>
-                                                    <td rowspan="2" valign="top" class="left-align">Hasil Penilaian IPA dan ITKP 
+                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan16">Hasil Penilaian IPA dan ITKP 
                                                         Nota Dinas Sekretaris Ditjen Perbendaharaan  nomor ND
                                                         275/PB.1/2025 tanggal 17 Januari 2025  
                                                         Nilai Indeks Pengelolaan Aset sebesar 104 
@@ -272,7 +284,8 @@
                                             let nilaiAset = document.getElementById("hasil-aset").innerText;
                                             let nilaiPengadaan = document.getElementById("hasil-pengadaan").innerText;
                                             let indeksCapaian16 = document.getElementById("indeks-iku16").innerText;
-                                    
+                                            let keterangan16hasil = document.getElementById("keterangan16").innerText;
+                                            
                                             // Cek apakah ada data lama di localStorage
                                             let storedData = localStorage.getItem("indeks_data");
                                             let data = storedData ? JSON.parse(storedData) : {};
@@ -281,11 +294,11 @@
                                             data.aset = nilaiAset;
                                             data.pengadaan = nilaiPengadaan;
                                             data.indeks = indeksCapaian16;
-                                    
+                                            data.keterangan16 = keterangan16hasil;
                                             // Simpan kembali ke localStorage
                                             localStorage.setItem("indeks_data", JSON.stringify(data));
                                     
-                                            alert("Data dari halaman 16 berhasil disimpan!");
+                                            alert("Data dari Persentase kualitas pengelolaan BMN dan Pengadaan berhasil disimpan!");
                                         }
                                     </script>
                                     <!-- <button onclick="submitData16()">Simpan Data Halaman 16</button> -->

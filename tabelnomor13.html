@@ -206,6 +206,17 @@
                                             <label for="pelaksanaan">Indeks Capaian Pelaksanaan Kebintalan:</label>
                                             <input type="number" id="pelaksanaan" value="0" oninput="hitungNilai13()">
                                 
+                                            <label for="keterangan13">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea13" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan13()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan13() {
+                                                    let inputText13 = document.getElementById("inputArea13").value;
+                                                    document.getElementById("keterangan13").innerHTML = inputText13.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
                                             <div style="text-align: right; margin-bottom: 10px;">
                                                 <button onclick="submitData13()" class="btn-simpan">
                                                     <img src="savedata.png"
@@ -237,7 +248,7 @@
                                                         Organization </td>
                                                     <td >50%</td>
                                                     <td colspan="2" id="nilaiLO">58,1%</td>
-                                                    <td rowspan="2" valign="top" class="left-align">Capaian = (50% x Indeks Capaian Implementasi LO) + (50% 
+                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan13">Capaian = (50% x Indeks Capaian Implementasi LO) + (50% 
                                                         x Indeks Capaian Pelaksanaan Kebintalan) 
                                                          
                                                         a. Implementasi LOFormula:  
@@ -325,7 +336,8 @@
                                             let nilaiLO = document.getElementById("nilaiLO").innerText;
                                             let nilaiPK = document.getElementById("nilaiPK").innerText;
                                             let totalNilai13 = document.getElementById("totalNilai13").innerText;
-                                    
+                                            let keterangan13hasil = document.getElementById("keterangan13").innerText;   
+                                            
                                             // Cek apakah ada data lama di localStorage
                                             let storedData = localStorage.getItem("indeks_data");
                                             let data = storedData ? JSON.parse(storedData) : {};
@@ -334,11 +346,11 @@
                                             data.nilaiLO = nilaiLO;
                                             data.nilaiPK = nilaiPK;
                                             data.totalNilai13 = totalNilai13;
-                                    
+                                            data.keterangan13 = keterangan13hasil;
                                             // Simpan kembali ke localStorage
                                             localStorage.setItem("indeks_data", JSON.stringify(data));
                                     
-                                            alert("Data dari halaman 13 berhasil disimpan!");
+                                            alert("Data dari Nilai kualitas pengelolaan SDM berhasil disimpan!");
                                         }
                                     </script>
                                     <!-- <button onclick="submitData13()">Simpan Data Halaman 13</button> -->

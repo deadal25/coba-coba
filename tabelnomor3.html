@@ -196,6 +196,19 @@
                                         <label for="ikpl">Masukkan IKPL:</label>
                                         <input type="number" id="ikpl" oninput="updateIndex3()" step="0.01" min="0" max="5">
                                         
+                                        
+                                        <label for="keterangan3">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea3" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan3()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan3() {
+                                                    let inputText3 = document.getElementById("inputArea3").value;
+                                                    document.getElementById("keterangan3").innerHTML = inputText3.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                        
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData3()" class="btn-simpan">
                                                 <img src="savedata.png"
@@ -227,7 +240,7 @@
                                                             stakeholder terhadap 
                                                             layanan KPPN </td>
                                                         <td colspan="3" id="ikplValue3">4,91</td>
-                                                        <td rowspan="2" valign="top" class="left-align"><p>Persentase Penyelesaian Tindak Lanjut 
+                                                        <td rowspan="2" valign="top" class="left-align" id="keterangan3"><p>Persentase Penyelesaian Tindak Lanjut 
                                                             Rekomendasi/Rencana Aksi Hasil Survei semester 
                                                             sebelumnya <br>
                                                             <p> 
@@ -283,6 +296,7 @@
                                                 function submitData3() {
                                                     let ikpl = document.getElementById("ikplValue3").innerText;
                                                     let indeks3 = document.getElementById("indeks3").innerText;
+                                                    let keterangan3hasil = document.getElementById("keterangan3").innerText;   
                                             
                                                     // Cek apakah ada data lama di localStorage
                                                     let storedData = localStorage.getItem("indeks_data");
@@ -291,11 +305,11 @@
                                                     // Update hanya bagian halaman 3
                                                     data.ikpl = ikpl;
                                                     data.indeks3 = indeks3;
-                                            
+                                                    data.keterangan3 = keterangan3hasil;
                                                     // Simpan kembali ke localStorage
                                                     localStorage.setItem("indeks_data", JSON.stringify(data));
                                             
-                                                    alert("Data dari halaman 16 berhasil disimpan!");
+                                                    alert("Data dari Indeks kepuasan satker terhadap layanan KPPN berhasil disimpan!");
                                                 }
                                             </script>
                                             <!-- <button onclick="submitData3()">Simpan Data Halaman 3</button> -->

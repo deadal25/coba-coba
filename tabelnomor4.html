@@ -201,6 +201,20 @@
                                     
                                         <label for="bnt">Pemenuhan Sertifikat BNT (%) :</label>
                                         <input type="number" id="bnt" oninput="updateCapaian4()" step="0.01" min="0">
+                                        
+                                        
+                                        <label for="keterangan4">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea4" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan4()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan4() {
+                                                    let inputText4 = document.getElementById("inputArea4").value;
+                                                    document.getElementById("keterangan4").innerHTML = inputText4.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                        
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData4()" class="btn-simpan">
                                                 <img src="savedata.png"
@@ -240,7 +254,7 @@
                                                         <td id="refreshmentValue">122,23%</td>
                                                         <td>40%</td>
                                                         <td id="refreshmentScore">48,89</td>
-                                                        <td rowspan="5" valign="top" class="left-align">Capaian Impelementasi = (persentase akselerasi refreshment 
+                                                        <td rowspan="5" valign="top" class="left-align" id="keterangan4">Capaian Impelementasi = (persentase akselerasi refreshment 
                                                             x 40%) + (persentase pemenuhan PNT dan SNT x 30%) + 
                                                             (persentase pemenuhan BNT x 30%) </td>
                                                 </tr>
@@ -314,6 +328,7 @@
                                                     let bntScore = document.getElementById("bntScore").innerText;
                                                     let totalCapaian = document.getElementById("totalCapaian").innerText;
                                                     let indeksIKI = document.getElementById("indeksIKI").innerText;
+                                                    let keterangan4hasil = document.getElementById("keterangan4").innerText;   
                                             
                                                     // Cek apakah ada data lama di localStorage
                                                     let storedData = localStorage.getItem("indeks_data");
@@ -328,11 +343,11 @@
                                                     data.bntScore = bntScore;
                                                     data.totalCapaian = totalCapaian;
                                                     data.indeksIKI = indeksIKI;
-                                            
+                                                    data.keterangan4 = keterangan4hasil;
                                                     // Simpan kembali ke localStorage
                                                     localStorage.setItem("indeks_data", JSON.stringify(data));
                                             
-                                                    alert("Data dari halaman 4 berhasil disimpan!");
+                                                    alert("Data dari Indeks implementasi standardisasi kompetensi pejabat perbendaharaan pada satker lingkup KPPN berhasil disimpan!");
                                                 }
                                             </script>
                                             <!-- <button onclick="submitData4()">Simpan Data Halaman 4</button> -->

@@ -202,6 +202,18 @@
                                         <label for="inkkp">Indeks KKP (%) :</label>
                                         <input type="number" id="inkkp" oninput="updateCapaian9()" step="0.01" min="0">
                                             
+                                        <label for="keterangan9">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea9" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan9()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan9() {
+                                                    let inputText9 = document.getElementById("inputArea9").value;
+                                                    document.getElementById("keterangan9").innerHTML = inputText9.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                        
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData9()" class="btn-simpan">
                                                 <img src="savedata.png"
@@ -233,7 +245,7 @@
                                                         <td class="left-align">Indeks Digipay </td>
                                                         <td id="indigipayvalue">122,23%</td>
                                                         <td id="indeksindigipay">48,89</td>
-                                                        <td rowspan="4" valign="top" class="left-align">IKU terdiri dari 3 komponen yaitu: 
+                                                        <td rowspan="4" valign="top" class="left-align" id="keterangan9">IKU terdiri dari 3 komponen yaitu: 
                                                             A. Implementasi Digipay 
                                                             B. Implementasi CMS 
                                                             C. Implementasi KKP 
@@ -350,7 +362,8 @@
                                         let indeksincms = document.getElementById("indeksincms").innerText;
                                         let indeksinkkp = document.getElementById("indeksinkkp").innerText;
                                         let indeksTotal9 = document.getElementById("indeksTotal9").innerText;
-                                
+                                        let keterangan9hasil = document.getElementById("keterangan9").innerText;   
+                                            
                                         // Cek apakah ada data lama di localStorage
                                         let storedData = localStorage.getItem("indeks_data");
                                         let data = storedData ? JSON.parse(storedData) : {};
@@ -363,11 +376,12 @@
                                         data.indeksincms = indeksincms;
                                         data.indeksinkkp = indeksinkkp;
                                         data.indeksTotal9 = indeksTotal9;
+                                        data.keterangan9 = keterangan9hasil;
                                 
                                         // Simpan kembali ke localStorage
                                         localStorage.setItem("indeks_data", JSON.stringify(data));
                                 
-                                        alert("Data dari halaman 9 berhasil disimpan!");
+                                        alert("Data dari Indeks Digitalisasi Pengelolaan Keuangan KPPN  berhasil disimpan!");
                                     }
                                 </script>
                                 <!-- <button onclick="submitData9()">Simpan Data Halaman 9</button> -->

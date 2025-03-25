@@ -202,6 +202,18 @@
                                             <label for="pengaduan">Pengelolaan Pengaduan & Rekomendasi:</label>
                                             <input type="number" id="pengaduan" value="0" oninput="hitungNilai14()">
                                 
+                                            <label for="keterangan14">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea14" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan14()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan14() {
+                                                    let inputText14 = document.getElementById("inputArea14").value;
+                                                    document.getElementById("keterangan14").innerHTML = inputText14.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                            
                                             <div style="text-align: right; margin-bottom: 10px;">
                                                 <button onclick="submitData14()" class="btn-simpan">
                                                     <img src="savedata.png"
@@ -233,7 +245,7 @@
                                                     Risiko </td>
                                                 <td ><b>35%</b></td>
                                                 <td colspan="2" id="nilaiMR">34,48</td>
-                                                <td rowspan="3" valign="top" class="left-align">Unsur-unsur penilaian pelaksanaan tugas kepatuhan internal 
+                                                <td rowspan="3" valign="top" class="left-align" id="keterangan14">Unsur-unsur penilaian pelaksanaan tugas kepatuhan internal 
                                                     pada KPPN, terdiri atas: 
                                                     1. Penerapan manajemen risiko (bobot: 35%) 
                                                     2. Pelaksanaan Pemantauan Pengendalian Intern, 
@@ -309,7 +321,8 @@
                                             let nilaiPP = document.getElementById("nilaiPP").innerText;
                                             let nilaiPR = document.getElementById("nilaiPR").innerText;
                                             let totalNilai14 = document.getElementById("totalNilai14").innerText;
-                                    
+                                            let keterangan14hasil = document.getElementById("keterangan14").innerText;   
+                                            
                                             // Cek apakah ada data lama di localStorage
                                             let storedData = localStorage.getItem("indeks_data");
                                             let data = storedData ? JSON.parse(storedData) : {};
@@ -319,11 +332,11 @@
                                             data.nilaiPP = nilaiPP;
                                             data.nilaiPR = nilaiPR;
                                             data.totalNilai14 = totalNilai14;
-                                    
+                                            data.keterangan14 = keterangan14hasil;
                                             // Simpan kembali ke localStorage
                                             localStorage.setItem("indeks_data", JSON.stringify(data));
                                     
-                                            alert("Data dari halaman 14 berhasil disimpan!");
+                                            alert("Data dari Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal berhasil disimpan!");
                                         }
                                     </script>
                                     <!-- <button onclick="submitData14()">Simpan Data Halaman 14</button> -->

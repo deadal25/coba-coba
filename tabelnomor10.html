@@ -199,6 +199,18 @@
                                         <label for="okt">LPJ Disampaikan ke KPPN: </label>
                                         <input type="number" id="okt" min="1" max="100" value="0" oninput="hitungIndeks10()">
                                         
+                                        <label for="keterangan10">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea10" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan10()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan10() {
+                                                    let inputText10 = document.getElementById("inputArea10").value;
+                                                    document.getElementById("keterangan10").innerHTML = inputText10.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                        
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData10()" class="btn-simpan">
                                                 <img src="savedata.png"
@@ -230,7 +242,7 @@
                                                     <td class="left-align">∑ LPJ Bendahara yang 
                                                         andal dan tepat waktu  </td>
                                                     <td colspan="3" id="indeksSept">4</td>
-                                                    <td rowspan="3" valign="top" class="left-align">Seluruh LPJ telah disampaikan tepat waktu dan telah 
+                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan10">Seluruh LPJ telah disampaikan tepat waktu dan telah 
                                                         divalidasi Indeks kualitas LPJ Bendahara K/L sebagai berikut: 
                                                          
                                                         Indeks 4: Jika memperoleh nilai 99,5% < x ≤ 100% LPJ 
@@ -293,7 +305,8 @@
                                                 let indeksSept = document.getElementById("indeksSept").innerText;
                                                 let indeksOkt = document.getElementById("indeksOkt").innerText;
                                                 let indeksTotal10 = document.getElementById("indeksTotal10").innerText;
-                                        
+                                                let keterangan10hasil = document.getElementById("keterangan10").innerText;   
+                                            
                                                 // Cek apakah ada data lama di localStorage
                                                 let storedData = localStorage.getItem("indeks_data");
                                                 let data = storedData ? JSON.parse(storedData) : {};
@@ -302,11 +315,11 @@
                                                 data.indeksSept = indeksSept;
                                                 data.indeksOkt = indeksOkt;
                                                 data.indeksTotal10 = indeksTotal10;
-                                        
+                                                data.keterangan10 = keterangan10hasil;
                                                 // Simpan kembali ke localStorage
                                                 localStorage.setItem("indeks_data", JSON.stringify(data));
                                         
-                                                alert("Data dari halaman 10 berhasil disimpan!");
+                                                alert("Data dari Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L berhasil disimpan!");
                                             }
                                         </script>
                                         <!-- <button onclick="submitData10()">Simpan Data Halaman 10</button> -->

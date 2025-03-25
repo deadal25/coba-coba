@@ -201,6 +201,18 @@
                                             <label for="sm">Nilai SM (Special Mission Advisory):</label>
                                             <input type="number" id="sm" min="0" max="100" value="100" oninput="hitungNilai11()">
                                 
+                                            <label for="keterangan11">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea11" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan11()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan11() {
+                                                    let inputText11 = document.getElementById("inputArea11").value;
+                                                    document.getElementById("keterangan11").innerHTML = inputText11.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                            
                                             <div style="text-align: right; margin-bottom: 10px;">
                                                 <button onclick="submitData11()" class="btn-simpan">
                                                     <img src="savedata.png"
@@ -233,7 +245,7 @@
                                                         Government Advisory  </td>
                                                     <td >50%</td>
                                                     <td colspan="2" id="nilaiCG">50,00</td>
-                                                    <td rowspan="3" valign="top" class="left-align">FORMULA = (Nilai rata2 CG x 50%) + (Nilai rata2 LG x 30%) 
+                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan11">FORMULA = (Nilai rata2 CG x 50%) + (Nilai rata2 LG x 30%) 
                                                         + (Implementasi SM x 20%) 
                                                          
                                                         *Formula bagi KPPN yang tidak melakukan penyaluran TKD 
@@ -315,7 +327,9 @@
                                             let nilaiTertimbangLG = document.getElementById("nilaiLG").innerText;
                                             let nilaiTertimbangSM = document.getElementById("nilaiSM").innerText;
                                             let totalNilai11 = document.getElementById("totalNilai11").innerText;
-                                    
+                                            
+                                            let keterangan11hasil = document.getElementById("keterangan11").innerText;   
+                                            
                                             // Cek apakah ada data lama di localStorage
                                             let storedData = localStorage.getItem("indeks_data");
                                             let data = storedData ? JSON.parse(storedData) : {};
@@ -325,11 +339,11 @@
                                             data.nilaiTertimbangLG = nilaiTertimbangLG;
                                             data.nilaiTertimbangSM = nilaiTertimbangSM;
                                             data.totalNilai11 = totalNilai11;
-                                    
+                                            data.keterangan11 = keterangan11hasil;
                                             // Simpan kembali ke localStorage
                                             localStorage.setItem("indeks_data", JSON.stringify(data));
                                     
-                                            alert("Data dari halaman 11 berhasil disimpan!");
+                                            alert("Data dari Tingkat Implementasi penajaman tugas Financial Advisory berhasil disimpan!");
                                         }
                                     </script>
                                     <!-- <button onclick="submitData11()">Simpan Data Halaman 11</button> -->

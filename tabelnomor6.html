@@ -200,7 +200,19 @@
                                         </label> 
                                             <div id="inputsContainer6"></div> 
                                         
-                                        <div style="text-align: right; margin-bottom: 10px;">
+                                            <label for="keterangan6">Masukkan Keterangan:</label>
+                                            <textarea id="inputArea6" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan6()"></textarea>
+                                            
+                                            <script>
+                                                function updateKeterangan6() {
+                                                    let inputText6 = document.getElementById("inputArea6").value;
+                                                    document.getElementById("keterangan6").innerHTML = inputText6.replace(/\n/g, "<br>");
+                                                    
+                                                }
+                                            </script>
+                                            
+                                        
+                                            <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData6()" class="btn-simpan">
                                                 <img src="savedata.png"
                                                     alt="save"> Simpan </button>
@@ -233,7 +245,7 @@
                                             periode </td>
                                         <td >0,3</td>
                                         <td colspan="2" id="nilaiDeviasiUnit6">0</td>
-                                        <td rowspan="4" valign="top" class="left-align">(100% - ((Rata - Rata Deviasi Unit RPD harian KPPN per 
+                                        <td rowspan="4" valign="top" class="left-align" id="keterangan6">(100% - ((Rata - Rata Deviasi Unit RPD harian KPPN per 
                                             periode*0,3) + ((Rata - Rata Deviasi Nilai RPD harian KPPN 
                                             per periode*0,7))) - (Rasio Dispensasi RPD harian KPPN per 
                                             periode)) 
@@ -328,7 +340,8 @@
                                             let nilaiDeviasiNilai6 = document.getElementById("nilaiDeviasiNilai6").innerText;
                                             let nilaiDispensasi6 = document.getElementById("nilaiDispensasi6").innerText;
                                             let hasil6 = document.getElementById("hasil6").innerText;
-                                    
+                                            let keterangan6hasil = document.getElementById("keterangan6").innerText;   
+                                            
                                             // Cek apakah ada data lama di localStorage
                                             let storedData = localStorage.getItem("indeks_data");
                                             let data = storedData ? JSON.parse(storedData) : {};
@@ -338,11 +351,12 @@
                                             data.nilaiDeviasiNilai6 = nilaiDeviasiNilai6;
                                             data.nilaiDispensasi6 = nilaiDispensasi6;
                                             data.hasil6 = hasil6;
+                                            data.keterangan6 = keterangan6hasil;
                                     
                                             // Simpan kembali ke localStorage
                                             localStorage.setItem("indeks_data", JSON.stringify(data));
                                     
-                                            alert("Data dari halaman 6 berhasil disimpan!");
+                                            alert("Data dari Persentase akurasi perencanaan kas berhasil disimpan!");
                                         }
                                     </script>
                                     <!-- <button onclick="submitData6()">Simpan Data Halaman 6</button> -->
