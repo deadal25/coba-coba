@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("resetMessage").style.color = "green";
 
                 setTimeout(() => {
-                    window.location.href = "login.html";
-                }, 2000);
+                    window.location.href = "index.html";
+                }, 5000);
             } else {
                 document.getElementById("resetMessage").innerText = "Token salah atau kadaluarsa!";
                 document.getElementById("resetMessage").style.color = "red";

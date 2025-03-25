@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("message").style.color = "green";
 
                 setTimeout(() => {
-                    window.location.href = "login.html"; // Redirect ke login setelah 2 detik
-                }, 2000);
+                    window.location.href = "index.html"; // Redirect ke login setelah 2 detik
+                }, 5000);
             } else {
                 document.getElementById("message").innerText = "Email tidak ditemukan! Silakan coba lagi.";
                 document.getElementById("message").style.color = "red";

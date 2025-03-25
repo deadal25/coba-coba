@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (users[username] && users[username].password === password) {
                 localStorage.setItem("loggedInUser", username);
-                window.location.href = "login.html";
+                window.location.href = "dashboard.html";
             } else {
                 document.getElementById("message").innerText = "Username atau password salah!";
                 document.getElementById("message").style.color = "red";
