@@ -9,6 +9,88 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.navbar {
+    padding: 10px 10px;
+    position:absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    padding-left: 680px;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: flex-start; /* Menggeser elemen ke kiri */
+    align-items: center;
+    /* padding-left: 700px; Memberikan sedikit ruang dari tepi kiri */
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 10px; /* Memberikan jarak antar link */
+    margin-right: none; /* Mendorong ke kanan */
+}
+
+
+.nav-links li {
+    display:inline-block;
+}
+
+.nav-links a {
+    color: #02618f;
+    text-decoration: none;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: 0.3s;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover {
+    background:  #00bcf2;
+    border-radius: 5px;
+}
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+
+
+
 body {
     background: url('background.png') no-repeat center center fixed;
     background-size: cover;
@@ -16,7 +98,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 50px;
+    padding-right: 100px;
 }
 .container {
     width: 100%;
@@ -113,3 +195,10 @@ body {
         padding: 40px 15px 15px 15px;
     }
 }
+
+.carousel-inner img {
+    width: 80%;
+    height: 300px; /* Sesuaikan tinggi sesuai kebutuhan */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
