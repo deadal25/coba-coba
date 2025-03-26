@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -192,38 +198,39 @@
                                     <div id="9a-CP" class="content">
                                         <br>
                                         <h3><b>Persentase kualitas pelaksanaan anggaran KPPN </b></h3>
-                                
-                                            <label for="smart">Nilai SMART:</label>
-                                            <input type="number" id="smart" value="0" oninput="hitungNilai15()">
-                                
-                                            <label for="ikpa">Nilai IKPA:</label>
-                                            <input type="number" id="ikpa" value="0" oninput="hitungNilai15()">
-                                
-                                            <label for="lk">Nilai LK UAKPA UAKPB:</label>
-                                            <input type="number" id="lk" value="0" oninput="hitungNilai15()">
-                                
-                                            <label for="tg">Target:</label>
-                                            <input type="number" id="tg" value="85" oninput="hitungNilai15()">
-                                
-                                            <label for="keterangan15">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea15" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan15()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan15() {
-                                                    let inputText15 = document.getElementById("inputArea15").value;
-                                                    document.getElementById("keterangan15").innerHTML = inputText15.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
+
+                                        <label for="smart">Nilai SMART:</label>
+                                        <input type="number" id="smart" value="0" oninput="hitungNilai15()">
+
+                                        <label for="ikpa">Nilai IKPA:</label>
+                                        <input type="number" id="ikpa" value="0" oninput="hitungNilai15()">
+
+                                        <label for="lk">Nilai LK UAKPA UAKPB:</label>
+                                        <input type="number" id="lk" value="0" oninput="hitungNilai15()">
+
+                                        <label for="tg">Target:</label>
+                                        <input type="number" id="tg" value="85" oninput="hitungNilai15()">
+
+                                        <label for="keterangan15">Masukkan Keterangan:</label>
+                                        <textarea id="inputArea15" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan15()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan15() {
+                                                let inputText15 = document.getElementById("inputArea15").value;
+                                                document.getElementById("keterangan15").innerHTML = inputText15.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
 
 
-                                            
-                                            <div style="text-align: right; margin-bottom: 10px;">
-                                                <button onclick="submitData15()" class="btn-simpan">
-                                                    <img src="savedata.png"
-                                                        alt="save"> Simpan </button>
-                                            </div>
-                                
+
+                                        <div style="text-align: right; margin-bottom: 10px;">
+                                            <button onclick="submitData15()" class="btn-simpan">
+                                                <img src="savedata.png" alt="save"> Simpan </button>
+                                        </div>
+
                                         <table>
                                             <tbody>
                                                 <tr>
@@ -233,42 +240,39 @@
                                                     <th colspan="3" class="hal2">DATA</th>
                                                     <th rowspan="1" class="hal2">KETERANGAN</th>
                                                 </tr>
-                                                </tbody>
+                                            </tbody>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="4" valign="top">15</td>
-                                                        <td rowspan="4" valign="top"> 9a-CP </td>
-                                                        <td rowspan="4" valign="top" class="left-align">
-                                                            Persentase kualitas  
-                                                            pelaksanaan anggaran 
-                                                            KPPN</td>
-                                                        <td><b>Komponen</b></td>
-                                                        <td ><b>Bobot</b></td>
-                                                        <td colspan="2"><b>Nilai</b></td>
-                                                        <td>Triwulan/Average</td>      
+                                                    <td rowspan="4" valign="top"> 9a-CP </td>
+                                                    <td rowspan="4" valign="top" class="left-align">
+                                                        Persentase kualitas
+                                                        pelaksanaan anggaran
+                                                        KPPN</td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td><b>Bobot</b></td>
+                                                    <td colspan="2"><b>Nilai</b></td>
+                                                    <td>Triwulan/Average</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="left-align">IKPA</td>
-                                                    <td >60%</td>
+                                                    <td>60%</td>
                                                     <td colspan="2" id="nilaiNKA">47,94</td>
-                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan15">Formula: (60% x IKKPA) + (40% x LK tingkat UAPPA-W dan 
-                                                        UAPPB-W) 
-                                                        a.IKKPA 
-                                                        Nilai capaian berasal dari nilai SMART sebesar 80,57, nilai 
-                                                        IKPA sebesar 68,6 
-                                                        NKA =50%*Nilai SMART + 50%*Nilai IKKPA 
-                                                        = 50%*80,57 + 50%*68,6*= 74,4  
-                                                        (NKA < 80 dikonversi menjadi 79,9) 
-                                                        b. LK UAKPA UAKPB 
-                                                        Nilai LK UAKPA UAKPB = 91 
-                                                        =91/85 = 107,06 
-                                                        Capaian IKU Persentase Kualitas Pengelolaan Keuangan 
-                                                        KPPN 
-                                                        =60%*79,9 + 40%*107,06 = 90,76</td>
+                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan15">
+                                                        Formula: (60% x IKKPA) + (40% x LK tingkat UAPPA-W dan
+                                                        UAPPB-W)
+                                                        a.IKKPA
+                                                        Nilai capaian berasal dari nilai SMART sebesar 80,57, nilai
+                                                        IKPA sebesar 68,6
+                                                        NKA =50%*Nilai SMART + 50%*Nilai IKKPA
+                                                        = 50%*80,57 + 50%*68,6*= 74,4
+                                                        (NKA < 80 dikonversi menjadi 79,9) b. LK UAKPA UAKPB Nilai LK
+                                                            UAKPA UAKPB=91=91/85=107,06 Capaian IKU Persentase Kualitas
+                                                            Pengelolaan Keuangan KPPN=60%*79,9 + 40%*107,06=90,76</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="left-align">LK UAKPA UAKPB </td>
-                                                    <td >40%</td>
+                                                    <td>40%</td>
                                                     <td colspan="2" id="nilaiLK">43</td>
                                                 </tr>
                                                 <tr>
@@ -276,71 +280,71 @@
                                                     <td colspan="3" id="totalNilai15"><b>90,76</b></td>
                                                     <td></td>
                                                 </tr>
-                                        </tbody>
+                                            </tbody>
                                         </table>
-                                
-                                    <script>
-                                        function hitungNilai15() {
-                                            let smart = parseFloat(document.getElementById('smart').value);
-                                            let ikpa = parseFloat(document.getElementById('ikpa').value);
-                                            let lk = parseFloat(document.getElementById('lk').value);
-                                            let tg = parseFloat(document.getElementById('tg').value);
-                                
-                                            let nka = (0.5 * smart) + (0.5 * ikpa);
-                                            let convertedNKA;
-                                
-                                            if (nka < 80) {
-                                                convertedNKA = 79.9;
-                                            } else if (nka === 80) {
-                                                convertedNKA = 80;
-                                            } else if (nka > 80 && nka < 91) {
-                                                convertedNKA = 80 + (nka - 80) / 0.55;
-                                            } else if (nka === 91) {
-                                                convertedNKA = 100;
-                                            } else if (nka > 91 && nka < 95.5) {
-                                                convertedNKA = 100 + (nka - 91) / 0.2;
-                                            } else {
-                                                convertedNKA = 120;
-                                            }
-                                
-                                            let nilaiLK = (lk / tg) * 100;
-                                            let nilaiIkpa = (0.6 * convertedNKA);
-                                            let nilaiLKfix = (0.4 * nilaiLK);
-                                            let totalNilai15 = (0.6 * convertedNKA) + (0.4 * nilaiLK);
-                                
-                                            document.getElementById('nilaiNKA').innerText = nilaiIkpa.toFixed(2);
-                                            document.getElementById('nilaiLK').innerText = nilaiLKfix.toFixed(2);
-                                            document.getElementById('totalNilai15').innerText = totalNilai15.toFixed(2);
-                                        }
-                                
-                                        hitungNilai15();
-                                    </script>
-                                 
-                                    <script>
-                                        function submitData15() {
-                                            let nilaiIkpa = document.getElementById("nilaiNKA").innerText;
-                                            let nilaiLKfix = document.getElementById("nilaiLK").innerText;
-                                            let totalNilai15 = document.getElementById("totalNilai15").innerText;
-                                            let keterangan15hasil = document.getElementById("keterangan15").innerText;   
 
-                                            // Cek apakah ada data lama di localStorage
-                                            let storedData = localStorage.getItem("indeks_data");
-                                            let data = storedData ? JSON.parse(storedData) : {};
-                                    
-                                            // Update hanya bagian halaman 15
-                                            data.Ikpa = nilaiIkpa;
-                                            data.LKfix = nilaiLKfix;
-                                            data.Nilai15 = totalNilai15;
-                                            data.keterangan15 = keterangan15hasil;
-                                            // Simpan kembali ke localStorage
-                                            localStorage.setItem("indeks_data", JSON.stringify(data));
-                                    
-                                            alert("Data dari Persentase kualitas pelaksanaan anggaran KPPN berhasil disimpan!");
-                                        }
-                                    </script>
-                                    <!-- <button onclick="submitData15()">Simpan Data Halaman 15</button> -->
-                                    
-                                </div>
+                                        <script>
+                                            function hitungNilai15() {
+                                                let smart = parseFloat(document.getElementById('smart').value);
+                                                let ikpa = parseFloat(document.getElementById('ikpa').value);
+                                                let lk = parseFloat(document.getElementById('lk').value);
+                                                let tg = parseFloat(document.getElementById('tg').value);
+
+                                                let nka = (0.5 * smart) + (0.5 * ikpa);
+                                                let convertedNKA;
+
+                                                if (nka < 80) {
+                                                    convertedNKA = 79.9;
+                                                } else if (nka === 80) {
+                                                    convertedNKA = 80;
+                                                } else if (nka > 80 && nka < 91) {
+                                                    convertedNKA = 80 + (nka - 80) / 0.55;
+                                                } else if (nka === 91) {
+                                                    convertedNKA = 100;
+                                                } else if (nka > 91 && nka < 95.5) {
+                                                    convertedNKA = 100 + (nka - 91) / 0.2;
+                                                } else {
+                                                    convertedNKA = 120;
+                                                }
+
+                                                let nilaiLK = (lk / tg) * 100;
+                                                let nilaiIkpa = (0.6 * convertedNKA);
+                                                let nilaiLKfix = (0.4 * nilaiLK);
+                                                let totalNilai15 = (0.6 * convertedNKA) + (0.4 * nilaiLK);
+
+                                                document.getElementById('nilaiNKA').innerText = nilaiIkpa.toFixed(2);
+                                                document.getElementById('nilaiLK').innerText = nilaiLKfix.toFixed(2);
+                                                document.getElementById('totalNilai15').innerText = totalNilai15.toFixed(2);
+                                            }
+
+                                            hitungNilai15();
+                                        </script>
+
+                                        <script>
+                                            function submitData15() {
+                                                let nilaiIkpa = document.getElementById("nilaiNKA").innerText;
+                                                let nilaiLKfix = document.getElementById("nilaiLK").innerText;
+                                                let totalNilai15 = document.getElementById("totalNilai15").innerText;
+                                                let keterangan15hasil = document.getElementById("keterangan15").innerText;
+
+                                                // Cek apakah ada data lama di localStorage
+                                                let storedData = localStorage.getItem("indeks_data");
+                                                let data = storedData ? JSON.parse(storedData) : {};
+
+                                                // Update hanya bagian halaman 15
+                                                data.Ikpa = nilaiIkpa;
+                                                data.LKfix = nilaiLKfix;
+                                                data.Nilai15 = totalNilai15;
+                                                data.keterangan15 = keterangan15hasil;
+                                                // Simpan kembali ke localStorage
+                                                localStorage.setItem("indeks_data", JSON.stringify(data));
+
+                                                alert("Data dari Persentase kualitas pelaksanaan anggaran KPPN berhasil disimpan!");
+                                            }
+                                        </script>
+                                        <!-- <button onclick="submitData15()">Simpan Data Halaman 15</button> -->
+
+                                    </div>
 
                                 </body>
                             </div>

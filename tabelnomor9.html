@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -192,200 +198,205 @@
                                     <div id="5b-N" class="content">
                                         <br>
                                         <h3><b>Indeks Digitalisasi Pengelolaan Keuangan KPPN </b></h3>
-                                        
+
                                         <label for="indigipay">Indeks Digipay (%) :</label>
-                                        <input type="number" id="indigipay" oninput="updateCapaian9()" step="0.01" min="0">
-                                    
+                                        <input type="number" id="indigipay" oninput="updateCapaian9()" step="0.01"
+                                            min="0">
+
                                         <label for="incms">Indeks CMS(%) :</label>
                                         <input type="number" id="incms" oninput="updateCapaian9()" step="0.01" min="0">
-                                    
+
                                         <label for="inkkp">Indeks KKP (%) :</label>
                                         <input type="number" id="inkkp" oninput="updateCapaian9()" step="0.01" min="0">
-                                            
+
                                         <label for="keterangan9">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea9" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan9()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan9() {
-                                                    let inputText9 = document.getElementById("inputArea9").value;
-                                                    document.getElementById("keterangan9").innerHTML = inputText9.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
-                                            
-                                        
+                                        <textarea id="inputArea9" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan9()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan9() {
+                                                let inputText9 = document.getElementById("inputArea9").value;
+                                                document.getElementById("keterangan9").innerHTML = inputText9.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
+
+
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData9()" class="btn-simpan">
-                                                <img src="savedata.png"
-                                                    alt="save"> Simpan </button>
+                                                <img src="savedata.png" alt="save"> Simpan </button>
                                         </div>
                                         <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <th rowspan="1" class="hal2">No</th>
-                                                        <th colspan="2" class="hal2">Uraian IKU</th>
-                                                        <th rowspan="1" width="200px" class="hal2">DATA YANG DIPERLUKAN</th>
-                                                        <th colspan="3" class="hal2">DATA</th>
-                                                        <th rowspan="1" class="hal2">KETERANGAN</th>
-                                                    </tr>
-                                                    </tbody>
-                                                <tbody>
-                                                    <tr>
-                                                        <td rowspan="5" valign="top">9</td>
-                                                        <td rowspan="5" valign="top"> 5b-N </td>
-                                                        <td rowspan="5" valign="top" class="left-align">Indeks Digitalisasi 
-                                                            Pengelolaan Keuangan 
-                                                            KPPN</td>
-                                                        <td><b>Komponen</b></td>
-                                                        <td><b>Persentase</b></td>
-                                                        <td><b>Indeks</b></td>
-                                                        <td>Triwulan/TLK</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="left-align">Indeks Digipay </td>
-                                                        <td id="indigipayvalue">122,23%</td>
-                                                        <td id="indeksindigipay">48,89</td>
-                                                        <td rowspan="4" valign="top" class="left-align" id="keterangan9">IKU terdiri dari 3 komponen yaitu: 
-                                                            A. Implementasi Digipay 
-                                                            B. Implementasi CMS 
-                                                            C. Implementasi KKP 
-                                                             
-                                                            A. Implementasi Digipay 
-                                                            1. Indeks 5 jika jumlah Transaksi pada Aplikasi Digipay Satu 
-                                                            dibandingkan dengan target >100%  
-                                                            2. Indeks 4 jika jumlah Transaksi pada Aplikasi Digipay Satu 
-                                                            dibandingkan dengan target  > 70% s.d. <100%  
-                                                            3. Indeks 3 jika jumlah Transaksi pada Aplikasi Digipay Satu 
-                                                            dibandingkan dengan target antara < 70% s.d.> 50%  
-                                                            4. Indeks 2 jika jumlah Transaksi pada Aplikasi Digipay Satu 
-                                                            dibandingkan dengan target antara  < 50% s.d. > 30% 
-                                                            5. Indeks 1 jika jumlah Transaksi pada Aplikasi Digipay Satu 
-                                                            dibandingkan dengan target < 30% 
-                                                             
-                                                            Pada triwulan IV, implementasi digipay telah terealisasi 
-                                                            sebesar 335 transaksi dari target 55 sehingga capaiannya 
-                                                            609,09% atau indeks 5. 
-                                                             
-                                                            B. Implementasi CMS 
-                                                            1. Indeks 5 jika persentase Transaksi CMS > 100% dari 
-                                                            target trajectory 
-                                                            2. Indeks 4 jika persentase Transaksi CMS > 85% s.d. 
-                                                            ≤100% dari target trajectory  
-                                                            3. Indeks 3 jika persentase Transaksi CMS > 70% s.d. ≤85% 
-                                                            dari target trajectory  
-                                                            4. Indeks 2 jika persentase Transaksi CMS > 40% s.d. ≤70% 
-                                                            dari target trajectory  
-                                                            5. Indeks 1 jika persentase Transaksi CMS ≤ 40% dari target 
-                                                            trajectory 
-                                                             
-                                                            Pada triwulan IV, implementasi transaksi CMS telah 
-                                                            terealisasi sebesar 36.249 transaksi dari target sehingga 
-                                                            capaian ini sebesar 90,58% atau indeks 5 </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="left-align">Pemenuhan Sertifikat PNT
-                                                            dan SNT bagi Pejabat Pembuat Komitmen dan
-                                                            Pejabat Penantanganan
-                                                            SPM </td>
-                                                        <td id="incmsvalue">188,31%</td>
-                                                        <td id="indeksincms">56,5</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="left-align">Pemenuhan Sertifikat BNT</td>
-                                                        <td id="inkkpvalue">100%</td>
-                                                        <td id="indeksinkkp">30</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Indeks</b></td>
-                                                        <td colspan="2" id="indeksTotal9"> <b>5</b></td>
-                                                    </tr>
-                                
-                                                </tbody>
-                                            </table>
-                                            <script>
-                                                function updateCapaian9() {
-                                                    let indigipay = parseFloat(document.getElementById("indigipay").value) || 0;
-                                                    let incms = parseFloat(document.getElementById("incms").value) || 0;
-                                                    let inkkp = parseFloat(document.getElementById("inkkp").value) || 0;
-                                        
-                                                    // let totalCapaian9 = indigipayScore + incmsScore + inkkp;
-                                                    // let indeksIKI = getIndeksIKI(totalCapaian);
-                                                    let indeksindigipay = getIndeksindigipay(indigipay);
-                                                    let indeksincms = getIndeksincms(incms);
-                                                    let indeksinkkp = getIndeksinkkp(inkkp);
-                                                    let indeksTotal9 = (indeksindigipay + indeksincms +indeksinkkp)/3;
-                                        
-                                                    document.getElementById("indigipayvalue").innerText = indigipay + "%";
-                                                    document.getElementById("incmsvalue").innerText = incms + "%";
-                                                    document.getElementById("inkkpvalue").innerText = inkkp + "%";
-                                        
-                                                    document.getElementById("indeksindigipay").innerText = indeksindigipay.toFixed(0);
-                                                    document.getElementById("indeksincms").innerText = indeksincms.toFixed(0);
-                                                    document.getElementById("indeksinkkp").innerText = indeksinkkp.toFixed(0);
-                                        
-                                                    document.getElementById("indeksTotal9").innerText = indeksTotal9.toFixed(0);
-                                                }
-                                        
-                                                function getIndeksindigipay(indigipay) {
-                                                    if (indigipay < 30) return 1;
-                                                    if (indigipay >= 30 && indigipay < 50) return 2;
-                                                    if (indigipay >= 50 && indigipay < 70) return 3;
-                                                    if (indigipay >= 70 && indigipay < 100) return 4;
-                                                    return 5;
-                                                }
-                                
-                                                function getIndeksincms(incms) {
-                                                    if (incms <= 40) return 1;
-                                                    if (incms > 40 && incms <= 70) return 2;
-                                                    if (incms > 70 && incms <= 85) return 3;
-                                                    if (incms > 85 && incms <= 100) return 4;
-                                                    return 5;
-                                                }
-                                
-                                                function getIndeksinkkp(inkkp) {
-                                                    if (inkkp < 30) return 1;
-                                                    if (inkkp >= 30 && inkkp < 40) return 2;
-                                                    if (inkkp >= 40 && inkkp < 50) return 3;
-                                                    if (inkkp >= 50 && inkkp <= 70) return 4;
-                                                    return 5;
-                                                }
-                                
-                                        
-                                            </script>
-                                
-                                <script>
-                                    function submitData9() {
-                                        let indigipay = document.getElementById("indigipayvalue").innerText;
-                                        let incms = document.getElementById("incmsvalue").innerText;
-                                        let inkkp = document.getElementById("inkkpvalue").innerText;
-                                        let indeksindigipay = document.getElementById("indeksindigipay").innerText;
-                                        let indeksincms = document.getElementById("indeksincms").innerText;
-                                        let indeksinkkp = document.getElementById("indeksinkkp").innerText;
-                                        let indeksTotal9 = document.getElementById("indeksTotal9").innerText;
-                                        let keterangan9hasil = document.getElementById("keterangan9").innerText;   
-                                            
-                                        // Cek apakah ada data lama di localStorage
-                                        let storedData = localStorage.getItem("indeks_data");
-                                        let data = storedData ? JSON.parse(storedData) : {};
-                                
-                                        // Update hanya bagian halaman 15
-                                        data.indigipay = indigipay;
-                                        data.incms = incms;
-                                        data.inkkp = inkkp;
-                                        data.indeksindigipay = indeksindigipay;
-                                        data.indeksincms = indeksincms;
-                                        data.indeksinkkp = indeksinkkp;
-                                        data.indeksTotal9 = indeksTotal9;
-                                        data.keterangan9 = keterangan9hasil;
-                                
-                                        // Simpan kembali ke localStorage
-                                        localStorage.setItem("indeks_data", JSON.stringify(data));
-                                
-                                        alert("Data dari Indeks Digitalisasi Pengelolaan Keuangan KPPN  berhasil disimpan!");
-                                    }
-                                </script>
-                                <!-- <button onclick="submitData9()">Simpan Data Halaman 9</button> -->
-                                            
+                                            <tbody>
+                                                <tr>
+                                                    <th rowspan="1" class="hal2">No</th>
+                                                    <th colspan="2" class="hal2">Uraian IKU</th>
+                                                    <th rowspan="1" width="200px" class="hal2">DATA YANG DIPERLUKAN</th>
+                                                    <th colspan="3" class="hal2">DATA</th>
+                                                    <th rowspan="1" class="hal2">KETERANGAN</th>
+                                                </tr>
+                                            </tbody>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="5" valign="top">9</td>
+                                                    <td rowspan="5" valign="top"> 5b-N </td>
+                                                    <td rowspan="5" valign="top" class="left-align">Indeks Digitalisasi
+                                                        Pengelolaan Keuangan
+                                                        KPPN</td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td><b>Persentase</b></td>
+                                                    <td><b>Indeks</b></td>
+                                                    <td>Triwulan/TLK</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Indeks Digipay </td>
+                                                    <td id="indigipayvalue">122,23%</td>
+                                                    <td id="indeksindigipay">48,89</td>
+                                                    <td rowspan="4" valign="top" class="left-align" id="keterangan9">IKU
+                                                        terdiri dari 3 komponen yaitu:
+                                                        A. Implementasi Digipay
+                                                        B. Implementasi CMS
+                                                        C. Implementasi KKP
+
+                                                        A. Implementasi Digipay
+                                                        1. Indeks 5 jika jumlah Transaksi pada Aplikasi Digipay Satu
+                                                        dibandingkan dengan target >100%
+                                                        2. Indeks 4 jika jumlah Transaksi pada Aplikasi Digipay Satu
+                                                        dibandingkan dengan target > 70% s.d. <100% 3. Indeks 3 jika
+                                                            jumlah Transaksi pada Aplikasi Digipay Satu dibandingkan
+                                                            dengan target antara < 70% s.d.> 50%
+                                                            4. Indeks 2 jika jumlah Transaksi pada Aplikasi Digipay Satu
+                                                            dibandingkan dengan target antara < 50% s.d.> 30%
+                                                                5. Indeks 1 jika jumlah Transaksi pada Aplikasi Digipay
+                                                                Satu
+                                                                dibandingkan dengan target < 30% Pada triwulan IV,
+                                                                    implementasi digipay telah terealisasi sebesar 335
+                                                                    transaksi dari target 55 sehingga capaiannya 609,09%
+                                                                    atau indeks 5. B. Implementasi CMS 1. Indeks 5 jika
+                                                                    persentase Transaksi CMS> 100% dari
+                                                                    target trajectory
+                                                                    2. Indeks 4 jika persentase Transaksi CMS > 85% s.d.
+                                                                    ≤100% dari target trajectory
+                                                                    3. Indeks 3 jika persentase Transaksi CMS > 70% s.d.
+                                                                    ≤85%
+                                                                    dari target trajectory
+                                                                    4. Indeks 2 jika persentase Transaksi CMS > 40% s.d.
+                                                                    ≤70%
+                                                                    dari target trajectory
+                                                                    5. Indeks 1 jika persentase Transaksi CMS ≤ 40% dari
+                                                                    target
+                                                                    trajectory
+
+                                                                    Pada triwulan IV, implementasi transaksi CMS telah
+                                                                    terealisasi sebesar 36.249 transaksi dari target
+                                                                    sehingga
+                                                                    capaian ini sebesar 90,58% atau indeks 5 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Pemenuhan Sertifikat PNT
+                                                        dan SNT bagi Pejabat Pembuat Komitmen dan
+                                                        Pejabat Penantanganan
+                                                        SPM </td>
+                                                    <td id="incmsvalue">188,31%</td>
+                                                    <td id="indeksincms">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Pemenuhan Sertifikat BNT</td>
+                                                    <td id="inkkpvalue">100%</td>
+                                                    <td id="indeksinkkp">30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Indeks</b></td>
+                                                    <td colspan="2" id="indeksTotal9"> <b>5</b></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <script>
+                                            function updateCapaian9() {
+                                                let indigipay = parseFloat(document.getElementById("indigipay").value) || 0;
+                                                let incms = parseFloat(document.getElementById("incms").value) || 0;
+                                                let inkkp = parseFloat(document.getElementById("inkkp").value) || 0;
+
+                                                // let totalCapaian9 = indigipayScore + incmsScore + inkkp;
+                                                // let indeksIKI = getIndeksIKI(totalCapaian);
+                                                let indeksindigipay = getIndeksindigipay(indigipay);
+                                                let indeksincms = getIndeksincms(incms);
+                                                let indeksinkkp = getIndeksinkkp(inkkp);
+                                                let indeksTotal9 = (indeksindigipay + indeksincms + indeksinkkp) / 3;
+
+                                                document.getElementById("indigipayvalue").innerText = indigipay + "%";
+                                                document.getElementById("incmsvalue").innerText = incms + "%";
+                                                document.getElementById("inkkpvalue").innerText = inkkp + "%";
+
+                                                document.getElementById("indeksindigipay").innerText = indeksindigipay.toFixed(0);
+                                                document.getElementById("indeksincms").innerText = indeksincms.toFixed(0);
+                                                document.getElementById("indeksinkkp").innerText = indeksinkkp.toFixed(0);
+
+                                                document.getElementById("indeksTotal9").innerText = indeksTotal9.toFixed(0);
+                                            }
+
+                                            function getIndeksindigipay(indigipay) {
+                                                if (indigipay < 30) return 1;
+                                                if (indigipay >= 30 && indigipay < 50) return 2;
+                                                if (indigipay >= 50 && indigipay < 70) return 3;
+                                                if (indigipay >= 70 && indigipay < 100) return 4;
+                                                return 5;
+                                            }
+
+                                            function getIndeksincms(incms) {
+                                                if (incms <= 40) return 1;
+                                                if (incms > 40 && incms <= 70) return 2;
+                                                if (incms > 70 && incms <= 85) return 3;
+                                                if (incms > 85 && incms <= 100) return 4;
+                                                return 5;
+                                            }
+
+                                            function getIndeksinkkp(inkkp) {
+                                                if (inkkp < 30) return 1;
+                                                if (inkkp >= 30 && inkkp < 40) return 2;
+                                                if (inkkp >= 40 && inkkp < 50) return 3;
+                                                if (inkkp >= 50 && inkkp <= 70) return 4;
+                                                return 5;
+                                            }
+
+
+                                        </script>
+
+                                        <script>
+                                            function submitData9() {
+                                                let indigipay = document.getElementById("indigipayvalue").innerText;
+                                                let incms = document.getElementById("incmsvalue").innerText;
+                                                let inkkp = document.getElementById("inkkpvalue").innerText;
+                                                let indeksindigipay = document.getElementById("indeksindigipay").innerText;
+                                                let indeksincms = document.getElementById("indeksincms").innerText;
+                                                let indeksinkkp = document.getElementById("indeksinkkp").innerText;
+                                                let indeksTotal9 = document.getElementById("indeksTotal9").innerText;
+                                                let keterangan9hasil = document.getElementById("keterangan9").innerText;
+
+                                                // Cek apakah ada data lama di localStorage
+                                                let storedData = localStorage.getItem("indeks_data");
+                                                let data = storedData ? JSON.parse(storedData) : {};
+
+                                                // Update hanya bagian halaman 15
+                                                data.indigipay = indigipay;
+                                                data.incms = incms;
+                                                data.inkkp = inkkp;
+                                                data.indeksindigipay = indeksindigipay;
+                                                data.indeksincms = indeksincms;
+                                                data.indeksinkkp = indeksinkkp;
+                                                data.indeksTotal9 = indeksTotal9;
+                                                data.keterangan9 = keterangan9hasil;
+
+                                                // Simpan kembali ke localStorage
+                                                localStorage.setItem("indeks_data", JSON.stringify(data));
+
+                                                alert("Data dari Indeks Digitalisasi Pengelolaan Keuangan KPPN  berhasil disimpan!");
+                                            }
+                                        </script>
+                                        <!-- <button onclick="submitData9()">Simpan Data Halaman 9</button> -->
+
                                     </div>
 
                                 </body>

@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -192,36 +198,41 @@
                                     <div id="5a-CP" class="content">
                                         <br>
                                         <h3><b>Nilai kinerja penyaluran Dana Transfer ke Daerah </b></h3>
-                                        
+
                                         <label for="syarat">Syarat (%) :</label>
                                         <input type="number" id="syarat" oninput="updateCapaian8()" step="0.01" min="0">
                                         <label for="proyeksi">Proyeksi (%) :</label>
-                                        <input type="number" id="proyeksi" oninput="updateCapaian8()" step="0.01" min="0">
+                                        <input type="number" id="proyeksi" oninput="updateCapaian8()" step="0.01"
+                                            min="0">
                                         <label for="akurasi">Akurasi (%) :</label>
-                                        <input type="number" id="akurasi" oninput="updateCapaian8()" step="0.01" min="0">
+                                        <input type="number" id="akurasi" oninput="updateCapaian8()" step="0.01"
+                                            min="0">
                                         <label for="monev">Monev (%) :</label>
                                         <input type="number" id="monev" oninput="updateCapaian8()" step="0.01" min="0">
                                         <label for="lkuakpa">LK-UAKPA (%) :</label>
-                                        <input type="number" id="lkuakpa" oninput="updateCapaian8()" step="0.01" min="0">
+                                        <input type="number" id="lkuakpa" oninput="updateCapaian8()" step="0.01"
+                                            min="0">
                                         <label for="realisasi">Realisasi (%) :</label>
-                                        <input type="number" id="realisasi" oninput="updateCapaian8()" step="0.01" min="0">
-                                        
+                                        <input type="number" id="realisasi" oninput="updateCapaian8()" step="0.01"
+                                            min="0">
+
                                         <label for="keterangan8">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea8" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan8()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan8() {
-                                                    let inputText8 = document.getElementById("inputArea8").value;
-                                                    document.getElementById("keterangan8").innerHTML = inputText8.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
-                                            
-                                        
+                                        <textarea id="inputArea8" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan8()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan8() {
+                                                let inputText8 = document.getElementById("inputArea8").value;
+                                                document.getElementById("keterangan8").innerHTML = inputText8.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
+
+
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData8()" class="btn-simpan">
-                                                <img src="savedata.png"
-                                                    alt="save"> Simpan </button>
+                                                <img src="savedata.png" alt="save"> Simpan </button>
                                         </div>
                                         <table>
                                             <tbody>
@@ -232,49 +243,51 @@
                                                     <th colspan="3" class="hal2">DATA</th>
                                                     <th rowspan="1" class="hal2">KETERANGAN</th>
                                                 </tr>
-                                                </tbody>
+                                            </tbody>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="8" valign="top">8</td>
-                                                        <td rowspan="8" valign="top"> 5a-CP </td>
-                                                        <td rowspan="8" valign="top" class="left-align">Nilai kinerja penyaluran 
-                                                            Dana Transfer ke 
-                                                            Daerah </td>
-                                                        <td><b>Komponen</b></td>
-                                                        <td ><b>Bobot</b></td>
-                                                        <td colspan="2"><b>Nilai</b></td>
-                                                        <td>Triwulan/Average</td>      
+                                                    <td rowspan="8" valign="top"> 5a-CP </td>
+                                                    <td rowspan="8" valign="top" class="left-align">Nilai kinerja
+                                                        penyaluran
+                                                        Dana Transfer ke
+                                                        Daerah </td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td><b>Bobot</b></td>
+                                                    <td colspan="2"><b>Nilai</b></td>
+                                                    <td>Triwulan/Average</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="left-align">Syarat </td>
-                                                        <td>15%</td>
-                                                        <td colspan="2" id="syaratScore">14,50</td>
-                                                        <td rowspan="7" valign="top" class="left-align" id="keterangan8">Hasil Penilaian dari Kantor Pusat (Nota Dinas Direktorat 
-                                                            Pelaksanaan Anggaran nomor ND-35/PB.2/2025 tanggal 
-                                                            10 Januari 2025) 
-                                                             
-                                                            Nilai Kualitas Kinerja penyaluran Dana Transfer ke Daerah 
-                                                            pada KPPN diukur dengan menggunakan beberapa variabel 
-                                                            Nilai Kinerja Penyaluran sebagai berikut : 
-                                                            1. Ketepatan waktu penyampaian dokumen persyaratan oleh 
-                                                            pemda dhi. syarat penyaluran DAK Fisik dan Dana Desa. 
-                                                            (SYARAT) 
-                                                            2. Tingkat  akurasi  penyusunan proyeksi penyaluran dana 
-                                                            Transfer Ke Daerah oleh KPPN. (PROYEKSI) 
-                                                            3. Ketepatan dan keakuratan penyelesaian SPP dan SPM 
-                                                            penyaluran dana Transfer ke Daerah hingga menjadi SP2D 
-                                                            oleh KPPN. (AKURASI) 
-                                                            4. Ketepatan waktu penyampaian laporan pemantauan dan 
-                                                            evaluasi penyaluran DAK dan Dana Desa. (MONEV) 
-                                                            5. Kelengkapan dan Ketepatan waktu penyampaian LK 
-                                                            tingkat UAKPA BUN TKD. (LK-UAKPA) 
-                                                            6. Nilai Penyaluran dana transfer ke daerah dan ketepatan 
-                                                            waktu perekaman capaian rincian output Transfer Ke Daerah 
-                                                            yang telah memperhitungkan nilai output. (REAL) </td>
+                                                    <td>15%</td>
+                                                    <td colspan="2" id="syaratScore">14,50</td>
+                                                    <td rowspan="7" valign="top" class="left-align" id="keterangan8">
+                                                        Hasil Penilaian dari Kantor Pusat (Nota Dinas Direktorat
+                                                        Pelaksanaan Anggaran nomor ND-35/PB.2/2025 tanggal
+                                                        10 Januari 2025)
+
+                                                        Nilai Kualitas Kinerja penyaluran Dana Transfer ke Daerah
+                                                        pada KPPN diukur dengan menggunakan beberapa variabel
+                                                        Nilai Kinerja Penyaluran sebagai berikut :
+                                                        1. Ketepatan waktu penyampaian dokumen persyaratan oleh
+                                                        pemda dhi. syarat penyaluran DAK Fisik dan Dana Desa.
+                                                        (SYARAT)
+                                                        2. Tingkat akurasi penyusunan proyeksi penyaluran dana
+                                                        Transfer Ke Daerah oleh KPPN. (PROYEKSI)
+                                                        3. Ketepatan dan keakuratan penyelesaian SPP dan SPM
+                                                        penyaluran dana Transfer ke Daerah hingga menjadi SP2D
+                                                        oleh KPPN. (AKURASI)
+                                                        4. Ketepatan waktu penyampaian laporan pemantauan dan
+                                                        evaluasi penyaluran DAK dan Dana Desa. (MONEV)
+                                                        5. Kelengkapan dan Ketepatan waktu penyampaian LK
+                                                        tingkat UAKPA BUN TKD. (LK-UAKPA)
+                                                        6. Nilai Penyaluran dana transfer ke daerah dan ketepatan
+                                                        waktu perekaman capaian rincian output Transfer Ke Daerah
+                                                        yang telah memperhitungkan nilai output. (REAL) </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="left-align">Proyeksi</td>
-                                                    <td >15%</td>
+                                                    <td>15%</td>
                                                     <td colspan="2" id="proyeksiScore">15,00</td>
                                                 </tr>
                                                 <tr>
@@ -289,7 +302,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="left-align">LK-UAKPA</td>
-                                                    <td >20%</td>
+                                                    <td>20%</td>
                                                     <td colspan="2" id="lkuakpaScore">20,00</td>
                                                 </tr>
                                                 <tr>
@@ -297,81 +310,81 @@
                                                     <td>20%</td>
                                                     <td colspan="2" id="realisasiScore">20,00</td>
                                                 </tr>
-                                                    <tr>
-                                                        <td><b>Jumlah</b></td>
-                                                        <td colspan ="3" id="totalCapaian8"> <b>135,39</b></td>
-                                                    </tr>
+                                                <tr>
+                                                    <td><b>Jumlah</b></td>
+                                                    <td colspan="3" id="totalCapaian8"> <b>135,39</b></td>
+                                                </tr>
                                             </tbody>
                                         </table>
-                                        
-                                            <script>
-                                                function updateCapaian8() {
-                                                    let syarat = parseFloat(document.getElementById("syarat").value) || 0;
-                                                    let proyeksi = parseFloat(document.getElementById("proyeksi").value) || 0;
-                                                    let akurasi = parseFloat(document.getElementById("akurasi").value) || 0;
-                                                    let monev = parseFloat(document.getElementById("syarat").value) || 0;
-                                                    let lkuakpa = parseFloat(document.getElementById("proyeksi").value) || 0;
-                                                    let realisasi = parseFloat(document.getElementById("akurasi").value) || 0;
-                                        
-                                                    let syaratScore = (syarat * 15) / 100;
-                                                    let proyeksiScore = (proyeksi * 15) / 100;
-                                                    let akurasiScore = (akurasi * 20) / 100;
-                                                    let monevScore = (monev * 10) / 100;
-                                                    let lkuakpaScore = (lkuakpa * 20) / 100;
-                                                    let realisasiScore = (realisasi * 20) / 100;
-                                        
-                                                    let totalCapaian8 = syaratScore + proyeksiScore + akurasiScore + monevScore + lkuakpaScore + realisasiScore ;
-                                        
-                                                    document.getElementById("syarat").innerText = syarat + "%";
-                                                    document.getElementById("proyeksi").innerText = proyeksi + "%";
-                                                    document.getElementById("akurasi").innerText = akurasi + "%";
-                                                    document.getElementById("monev").innerText = monev + "%";
-                                                    document.getElementById("lkuakpa").innerText = lkuakpa + "%";
-                                                    document.getElementById("realisasi").innerText = realisasi + "%";
-                                        
-                                                    document.getElementById("syaratScore").innerText = syaratScore.toFixed(2);
-                                                    document.getElementById("proyeksiScore").innerText = proyeksiScore.toFixed(2);
-                                                    document.getElementById("akurasiScore").innerText = akurasiScore.toFixed(2);
-                                                    document.getElementById("monevScore").innerText = monevScore.toFixed(2);
-                                                    document.getElementById("lkuakpaScore").innerText = lkuakpaScore.toFixed(2);
-                                                    document.getElementById("realisasiScore").innerText = realisasiScore.toFixed(2);
-                                        
-                                                    document.getElementById("totalCapaian8").innerText = totalCapaian8.toFixed(2);
-                                                }
-                                        
-                                            </script>
-                                            <script>
-                                                function submitData8() {
-                                                    let syaratScore = document.getElementById("syaratScore").innerText;
-                                                    let proyeksiScore = document.getElementById("proyeksiScore").innerText;
-                                                    let akurasiScore = document.getElementById("akurasiScore").innerText;
-                                                    let monevScore = document.getElementById("monevScore").innerText;
-                                                    let lkuakpaScore = document.getElementById("lkuakpaScore").innerText;
-                                                    let realisasiScore = document.getElementById("realisasiScore").innerText;
-                                                    let totalCapaian8 = document.getElementById("totalCapaian8").innerText;
-                                                    let keterangan8hasil = document.getElementById("keterangan8").innerText;   
-                                            
-                                                    // Cek apakah ada data lama di localStorage
-                                                    let storedData = localStorage.getItem("indeks_data");
-                                                    let data = storedData ? JSON.parse(storedData) : {};
-                                            
-                                                    // Update hanya bagian halaman 15
-                                                    data.syaratScore = syaratScore;
-                                                    data.proyeksiScore = proyeksiScore;
-                                                    data.akurasiScore = akurasiScore;
-                                                    data.monevScore = monevScore;
-                                                    data.lkuakpaScore = lkuakpaScore;
-                                                    data.realisasiScore = realisasiScore;
-                                                    data.totalCapaian8 = totalCapaian8;
-                                                    data.keterangan8 = keterangan8hasil;
-                                                    // Simpan kembali ke localStorage
-                                                    localStorage.setItem("indeks_data", JSON.stringify(data));
-                                            
-                                                    alert("Data dari Nilai kinerja penyaluran Dana Transfer ke Daerah berhasil disimpan!");
-                                                }
-                                            </script>
-                                            <!-- <button onclick="submitData8()">Simpan Data Halaman 8</button> -->
-                                    </div> 
+
+                                        <script>
+                                            function updateCapaian8() {
+                                                let syarat = parseFloat(document.getElementById("syarat").value) || 0;
+                                                let proyeksi = parseFloat(document.getElementById("proyeksi").value) || 0;
+                                                let akurasi = parseFloat(document.getElementById("akurasi").value) || 0;
+                                                let monev = parseFloat(document.getElementById("syarat").value) || 0;
+                                                let lkuakpa = parseFloat(document.getElementById("proyeksi").value) || 0;
+                                                let realisasi = parseFloat(document.getElementById("akurasi").value) || 0;
+
+                                                let syaratScore = (syarat * 15) / 100;
+                                                let proyeksiScore = (proyeksi * 15) / 100;
+                                                let akurasiScore = (akurasi * 20) / 100;
+                                                let monevScore = (monev * 10) / 100;
+                                                let lkuakpaScore = (lkuakpa * 20) / 100;
+                                                let realisasiScore = (realisasi * 20) / 100;
+
+                                                let totalCapaian8 = syaratScore + proyeksiScore + akurasiScore + monevScore + lkuakpaScore + realisasiScore;
+
+                                                document.getElementById("syarat").innerText = syarat + "%";
+                                                document.getElementById("proyeksi").innerText = proyeksi + "%";
+                                                document.getElementById("akurasi").innerText = akurasi + "%";
+                                                document.getElementById("monev").innerText = monev + "%";
+                                                document.getElementById("lkuakpa").innerText = lkuakpa + "%";
+                                                document.getElementById("realisasi").innerText = realisasi + "%";
+
+                                                document.getElementById("syaratScore").innerText = syaratScore.toFixed(2);
+                                                document.getElementById("proyeksiScore").innerText = proyeksiScore.toFixed(2);
+                                                document.getElementById("akurasiScore").innerText = akurasiScore.toFixed(2);
+                                                document.getElementById("monevScore").innerText = monevScore.toFixed(2);
+                                                document.getElementById("lkuakpaScore").innerText = lkuakpaScore.toFixed(2);
+                                                document.getElementById("realisasiScore").innerText = realisasiScore.toFixed(2);
+
+                                                document.getElementById("totalCapaian8").innerText = totalCapaian8.toFixed(2);
+                                            }
+
+                                        </script>
+                                        <script>
+                                            function submitData8() {
+                                                let syaratScore = document.getElementById("syaratScore").innerText;
+                                                let proyeksiScore = document.getElementById("proyeksiScore").innerText;
+                                                let akurasiScore = document.getElementById("akurasiScore").innerText;
+                                                let monevScore = document.getElementById("monevScore").innerText;
+                                                let lkuakpaScore = document.getElementById("lkuakpaScore").innerText;
+                                                let realisasiScore = document.getElementById("realisasiScore").innerText;
+                                                let totalCapaian8 = document.getElementById("totalCapaian8").innerText;
+                                                let keterangan8hasil = document.getElementById("keterangan8").innerText;
+
+                                                // Cek apakah ada data lama di localStorage
+                                                let storedData = localStorage.getItem("indeks_data");
+                                                let data = storedData ? JSON.parse(storedData) : {};
+
+                                                // Update hanya bagian halaman 15
+                                                data.syaratScore = syaratScore;
+                                                data.proyeksiScore = proyeksiScore;
+                                                data.akurasiScore = akurasiScore;
+                                                data.monevScore = monevScore;
+                                                data.lkuakpaScore = lkuakpaScore;
+                                                data.realisasiScore = realisasiScore;
+                                                data.totalCapaian8 = totalCapaian8;
+                                                data.keterangan8 = keterangan8hasil;
+                                                // Simpan kembali ke localStorage
+                                                localStorage.setItem("indeks_data", JSON.stringify(data));
+
+                                                alert("Data dari Nilai kinerja penyaluran Dana Transfer ke Daerah berhasil disimpan!");
+                                            }
+                                        </script>
+                                        <!-- <button onclick="submitData8()">Simpan Data Halaman 8</button> -->
+                                    </div>
 
                                 </body>
                             </div>

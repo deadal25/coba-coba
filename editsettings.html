@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Settings Pengguna - KPPN Majene</title>
+    <title>Edit Profil - KPPN Majene</title>
     <link rel="icon" href="LogoKemenkeu.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -68,7 +68,7 @@
 
                         <div id="userMenu" class="user-menu dropdown-menu">
                             <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
-                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
                             <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
                                     class="fa fa-power-off"></i> Logout</a>
                         </div>
@@ -93,7 +93,7 @@
         <div class="breadcrumbs">
             <div class="col-sm-12">
                 <div class="page-header text-center">
-                    <h1>Settings Pengguna</h1>
+                    <h1>Edit Profil</h1>
                 </div>
             </div>
         </div>
@@ -104,17 +104,30 @@
                     <div class="col-md-6 offset-md-3">
                         <div class="card">
                             <div class="card-header text-center">
+
                                 <img src="admin.jpg" class="rounded-circle" width="100" alt="User Avatar">
-                                <h3 class="mt-2" id="userFullName">Nama Pengguna</h3>
                             </div>
                             <div class="card-body">
-                                <p><strong>Email:</strong> <span id="userEmail">Admin</span></p>
-                                <p><strong>Alamat:</strong> <span id="userAlamat">user</span></p>
-                                <p><strong>Password:</strong> <span id="userPw">Password</span></p>
-                            </div>
-                            <div class="card-footer text-center">
-                                <a href="editsettings.html" class="btn btn-primary">Edit Password?</a>
-                                <a id="logout" href="index.html" onclick="logout()" class="btn btn-danger">Logout</a>
+                                <form id="editSettingsForm">
+                                    <div class="form-group">
+                                        <label for="fullName">Nama Lengkap</label>
+                                        <input type="text" id="fullName" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" class="form-control" required readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alamat">Alamat</label>
+                                        <input type="text" id="alamat" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="userPw">Password</label>
+                                        <input type="text" id="userPw" class="form-control" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">Simpan Perubahan</button>
+                                    <a href="profile.html" class="btn btn-secondary btn-block">Batal</a>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -150,6 +163,53 @@
             });
         });
     </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (!loggedInUser) {
+                window.location.href = "index.html";
+            } else {
+                let users = JSON.parse(localStorage.getItem("users")) || {};
+                let userData = users[loggedInUser];
+
+                if (userData) {
+                    document.getElementById("fullName").value = userData.fullName || "";
+                    document.getElementById("email").value = loggedInUser;
+                    document.getElementById("alamat").value = userData.alamat || "";
+                    document.getElementById("userPw").value = userData.password || "";
+                }
+            }
+
+            document.getElementById("editSettingsForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                let users = JSON.parse(localStorage.getItem("users")) || {};
+                let existingUserData = users[loggedInUser] || {};
+
+                // Simpan kembali password lama jika ada
+                users[loggedInUser] = {
+                    fullName: document.getElementById("fullName").value,
+                    alamat: document.getElementById("alamat").value,
+                    password: document.getElementById("userPw").value,
+                };
+
+                localStorage.setItem("users", JSON.stringify(users));
+                alert("Password berhasil diperbarui!");
+                window.location.href = "settings.html";
+            });
+
+            document.getElementById("logoutBtn").addEventListener("click", function () {
+                localStorage.removeItem("loggedInUser");
+                window.location.href = "index.html";
+            });
+        });
+
+    </script>
+
+
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>

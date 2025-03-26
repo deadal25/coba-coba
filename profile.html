@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Settings Pengguna - KPPN Majene</title>
+    <title>Profil Pengguna - KPPN Majene</title>
     <link rel="icon" href="LogoKemenkeu.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -68,7 +68,7 @@
 
                         <div id="userMenu" class="user-menu dropdown-menu">
                             <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
-                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
                             <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
                                     class="fa fa-power-off"></i> Logout</a>
                         </div>
@@ -93,7 +93,7 @@
         <div class="breadcrumbs">
             <div class="col-sm-12">
                 <div class="page-header text-center">
-                    <h1>Settings Pengguna</h1>
+                    <h1>Profil Pengguna</h1>
                 </div>
             </div>
         </div>
@@ -110,10 +110,9 @@
                             <div class="card-body">
                                 <p><strong>Email:</strong> <span id="userEmail">Admin</span></p>
                                 <p><strong>Alamat:</strong> <span id="userAlamat">user</span></p>
-                                <p><strong>Password:</strong> <span id="userPw">Password</span></p>
                             </div>
                             <div class="card-footer text-center">
-                                <a href="editsettings.html" class="btn btn-primary">Edit Password?</a>
+                                <a href="editprofile.html" class="btn btn-primary">Edit Profil</a>
                                 <a id="logout" href="index.html" onclick="logout()" class="btn btn-danger">Logout</a>
                             </div>
                         </div>
@@ -138,7 +137,6 @@
                     document.getElementById("userFullName").innerText = userData.fullName || "Nama Pengguna";
                     document.getElementById("userEmail").innerText = loggedInUser;
                     document.getElementById("userAlamat").innerText = userData.alamat || "Alamat Pengguna";
-                    document.getElementById("userPw").innerText = userData.password || "Password Pengguna";
                     // document.getElementById("userRole").innerText = "User"; // Bisa diganti dengan data tambahan jika ada
                 }
             }

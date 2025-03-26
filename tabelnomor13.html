@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -192,36 +198,37 @@
                                     <div id="8b-N" class="content">
                                         <br>
                                         <h3><b>Nilai kualitas pengelolaan SDM</b> </h3>
-                                            <label for="triwulan">Pilih Triwulan:</label>
-                                            <select id="triwulan" onchange="hitungNilai13()">
-                                                <option value="30">Triwulan 1</option>
-                                                <option value="50">Triwulan 2</option>
-                                                <option value="70">Triwulan 3</option>
-                                                <option value="90">Triwulan 4</option>
-                                            </select>
-                                
-                                            <label for="learning">Indeks Capaian Learning Organization:</label>
-                                            <input type="number" id="learning" value="0" oninput="hitungNilai13()">
-                                
-                                            <label for="pelaksanaan">Indeks Capaian Pelaksanaan Kebintalan:</label>
-                                            <input type="number" id="pelaksanaan" value="0" oninput="hitungNilai13()">
-                                
-                                            <label for="keterangan13">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea13" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan13()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan13() {
-                                                    let inputText13 = document.getElementById("inputArea13").value;
-                                                    document.getElementById("keterangan13").innerHTML = inputText13.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
-                                            
-                                            <div style="text-align: right; margin-bottom: 10px;">
-                                                <button onclick="submitData13()" class="btn-simpan">
-                                                    <img src="savedata.png"
-                                                        alt="save"> Simpan </button>
-                                            </div>
+                                        <label for="triwulan">Pilih Triwulan:</label>
+                                        <select id="triwulan" onchange="hitungNilai13()">
+                                            <option value="30">Triwulan 1</option>
+                                            <option value="50">Triwulan 2</option>
+                                            <option value="70">Triwulan 3</option>
+                                            <option value="90">Triwulan 4</option>
+                                        </select>
+
+                                        <label for="learning">Indeks Capaian Learning Organization:</label>
+                                        <input type="number" id="learning" value="0" oninput="hitungNilai13()">
+
+                                        <label for="pelaksanaan">Indeks Capaian Pelaksanaan Kebintalan:</label>
+                                        <input type="number" id="pelaksanaan" value="0" oninput="hitungNilai13()">
+
+                                        <label for="keterangan13">Masukkan Keterangan:</label>
+                                        <textarea id="inputArea13" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan13()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan13() {
+                                                let inputText13 = document.getElementById("inputArea13").value;
+                                                document.getElementById("keterangan13").innerHTML = inputText13.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
+
+                                        <div style="text-align: right; margin-bottom: 10px;">
+                                            <button onclick="submitData13()" class="btn-simpan">
+                                                <img src="savedata.png" alt="save"> Simpan </button>
+                                        </div>
                                         <table>
                                             <tbody>
                                                 <tr>
@@ -231,79 +238,87 @@
                                                     <th colspan="3" class="hal2">DATA</th>
                                                     <th rowspan="1" class="hal2">KETERANGAN</th>
                                                 </tr>
-                                                </tbody>
+                                            </tbody>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="4" valign="top">13</td>
-                                                        <td rowspan="4" valign="top"> 8b-N </td>
-                                                        <td rowspan="4" valign="top" class="left-align">Nilai kualitas 
-                                                            pengelolaan SDM </td>
-                                                        <td><b>Komponen</b></td>
-                                                        <td ><b>Bobot</b></td>
-                                                        <td colspan="2"><b>Nilai</b></td>
-                                                        <td>Triwulan/Average</td>      
+                                                    <td rowspan="4" valign="top"> 8b-N </td>
+                                                    <td rowspan="4" valign="top" class="left-align">Nilai kualitas
+                                                        pengelolaan SDM </td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td><b>Bobot</b></td>
+                                                    <td colspan="2"><b>Nilai</b></td>
+                                                    <td>Triwulan/Average</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="left-align">Indeks Capaian Learning 
+                                                    <td class="left-align">Indeks Capaian Learning
                                                         Organization </td>
-                                                    <td >50%</td>
+                                                    <td>50%</td>
                                                     <td colspan="2" id="nilaiLO">58,1%</td>
-                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan13">Capaian = (50% x Indeks Capaian Implementasi LO) + (50% 
-                                                        x Indeks Capaian Pelaksanaan Kebintalan) 
-                                                         
-                                                        a. Implementasi LOFormula:  
-                                                        Nilai Tingkat Implementasi Learning Organization 
-                                                        =(∑𝑁𝑖𝑙𝑎𝑖 𝑆𝑢𝑏𝑘𝑜𝑚𝑝𝑜𝑛𝑒𝑛)/8 
-                                                        Capaian s.d. 9 Januari 2025 dari Aplikasi Training: 
-                                                        Komponen 1: 70 
-                                                        Komponen 2: 100 
-                                                        Komponen 3: 166.67 
-                                                        Komponen 4: 100 
-                                                        Komponen 5: 100 
-                                                        Komponen 6: 100 
-                                                        Komponen 7: 100 
-                                                        Komponen 8: 100 
-                                                         
-                                                        Niali capaian Implementasi LO sebesar 104,58. 
-                                                         
-                                                        b. Pelaksanaan Program/KegiataN Kebintalan 
-                                                         
-                                                        Formula:Triwulan I s.d. III = (80% x pelaksanaan 
-                                                        kegiatan) + (20% x nilai kepatuhan pelaporan) 
-                                                        Triwulan IV = (60% x pelaksanaan kegiatan) + (30% 
-                                                        feedback peserta) + (10% x nilai kepatuhan pelaporan). 
-                                                        Nilai Pelaksanaan Kegiatan: - 4 kegiatan = 120 - 3 kegiatan = 110 - 2 kegiatan = 80 - 1 kegiatan = 70 
-                                                        Nilai Kepatuhan Pelaporan: - Sebelum batas waktu = 110 - Sesuai batas waktu = 100 - 1-3 hari setelah batas waktu = 80 - lebih dari 3 hari setelah batas waktu = 50Capaian = (50% x Indeks Capaian Implementasi LO) + (50% 
-                                                        x Indeks Capaian Pelaksanaan Kebintalan) 
-                                                         
-                                                        a. Implementasi LOFormula:  
-                                                        Nilai Tingkat Implementasi Learning Organization 
-                                                        =(∑𝑁𝑖𝑙𝑎𝑖 𝑆𝑢𝑏𝑘𝑜𝑚𝑝𝑜𝑛𝑒𝑛)/8 
-                                                        Capaian s.d. 9 Januari 2025 dari Aplikasi Training: 
-                                                        Komponen 1: 70 
-                                                        Komponen 2: 100 
-                                                        Komponen 3: 166.67 
-                                                        Komponen 4: 100 
-                                                        Komponen 5: 100 
-                                                        Komponen 6: 100 
-                                                        Komponen 7: 100 
-                                                        Komponen 8: 100 
-                                                         
-                                                        Niali capaian Implementasi LO sebesar 104,58. 
-                                                         
-                                                        b. Pelaksanaan Program/KegiataN Kebintalan 
-                                                         
-                                                        Formula:Triwulan I s.d. III = (80% x pelaksanaan 
-                                                        kegiatan) + (20% x nilai kepatuhan pelaporan) 
-                                                        Triwulan IV = (60% x pelaksanaan kegiatan) + (30% 
-                                                        feedback peserta) + (10% x nilai kepatuhan pelaporan). 
-                                                        Nilai Pelaksanaan Kegiatan: - 4 kegiatan = 120 - 3 kegiatan = 110 - 2 kegiatan = 80 - 1 kegiatan = 70 
-                                                        Nilai Kepatuhan Pelaporan: - Sebelum batas waktu = 110 - Sesuai batas waktu = 100 - 1-3 hari setelah batas waktu = 80 - lebih dari 3 hari setelah batas waktu = 50</td>
+                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan13">
+                                                        Capaian = (50% x Indeks Capaian Implementasi LO) + (50%
+                                                        x Indeks Capaian Pelaksanaan Kebintalan)
+
+                                                        a. Implementasi LOFormula:
+                                                        Nilai Tingkat Implementasi Learning Organization
+                                                        =(∑𝑁𝑖𝑙𝑎𝑖 𝑆𝑢𝑏𝑘𝑜𝑚𝑝𝑜𝑛𝑒𝑛)/8
+                                                        Capaian s.d. 9 Januari 2025 dari Aplikasi Training:
+                                                        Komponen 1: 70
+                                                        Komponen 2: 100
+                                                        Komponen 3: 166.67
+                                                        Komponen 4: 100
+                                                        Komponen 5: 100
+                                                        Komponen 6: 100
+                                                        Komponen 7: 100
+                                                        Komponen 8: 100
+
+                                                        Niali capaian Implementasi LO sebesar 104,58.
+
+                                                        b. Pelaksanaan Program/KegiataN Kebintalan
+
+                                                        Formula:Triwulan I s.d. III = (80% x pelaksanaan
+                                                        kegiatan) + (20% x nilai kepatuhan pelaporan)
+                                                        Triwulan IV = (60% x pelaksanaan kegiatan) + (30%
+                                                        feedback peserta) + (10% x nilai kepatuhan pelaporan).
+                                                        Nilai Pelaksanaan Kegiatan: - 4 kegiatan = 120 - 3 kegiatan =
+                                                        110 - 2 kegiatan = 80 - 1 kegiatan = 70
+                                                        Nilai Kepatuhan Pelaporan: - Sebelum batas waktu = 110 - Sesuai
+                                                        batas waktu = 100 - 1-3 hari setelah batas waktu = 80 - lebih
+                                                        dari 3 hari setelah batas waktu = 50Capaian = (50% x Indeks
+                                                        Capaian Implementasi LO) + (50%
+                                                        x Indeks Capaian Pelaksanaan Kebintalan)
+
+                                                        a. Implementasi LOFormula:
+                                                        Nilai Tingkat Implementasi Learning Organization
+                                                        =(∑𝑁𝑖𝑙𝑎𝑖 𝑆𝑢𝑏𝑘𝑜𝑚𝑝𝑜𝑛𝑒𝑛)/8
+                                                        Capaian s.d. 9 Januari 2025 dari Aplikasi Training:
+                                                        Komponen 1: 70
+                                                        Komponen 2: 100
+                                                        Komponen 3: 166.67
+                                                        Komponen 4: 100
+                                                        Komponen 5: 100
+                                                        Komponen 6: 100
+                                                        Komponen 7: 100
+                                                        Komponen 8: 100
+
+                                                        Niali capaian Implementasi LO sebesar 104,58.
+
+                                                        b. Pelaksanaan Program/KegiataN Kebintalan
+
+                                                        Formula:Triwulan I s.d. III = (80% x pelaksanaan
+                                                        kegiatan) + (20% x nilai kepatuhan pelaporan)
+                                                        Triwulan IV = (60% x pelaksanaan kegiatan) + (30%
+                                                        feedback peserta) + (10% x nilai kepatuhan pelaporan).
+                                                        Nilai Pelaksanaan Kegiatan: - 4 kegiatan = 120 - 3 kegiatan =
+                                                        110 - 2 kegiatan = 80 - 1 kegiatan = 70
+                                                        Nilai Kepatuhan Pelaporan: - Sebelum batas waktu = 110 - Sesuai
+                                                        batas waktu = 100 - 1-3 hari setelah batas waktu = 80 - lebih
+                                                        dari 3 hari setelah batas waktu = 50</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="left-align">Indeks Capaian 
+                                                    <td class="left-align">Indeks Capaian
                                                         Pelaksanaan Kebintalan </td>
-                                                    <td >50%</td>
+                                                    <td>50%</td>
                                                     <td colspan="2" id="nilaiPK">58,50</td>
                                                 </tr>
                                                 <tr>
@@ -311,51 +326,51 @@
                                                     <td colspan="3" id="totalNilai13"><b>116,60</b></td>
                                                     <td></td>
                                                 </tr>
-                                        </tbody>
+                                            </tbody>
                                         </table>
-                                
-                                    <script>
-                                        function hitungNilai13() {
-                                            let targetLO = parseFloat(document.getElementById('triwulan').value);
-                                            let nilaiLearning = parseFloat(document.getElementById('learning').value);
-                                            let nilaiPelaksanaan = parseFloat(document.getElementById('pelaksanaan').value);
-                                
-                                            let nilaiLO = ((nilaiLearning / targetLO) * 100) * 0.5;
-                                            let nilaiPK = (nilaiPelaksanaan * 0.5);
-                                            let totalNilai13 = nilaiLO + nilaiPK;
-                                
-                                            document.getElementById('nilaiLO').innerText = nilaiLO.toFixed(2);
-                                            document.getElementById('nilaiPK').innerText = nilaiPK.toFixed(2);
-                                            document.getElementById('totalNilai13').innerText = totalNilai13.toFixed(2);
-                                        }
-                                
-                                        hitungNilai13();
-                                    </script>
-                                    <script>
-                                        function submitData13() {
-                                            let nilaiLO = document.getElementById("nilaiLO").innerText;
-                                            let nilaiPK = document.getElementById("nilaiPK").innerText;
-                                            let totalNilai13 = document.getElementById("totalNilai13").innerText;
-                                            let keterangan13hasil = document.getElementById("keterangan13").innerText;   
-                                            
-                                            // Cek apakah ada data lama di localStorage
-                                            let storedData = localStorage.getItem("indeks_data");
-                                            let data = storedData ? JSON.parse(storedData) : {};
-                                    
-                                            // Update hanya bagian halaman 16
-                                            data.nilaiLO = nilaiLO;
-                                            data.nilaiPK = nilaiPK;
-                                            data.totalNilai13 = totalNilai13;
-                                            data.keterangan13 = keterangan13hasil;
-                                            // Simpan kembali ke localStorage
-                                            localStorage.setItem("indeks_data", JSON.stringify(data));
-                                    
-                                            alert("Data dari Nilai kualitas pengelolaan SDM berhasil disimpan!");
-                                        }
-                                    </script>
-                                    <!-- <button onclick="submitData13()">Simpan Data Halaman 13</button> -->
-                                    
-                                </div>
+
+                                        <script>
+                                            function hitungNilai13() {
+                                                let targetLO = parseFloat(document.getElementById('triwulan').value);
+                                                let nilaiLearning = parseFloat(document.getElementById('learning').value);
+                                                let nilaiPelaksanaan = parseFloat(document.getElementById('pelaksanaan').value);
+
+                                                let nilaiLO = ((nilaiLearning / targetLO) * 100) * 0.5;
+                                                let nilaiPK = (nilaiPelaksanaan * 0.5);
+                                                let totalNilai13 = nilaiLO + nilaiPK;
+
+                                                document.getElementById('nilaiLO').innerText = nilaiLO.toFixed(2);
+                                                document.getElementById('nilaiPK').innerText = nilaiPK.toFixed(2);
+                                                document.getElementById('totalNilai13').innerText = totalNilai13.toFixed(2);
+                                            }
+
+                                            hitungNilai13();
+                                        </script>
+                                        <script>
+                                            function submitData13() {
+                                                let nilaiLO = document.getElementById("nilaiLO").innerText;
+                                                let nilaiPK = document.getElementById("nilaiPK").innerText;
+                                                let totalNilai13 = document.getElementById("totalNilai13").innerText;
+                                                let keterangan13hasil = document.getElementById("keterangan13").innerText;
+
+                                                // Cek apakah ada data lama di localStorage
+                                                let storedData = localStorage.getItem("indeks_data");
+                                                let data = storedData ? JSON.parse(storedData) : {};
+
+                                                // Update hanya bagian halaman 16
+                                                data.nilaiLO = nilaiLO;
+                                                data.nilaiPK = nilaiPK;
+                                                data.totalNilai13 = totalNilai13;
+                                                data.keterangan13 = keterangan13hasil;
+                                                // Simpan kembali ke localStorage
+                                                localStorage.setItem("indeks_data", JSON.stringify(data));
+
+                                                alert("Data dari Nilai kualitas pengelolaan SDM berhasil disimpan!");
+                                            }
+                                        </script>
+                                        <!-- <button onclick="submitData13()">Simpan Data Halaman 13</button> -->
+
+                                    </div>
 
                                 </body>
                             </div>

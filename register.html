@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -17,40 +19,46 @@
                 <li><a href="https://www.kemenkeu.go.id" target="_blank">Portal Kemenkeu</a></li>
                 <li><a href="https://servicedesk.kemenkeu.go.id" target="_blank">ServiceDesk</a></li>
                 <li><a href="https://hai.kemenkeu.go.id" target="_blank">Hai Kemenkeu</a></li>
-                <li><a href="https://djpb.kemenkeu.go.id/kppn/majene/id/layanan/layanan-pengaduan.html" target="_blank">Pengaduan 059</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kppn/majene/id/layanan/layanan-pengaduan.html"
+                        target="_blank">Pengaduan 059</a></li>
                 <li><a href="https://www.wise.kemenkeu.go.id" target="_blank">Wise Kemenkeu</a></li>
             </ul>
         </div>
     </nav>
     <div class="container">
-    <div class="wrapper">
-        <div class="logo">
-            <img src="logo.png" alt="KPPN Majene">
-        </div><br>
-        <div class="text-center mt-4 name">
-            
-        </div>
-        <form id="registerForm" class="p-3 mt-3">
-            <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="logo.png" alt="KPPN Majene">
+            </div><br>
+            <div class="text-center mt-4 name">
+
             </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="far fa-envelope"></span>
-                <input type="email" name="email" id="email" placeholder="Email" required>
+            <form id="registerForm" class="p-3 mt-3">
+                <div class="form-field d-flex align-items-center">
+                    <span class="far fa-user"></span>
+                    <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
+                </div>
+                <div class="form-field d-flex align-items-center">
+                    <span class="far fa-envelope"></span>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-field d-flex align-items-center">
+                    <span class="far fa-envelope"></span>
+                    <input type="text" name="alamat" id="alamat" placeholder="Alamat" required>
+                </div>
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input type="password" name="password" id="registerPwd" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn mt-3">Sign Up</button>
+                <p id="registerMessage"></p>
+            </form>
+
+            <div class="text-center fs-6">
+                Already have an account? <a href="index.html">Login</a>
             </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="registerPwd" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn mt-3">Sign Up</button>
-            <p id="registerMessage"></p>
-        </form>
-        
-        <div class="text-center fs-6">
-            Already have an account? <a href="index.html">Login</a>
         </div>
     </div>
-</div>
 </body>
+
 </html>

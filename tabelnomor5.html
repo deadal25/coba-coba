@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -191,29 +197,31 @@
 
                                     <div id="3b-N" class="content">
                                         <br>
-                                        <h3><b>Tingkat efektivitas edukasi di bidang pengelolaan perbendaharaan </b></h3>
-                                        
+                                        <h3><b>Tingkat efektivitas edukasi di bidang pengelolaan perbendaharaan </b>
+                                        </h3>
+
                                         <label>Nilai Kuisioner: </label>
-                                            <input type="number" id="kuisioner">
+                                        <input type="number" id="kuisioner">
                                         <label>Nilai Post Test: </label>
-                                            <input type="number" id="post_test">
-                                        
-                                            <label for="keterangan5">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea5" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan5()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan5() {
-                                                    let inputText5 = document.getElementById("inputArea5").value;
-                                                    document.getElementById("keterangan5").innerHTML = inputText5.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
-                                            
-                                        
-                                            <div style="text-align: right; margin-bottom: 10px;">
+                                        <input type="number" id="post_test">
+
+                                        <label for="keterangan5">Masukkan Keterangan:</label>
+                                        <textarea id="inputArea5" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan5()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan5() {
+                                                let inputText5 = document.getElementById("inputArea5").value;
+                                                document.getElementById("keterangan5").innerHTML = inputText5.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
+
+
+                                        <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData5()" class="btn-simpan">
-                                                <img src="savedata.png"
-                                                    alt="save"> Simpan </button>
+                                                <img src="savedata.png" alt="save"> Simpan </button>
                                         </div>
                                         <table>
                                             <tbody>
@@ -224,32 +232,29 @@
                                                     <th colspan="3" class="hal2">DATA</th>
                                                     <th rowspan="1" class="hal2">KETERANGAN</th>
                                                 </tr>
-                                                </tbody>
+                                            </tbody>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="4" valign="top">5</td>
                                                     <td rowspan="4" valign="top">3b-N</td>
-                                                    <td rowspan="4" valign="top" class="left-align">Tingkat efektivitas 
-                                                    edukasi di bidang 
-                                                    pengelolaan 
-                                                    perbendaharaan</td>
+                                                    <td rowspan="4" valign="top" class="left-align">Tingkat efektivitas
+                                                        edukasi di bidang
+                                                        pengelolaan
+                                                        perbendaharaan</td>
                                                     <td><b>Komponen</b></td>
                                                     <td colspan="3"><b>Nilai</b></td>
-                                                    <td>Triwulan/Average</td> 
+                                                    <td>Triwulan/Average</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Nilai Kuisioner</td>
                                                     <td colspan="3" id="nilaiKuisioner">100</td>
-                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan5">Nilai Efektivitas Edukasi dan Komunikasi 
-                                    
-                                                        Indeks 5 : 95 < x <= 100 
-                                                        Indeks 4,5 : 85 < x <= 95 
-                                                        Indeks 4 : 80 < x  <=85 
-                                                        Indeks 3,5 : 70 < x <=80  
-                                                        Indeks 3 : 60 < x <=70  
-                                                        Indeks 2,5 :50 < x <= 59  
-                                                        Indeks 2 : 40 < x <= 49  
-                                                        Indeks 1 : nilai edukom <40 </td>
+                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan5">
+                                                        Nilai Efektivitas Edukasi dan Komunikasi
+
+                                                        Indeks 5 : 95 < x <=100 Indeks 4,5 : 85 < x <=95 Indeks 4 : 80 <
+                                                            x <=85 Indeks 3,5 : 70 < x <=80 Indeks 3 : 60 < x <=70
+                                                            Indeks 2,5 :50 < x <=59 Indeks 2 : 40 < x <=49 Indeks 1 :
+                                                            nilai edukom <40 </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Nilai Rata-rata Post Test </td>
@@ -261,14 +266,14 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    
+
                                         <script>
                                             function hitungIndeks5() {
                                                 let kuisioner = parseFloat(document.getElementById('kuisioner').value) || 0;
                                                 let postTest = parseFloat(document.getElementById('post_test').value) || 0;
                                                 let rataRata = (postTest * 0.6) + (kuisioner * 0.4);
                                                 let indeks;
-                                                
+
                                                 if (rataRata > 95) indeks = "5";
                                                 else if (rataRata > 85) indeks = "4.5";
                                                 else if (rataRata > 80) indeks = "4";
@@ -277,27 +282,27 @@
                                                 else if (rataRata > 50) indeks = "2.5";
                                                 else if (rataRata > 40) indeks = "2";
                                                 else indeks = "1";
-                                    
+
                                                 document.getElementById('nilaiKuisioner').innerText = kuisioner.toFixed(2);
                                                 document.getElementById('nilaiPostTest').innerText = postTest.toFixed(2);
                                                 document.getElementById('indeks').innerText = indeks;
                                             }
-                                    
+
                                             document.getElementById('kuisioner').addEventListener('input', hitungIndeks5);
                                             document.getElementById('post_test').addEventListener('input', hitungIndeks5);
-                                    
+
                                         </script>
                                         <script>
                                             function submitData5() {
                                                 let kuisioner = document.getElementById("nilaiKuisioner").innerText;
                                                 let postTest = document.getElementById("nilaiPostTest").innerText;
                                                 let indeks = document.getElementById("indeks").innerText;
-                                                let keterangan5hasil = document.getElementById("keterangan5").innerText;   
-                                            
+                                                let keterangan5hasil = document.getElementById("keterangan5").innerText;
+
                                                 // Cek apakah ada data lama di localStorage
                                                 let storedData = localStorage.getItem("indeks_data");
                                                 let data = storedData ? JSON.parse(storedData) : {};
-                                        
+
                                                 // Update hanya bagian halaman 5
                                                 data.kuisioner = kuisioner;
                                                 data.postTest = postTest;
@@ -305,13 +310,13 @@
                                                 data.keterangan5 = keterangan5hasil;
                                                 // Simpan kembali ke localStorage
                                                 localStorage.setItem("indeks_data", JSON.stringify(data));
-                                        
+
                                                 alert("Data dari Tingkat efektivitas edukasi di bidang pengelolaan perbendaharaan berhasil disimpan!");
                                             }
                                         </script>
                                         <!-- <button onclick="submitData5()">Simpan Data Halaman 5</button> -->
-                                </div>
-                                    
+                                    </div>
+
 
                                 </body>
                             </div>

@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -210,30 +216,31 @@
                                         <label for="ds">Dispensasi SPM (%) :</label>
                                         <input type="number" id="ds" oninput="updateCapaian1()" step="0.01" min="0">
 
-                                        
+
                                         <label for="keterangan1">Masukkan Keterangan: </label>
-                                            <textarea id="inputArea1" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan1()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan1() {
-                                                    let inputText = document.getElementById("inputArea1").value;
-                                                    let keteranganCell = document.getElementById("keterangan1");
-                                                    let totalNilaiSpan = document.getElementById("totalNilaiSpan1");
-                                            
-                                                    // Menampilkan teks yang diinput dengan paragraf sesuai format
-                                                    keteranganCell.innerHTML = inputText.replace(/\n/g, "<br>")+
-                                                                               "<span id='totalNilaiSpan1'>" + "</span><br>";
-                                                }
-                                            </script>
-                                            
-                                        
+                                        <textarea id="inputArea1" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan1()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan1() {
+                                                let inputText = document.getElementById("inputArea1").value;
+                                                let keteranganCell = document.getElementById("keterangan1");
+                                                let totalNilaiSpan = document.getElementById("totalNilaiSpan1");
+
+                                                // Menampilkan teks yang diinput dengan paragraf sesuai format
+                                                keteranganCell.innerHTML = inputText.replace(/\n/g, "<br>") +
+                                                    "<span id='totalNilaiSpan1'>" + "</span><br>";
+                                            }
+                                        </script>
+
+
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData1()" class="btn-simpan">
-                                                <img src="savedata.png"
-                                                    alt="save"> Simpan </button>
+                                                <img src="savedata.png" alt="save"> Simpan </button>
                                         </div>
                                         <table>
-                    
+
                                             <tbody>
                                                 <tr>
                                                     <th rowspan="1" class="hal2">No</th>
@@ -269,7 +276,8 @@
                                                     <td id="rdValue">122,23%</td>
                                                     <td>10%</td>
                                                     <td id="rdScore">48,89</td>
-                                                    <td rowspan="9" valign="top" class="left-align" id="keterangan1">Hasil penilaian
+                                                    <td rowspan="9" valign="top" class="left-align" id="keterangan1">
+                                                        Hasil penilaian
                                                         IKPA tingkat Nasional sebagai BUN pada Aplikasi OMSPAN = <span
                                                             id="totalNilaiSpan1">95.16</span></td>
                                                 </tr>
@@ -388,8 +396,8 @@
                                                 let dsScore = document.getElementById("dsScore").innerText;
                                                 let totalCapaian1 = document.getElementById("totalCapaian1").innerText;
                                                 let totalNilaiSpan1 = document.getElementById("totalNilaiSpan1").innerText;
-                                                let keterangan1hasil = document.getElementById("keterangan1").innerText;   
-                                            
+                                                let keterangan1hasil = document.getElementById("keterangan1").innerText;
+
 
                                                 // Cek apakah ada data lama di localStorage
                                                 let storedData = localStorage.getItem("indeks_data");

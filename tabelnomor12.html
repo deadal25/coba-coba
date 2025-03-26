@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -192,29 +198,32 @@
                                     <div id="8a-N" class="content">
                                         <br>
                                         <h3><b>Tingkat kualitas pengelolaan kinerja organisasi </b></h3>
-                                            <label for="lhps1">Nilai LHPS Semester 2 2023:</label>
-                                            <input type="number" id="lhps1" min="0" max="100" value="9.56" oninput="hitungNilai12()">
-                                
-                                            <label for="lhps2">Nilai LHPS Semester 1 2024:</label>
-                                            <input type="number" id="lhps2" min="0" max="100" value="9.71" oninput="hitungNilai12()">
-                                        
-                                            <label for="keterangan12">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea12" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan12()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan12() {
-                                                    let inputText12 = document.getElementById("inputArea12").value;
-                                                    document.getElementById("keterangan12").innerHTML = inputText12.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
-                                            
-                                            
-                                            <div style="text-align: right; margin-bottom: 10px;">
-                                                <button onclick="submitData12()" class="btn-simpan">
-                                                    <img src="savedata.png"
-                                                        alt="save"> Simpan </button>
-                                            </div>
+                                        <label for="lhps1">Nilai LHPS Semester 2 2023:</label>
+                                        <input type="number" id="lhps1" min="0" max="100" value="9.56"
+                                            oninput="hitungNilai12()">
+
+                                        <label for="lhps2">Nilai LHPS Semester 1 2024:</label>
+                                        <input type="number" id="lhps2" min="0" max="100" value="9.71"
+                                            oninput="hitungNilai12()">
+
+                                        <label for="keterangan12">Masukkan Keterangan:</label>
+                                        <textarea id="inputArea12" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan12()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan12() {
+                                                let inputText12 = document.getElementById("inputArea12").value;
+                                                document.getElementById("keterangan12").innerHTML = inputText12.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
+
+
+                                        <div style="text-align: right; margin-bottom: 10px;">
+                                            <button onclick="submitData12()" class="btn-simpan">
+                                                <img src="savedata.png" alt="save"> Simpan </button>
+                                        </div>
                                         <table>
                                             <tbody>
                                                 <tr>
@@ -224,57 +233,58 @@
                                                     <th colspan="3" class="hal2">DATA</th>
                                                     <th rowspan="1" class="hal2">KETERANGAN</th>
                                                 </tr>
-                                                </tbody>
+                                            </tbody>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="4" valign="top">12</td>
-                                                        <td rowspan="4" valign="top"> 8a-N </td>
-                                                        <td rowspan="4" valign="top" class="left-align">Tingkat kualitas 
-                                                            pengelolaan kinerja 
-                                                            organisasi </td>
-                                                        <td><b>Komponen</b></td>
-                                                        <td ><b>Bobot</b></td>
-                                                        <td colspan="2"><b>Nilai</b></td>
-                                                        <td>Triwulan/Average</td>      
+                                                    <td rowspan="4" valign="top"> 8a-N </td>
+                                                    <td rowspan="4" valign="top" class="left-align">Tingkat kualitas
+                                                        pengelolaan kinerja
+                                                        organisasi </td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td><b>Bobot</b></td>
+                                                    <td colspan="2"><b>Nilai</b></td>
+                                                    <td>Triwulan/Average</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="left-align">indeks capaian komponen 
-                                                        nilai LHPS   </td>
-                                                    <td >50%</td>
+                                                    <td class="left-align">indeks capaian komponen
+                                                        nilai LHPS </td>
+                                                    <td>50%</td>
                                                     <td colspan="2" id="nilaiLHPS1">54,16%</td>
-                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan12">Triwulan IV = (50% x indeks capaian komponen SFO) + (50% 
-                                                        x indeks capaian komponen nilai LHPS) 
-                                                         
-                                                        Nilai SFO target 85 
-                                                        *Jika menjadi unit sampel maka penilaian dari Kantor Pusat 
-                                                        DJPb 
-                                                        *Jika tidak menjadi unit sampel maka penilaian dari Kanwil 
-                                                        DJPb 
-                                                        Nilai kinerja KPPN hasil pembinaan Kanwil DJPb 
-                                                        Target = 8.9 
-                                                         
-                                                        indeks capaian komponen nilai LHPS 
-                                                        (50% x Nilai LHPS Semester 2 2023) + (50% x Nilai LHPS 
-                                                        Semester 1 2024)/target (8,9) 
-                                                        Berdasarkan Nota Dinas Kepala Kantor Wilayah Direktorat 
-                                                        Jenderal Perbendaharaan Provinsi Sulawesi Barat nomor 
-                                                        ND-409/WPB.26/2024 tentang Penyampaian Laporan Hasil 
-                                                        Pembinaan dan Supervisi (LHPS) Kanwil Ditjen 
-                                                        Perbendaharaan Provinsi Sulawesi Barat Periode Semester I 
-                                                        Tahun 2024 
-                                                        Nilai LHPS Semester 2 2023 :  9,56 
-                                                        Nilai LHPS Semester I 2024 : 9,71 
-                                                        Nilai capaian IKU: (50%* 9,56) + (50%* 9,71) / 8,9 =108,26% 
-                                                        Indeks capaian  komponen SFO 
-                                                         
-                                                        Nota Dinas Kepala Bagian Organisasi dan Tata Laksana 
+                                                    <td rowspan="2" valign="top" class="left-align" id="keterangan12">
+                                                        Triwulan IV = (50% x indeks capaian komponen SFO) + (50%
+                                                        x indeks capaian komponen nilai LHPS)
+
+                                                        Nilai SFO target 85
+                                                        *Jika menjadi unit sampel maka penilaian dari Kantor Pusat
+                                                        DJPb
+                                                        *Jika tidak menjadi unit sampel maka penilaian dari Kanwil
+                                                        DJPb
+                                                        Nilai kinerja KPPN hasil pembinaan Kanwil DJPb
+                                                        Target = 8.9
+
+                                                        indeks capaian komponen nilai LHPS
+                                                        (50% x Nilai LHPS Semester 2 2023) + (50% x Nilai LHPS
+                                                        Semester 1 2024)/target (8,9)
+                                                        Berdasarkan Nota Dinas Kepala Kantor Wilayah Direktorat
+                                                        Jenderal Perbendaharaan Provinsi Sulawesi Barat nomor
+                                                        ND-409/WPB.26/2024 tentang Penyampaian Laporan Hasil
+                                                        Pembinaan dan Supervisi (LHPS) Kanwil Ditjen
+                                                        Perbendaharaan Provinsi Sulawesi Barat Periode Semester I
+                                                        Tahun 2024
+                                                        Nilai LHPS Semester 2 2023 : 9,56
+                                                        Nilai LHPS Semester I 2024 : 9,71
+                                                        Nilai capaian IKU: (50%* 9,56) + (50%* 9,71) / 8,9 =108,26%
+                                                        Indeks capaian komponen SFO
+
+                                                        Nota Dinas Kepala Bagian Organisasi dan Tata Laksana
                                                         nomor ND-162/PB.11/2025 tanggal 17 Januari 2025</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="left-align">indeks capaian ketepatan 
-                                                        waktu penyampaian 
+                                                    <td class="left-align">indeks capaian ketepatan
+                                                        waktu penyampaian
                                                         laporan SFO </td>
-                                                    <td >50%</td>
+                                                    <td>50%</td>
                                                     <td colspan="2" id="nilaiLHPS2">52,98</td>
                                                 </tr>
                                                 <tr>
@@ -282,51 +292,51 @@
                                                     <td colspan="3" id="totalIKU12"><b>108,26%</b></td>
                                                     <td></td>
                                                 </tr>
-                                        </tbody>
+                                            </tbody>
                                         </table>
-                                    <script>
-                                        function hitungNilai12() {
-                                            let lhps1 = parseFloat(document.getElementById('lhps1').value) || 0;
-                                            let lhps2 = parseFloat(document.getElementById('lhps2').value) || 0;
-                                            let target = 8.9;
-                                
-                                            let nilaiTertimbang1 = (lhps1 * 50) / 100;
-                                            let nilaiTertimbang2 = (lhps2 * 50) / 100;
-                                            let nilaiTab1 = (lhps1 * 50) / 8.9;
-                                            let nilaiTab2 = (lhps2 * 50) /8.9;
-                                            let totalIKU12 = ((nilaiTertimbang1 + nilaiTertimbang2) / target) * 100;
-                                
-                                            document.getElementById('nilaiLHPS1').innerText = nilaiTab1.toFixed(2);
-                                            document.getElementById('nilaiLHPS2').innerText = nilaiTab2.toFixed(2);
-                                            document.getElementById('totalIKU12').innerText = totalIKU12.toFixed(2) + "%";
-                                        }
-                                
-                                        hitungNilai12();
-                                    </script>
-                                    <script>
-                                        function submitData12() {
-                                            let nilaiTab1 = document.getElementById("nilaiLHPS1").innerText;
-                                            let nilaiTab2 = document.getElementById("nilaiLHPS2").innerText;
-                                            let totalIKU12 = document.getElementById("totalIKU12").innerText;
-                                            let keterangan12hasil = document.getElementById("keterangan12").innerText;   
-                                            
-                                            // Cek apakah ada data lama di localStorage
-                                            let storedData = localStorage.getItem("indeks_data");
-                                            let data = storedData ? JSON.parse(storedData) : {};
-                                    
-                                            // Update hanya bagian halaman 12
-                                            data.nilaiTab1 = nilaiTab1;
-                                            data.nilaiTab2 = nilaiTab2;
-                                            data.totalIKU12 = totalIKU12;
-                                            data.keterangan12 = keterangan12hasil;
-                                            // Simpan kembali ke localStorage
-                                            localStorage.setItem("indeks_data", JSON.stringify(data));
-                                    
-                                            alert("Data dari Tingkat kualitas pengelolaan kinerja organisasi berhasil disimpan!");
-                                        }
-                                    </script>
-                                    <!-- <button onclick="submitData12()">Simpan Data Halaman 12</button> -->
-                                </div>
+                                        <script>
+                                            function hitungNilai12() {
+                                                let lhps1 = parseFloat(document.getElementById('lhps1').value) || 0;
+                                                let lhps2 = parseFloat(document.getElementById('lhps2').value) || 0;
+                                                let target = 8.9;
+
+                                                let nilaiTertimbang1 = (lhps1 * 50) / 100;
+                                                let nilaiTertimbang2 = (lhps2 * 50) / 100;
+                                                let nilaiTab1 = (lhps1 * 50) / 8.9;
+                                                let nilaiTab2 = (lhps2 * 50) / 8.9;
+                                                let totalIKU12 = ((nilaiTertimbang1 + nilaiTertimbang2) / target) * 100;
+
+                                                document.getElementById('nilaiLHPS1').innerText = nilaiTab1.toFixed(2);
+                                                document.getElementById('nilaiLHPS2').innerText = nilaiTab2.toFixed(2);
+                                                document.getElementById('totalIKU12').innerText = totalIKU12.toFixed(2) + "%";
+                                            }
+
+                                            hitungNilai12();
+                                        </script>
+                                        <script>
+                                            function submitData12() {
+                                                let nilaiTab1 = document.getElementById("nilaiLHPS1").innerText;
+                                                let nilaiTab2 = document.getElementById("nilaiLHPS2").innerText;
+                                                let totalIKU12 = document.getElementById("totalIKU12").innerText;
+                                                let keterangan12hasil = document.getElementById("keterangan12").innerText;
+
+                                                // Cek apakah ada data lama di localStorage
+                                                let storedData = localStorage.getItem("indeks_data");
+                                                let data = storedData ? JSON.parse(storedData) : {};
+
+                                                // Update hanya bagian halaman 12
+                                                data.nilaiTab1 = nilaiTab1;
+                                                data.nilaiTab2 = nilaiTab2;
+                                                data.totalIKU12 = totalIKU12;
+                                                data.keterangan12 = keterangan12hasil;
+                                                // Simpan kembali ke localStorage
+                                                localStorage.setItem("indeks_data", JSON.stringify(data));
+
+                                                alert("Data dari Tingkat kualitas pengelolaan kinerja organisasi berhasil disimpan!");
+                                            }
+                                        </script>
+                                        <!-- <button onclick="submitData12()">Simpan Data Halaman 12</button> -->
+                                    </div>
 
                                 </body>
                             </div>

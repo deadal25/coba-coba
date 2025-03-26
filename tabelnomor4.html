@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -191,34 +197,37 @@
 
                                     <div id="3a-N" class="content">
                                         <br>
-                                        <h3><b>Indeks implementasi standardisasi kompetensi pejabat perbendaharaan pada satker lingkup KPPN </b></h3>
+                                        <h3><b>Indeks implementasi standardisasi kompetensi pejabat perbendaharaan pada
+                                                satker lingkup KPPN </b></h3>
 
                                         <label for="refreshment">Akselerasi Penyelenggaraan Refreshment (%) :</label>
-                                        <input type="number" id="refreshment" oninput="updateCapaian4()" step="0.01" min="0">
-                                    
+                                        <input type="number" id="refreshment" oninput="updateCapaian4()" step="0.01"
+                                            min="0">
+
                                         <label for="pnTsnt">Pemenuhan Sertifikat PNT dan SNT (%) :</label>
                                         <input type="number" id="pnTsnt" oninput="updateCapaian4()" step="0.01" min="0">
-                                    
+
                                         <label for="bnt">Pemenuhan Sertifikat BNT (%) :</label>
                                         <input type="number" id="bnt" oninput="updateCapaian4()" step="0.01" min="0">
-                                        
-                                        
+
+
                                         <label for="keterangan4">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea4" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan4()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan4() {
-                                                    let inputText4 = document.getElementById("inputArea4").value;
-                                                    document.getElementById("keterangan4").innerHTML = inputText4.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
-                                            
-                                        
+                                        <textarea id="inputArea4" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan4()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan4() {
+                                                let inputText4 = document.getElementById("inputArea4").value;
+                                                document.getElementById("keterangan4").innerHTML = inputText4.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
+
+
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData4()" class="btn-simpan">
-                                                <img src="savedata.png"
-                                                    alt="save"> Simpan </button>
+                                                <img src="savedata.png" alt="save"> Simpan </button>
                                         </div>
                                         <table>
                                             <tbody>
@@ -229,128 +238,129 @@
                                                     <th colspan="3" class="hal2">DATA</th>
                                                     <th rowspan="1" class="hal2">KETERANGAN</th>
                                                 </tr>
-                                                </tbody>
+                                            </tbody>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="6" valign="top">4</td>
-                                                        <td rowspan="6" valign="top"> 3a-N </td>
-                                                        <td rowspan="6" valign="top" class="left-align">Indeks implementasi 
-                                                            standardisasi 
-                                                            kompetensi pejabat 
-                                                            perbendaharaan pada 
-                                                            satker lingkup KPPN</td>
-                                                        <td><b>Komponen</b></td>
-                                                        <td><b>% dari target</b></td>
-                                                        <td><b>Bobot</b></td>
-                                                        <td><b>Nilai</b></td>
-                                                        <td>Triwulan/TLK</td>      
+                                                    <td rowspan="6" valign="top"> 3a-N </td>
+                                                    <td rowspan="6" valign="top" class="left-align">Indeks implementasi
+                                                        standardisasi
+                                                        kompetensi pejabat
+                                                        perbendaharaan pada
+                                                        satker lingkup KPPN</td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td><b>% dari target</b></td>
+                                                    <td><b>Bobot</b></td>
+                                                    <td><b>Nilai</b></td>
+                                                    <td>Triwulan/TLK</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="left-align">Akselerasi 
-                                                        Penyelenggaraan 
-                                                        Refreshment oleh Unit 
-                                                        Pelaksana Penilaian 
+                                                    <td class="left-align">Akselerasi
+                                                        Penyelenggaraan
+                                                        Refreshment oleh Unit
+                                                        Pelaksana Penilaian
                                                         Kompetensi PPK/PPSPM </td>
-                                                        <td id="refreshmentValue">122,23%</td>
-                                                        <td>40%</td>
-                                                        <td id="refreshmentScore">48,89</td>
-                                                        <td rowspan="5" valign="top" class="left-align" id="keterangan4">Capaian Impelementasi = (persentase akselerasi refreshment 
-                                                            x 40%) + (persentase pemenuhan PNT dan SNT x 30%) + 
-                                                            (persentase pemenuhan BNT x 30%) </td>
+                                                    <td id="refreshmentValue">122,23%</td>
+                                                    <td>40%</td>
+                                                    <td id="refreshmentScore">48,89</td>
+                                                    <td rowspan="5" valign="top" class="left-align" id="keterangan4">
+                                                        Capaian Impelementasi = (persentase akselerasi refreshment
+                                                        x 40%) + (persentase pemenuhan PNT dan SNT x 30%) +
+                                                        (persentase pemenuhan BNT x 30%) </td>
                                                 </tr>
-                                                    <tr>
-                                                        <td class="left-align">Pemenuhan Sertifikat PNT 
-                                                            dan SNT bagi Pejabat Pembuat Komitmen dan 
-                                                            Pejabat Penantanganan 
-                                                            SPM  </td>
-                                                        <td id="pnTsntValue">188,31%</td>
-                                                        <td>30%</td>
-                                                        <td id="pnTsntScore">56,5</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="left-align">Pemenuhan Sertifikat BNT</td>
-                                                        <td id="bntValue">100%</td>
-                                                        <td>30%</td>
-                                                        <td id="bntScore">30</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Jumlah</b></td>
-                                                        <td colspan ="3" id="totalCapaian"> <b>135,39</b></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Indeks</b></td>
-                                                        <td colspan ="3" id="indeksIKI"> <b>5</b></td>
-                                                    </tr>
+                                                <tr>
+                                                    <td class="left-align">Pemenuhan Sertifikat PNT
+                                                        dan SNT bagi Pejabat Pembuat Komitmen dan
+                                                        Pejabat Penantanganan
+                                                        SPM </td>
+                                                    <td id="pnTsntValue">188,31%</td>
+                                                    <td>30%</td>
+                                                    <td id="pnTsntScore">56,5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left-align">Pemenuhan Sertifikat BNT</td>
+                                                    <td id="bntValue">100%</td>
+                                                    <td>30%</td>
+                                                    <td id="bntScore">30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Jumlah</b></td>
+                                                    <td colspan="3" id="totalCapaian"> <b>135,39</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Indeks</b></td>
+                                                    <td colspan="3" id="indeksIKI"> <b>5</b></td>
+                                                </tr>
                                             </tbody>
                                         </table>
-                                        
-                                            <script>
-                                                function updateCapaian4() {
-                                                    let refreshment = parseFloat(document.getElementById("refreshment").value) || 0;
-                                                    let pnTsnt = parseFloat(document.getElementById("pnTsnt").value) || 0;
-                                                    let bnt = parseFloat(document.getElementById("bnt").value) || 0;
-                                        
-                                                    let refreshmentScore = (refreshment * 40) / 100;
-                                                    let pnTsntScore = (pnTsnt * 30) / 100;
-                                                    let bntScore = (bnt * 30) / 100;
-                                        
-                                                    let totalCapaian = refreshmentScore + pnTsntScore + bntScore;
-                                                    let indeksIKI = getIndeksIKI(totalCapaian);
-                                        
-                                                    document.getElementById("refreshmentValue").innerText = refreshment + "%";
-                                                    document.getElementById("pnTsntValue").innerText = pnTsnt + "%";
-                                                    document.getElementById("bntValue").innerText = bnt + "%";
-                                        
-                                                    document.getElementById("refreshmentScore").innerText = refreshmentScore.toFixed(2);
-                                                    document.getElementById("pnTsntScore").innerText = pnTsntScore.toFixed(2);
-                                                    document.getElementById("bntScore").innerText = bntScore.toFixed(2);
-                                        
-                                                    document.getElementById("totalCapaian").innerText = totalCapaian.toFixed(2);
-                                                    document.getElementById("indeksIKI").innerText = indeksIKI;
-                                                }
-                                        
-                                                function getIndeksIKI(capaian) {
-                                                    if (capaian < 75) return 1;
-                                                    if (capaian >= 75 && capaian < 80) return 2;
-                                                    if (capaian >= 80 && capaian < 85) return 3;
-                                                    if (capaian >= 85 && capaian < 90) return 4;
-                                                    return 5;
-                                                }
-                                        
-                                            </script>
-                                            <script>
-                                                function submitData4() {
-                                                    let refreshment = document.getElementById("refreshmentValue").innerText;
-                                                    let pnTsnt = document.getElementById("pnTsntValue").innerText;
-                                                    let bnt = document.getElementById("bntValue").innerText;
-                                                    let refreshmentScore = document.getElementById("refreshmentScore").innerText;
-                                                    let pnTsntScore = document.getElementById("pnTsntScore").innerText;
-                                                    let bntScore = document.getElementById("bntScore").innerText;
-                                                    let totalCapaian = document.getElementById("totalCapaian").innerText;
-                                                    let indeksIKI = document.getElementById("indeksIKI").innerText;
-                                                    let keterangan4hasil = document.getElementById("keterangan4").innerText;   
-                                            
-                                                    // Cek apakah ada data lama di localStorage
-                                                    let storedData = localStorage.getItem("indeks_data");
-                                                    let data = storedData ? JSON.parse(storedData) : {};
-                                            
-                                                    // Update hanya bagian halaman 4
-                                                    data.refreshment = refreshment;
-                                                    data.pnTsnt = pnTsnt;
-                                                    data.bnt = bnt;
-                                                    data.refreshmentScore = refreshmentScore;
-                                                    data.pnTsntScore = pnTsntScore;
-                                                    data.bntScore = bntScore;
-                                                    data.totalCapaian = totalCapaian;
-                                                    data.indeksIKI = indeksIKI;
-                                                    data.keterangan4 = keterangan4hasil;
-                                                    // Simpan kembali ke localStorage
-                                                    localStorage.setItem("indeks_data", JSON.stringify(data));
-                                            
-                                                    alert("Data dari Indeks implementasi standardisasi kompetensi pejabat perbendaharaan pada satker lingkup KPPN berhasil disimpan!");
-                                                }
-                                            </script>
-                                            <!-- <button onclick="submitData4()">Simpan Data Halaman 4</button> -->
+
+                                        <script>
+                                            function updateCapaian4() {
+                                                let refreshment = parseFloat(document.getElementById("refreshment").value) || 0;
+                                                let pnTsnt = parseFloat(document.getElementById("pnTsnt").value) || 0;
+                                                let bnt = parseFloat(document.getElementById("bnt").value) || 0;
+
+                                                let refreshmentScore = (refreshment * 40) / 100;
+                                                let pnTsntScore = (pnTsnt * 30) / 100;
+                                                let bntScore = (bnt * 30) / 100;
+
+                                                let totalCapaian = refreshmentScore + pnTsntScore + bntScore;
+                                                let indeksIKI = getIndeksIKI(totalCapaian);
+
+                                                document.getElementById("refreshmentValue").innerText = refreshment + "%";
+                                                document.getElementById("pnTsntValue").innerText = pnTsnt + "%";
+                                                document.getElementById("bntValue").innerText = bnt + "%";
+
+                                                document.getElementById("refreshmentScore").innerText = refreshmentScore.toFixed(2);
+                                                document.getElementById("pnTsntScore").innerText = pnTsntScore.toFixed(2);
+                                                document.getElementById("bntScore").innerText = bntScore.toFixed(2);
+
+                                                document.getElementById("totalCapaian").innerText = totalCapaian.toFixed(2);
+                                                document.getElementById("indeksIKI").innerText = indeksIKI;
+                                            }
+
+                                            function getIndeksIKI(capaian) {
+                                                if (capaian < 75) return 1;
+                                                if (capaian >= 75 && capaian < 80) return 2;
+                                                if (capaian >= 80 && capaian < 85) return 3;
+                                                if (capaian >= 85 && capaian < 90) return 4;
+                                                return 5;
+                                            }
+
+                                        </script>
+                                        <script>
+                                            function submitData4() {
+                                                let refreshment = document.getElementById("refreshmentValue").innerText;
+                                                let pnTsnt = document.getElementById("pnTsntValue").innerText;
+                                                let bnt = document.getElementById("bntValue").innerText;
+                                                let refreshmentScore = document.getElementById("refreshmentScore").innerText;
+                                                let pnTsntScore = document.getElementById("pnTsntScore").innerText;
+                                                let bntScore = document.getElementById("bntScore").innerText;
+                                                let totalCapaian = document.getElementById("totalCapaian").innerText;
+                                                let indeksIKI = document.getElementById("indeksIKI").innerText;
+                                                let keterangan4hasil = document.getElementById("keterangan4").innerText;
+
+                                                // Cek apakah ada data lama di localStorage
+                                                let storedData = localStorage.getItem("indeks_data");
+                                                let data = storedData ? JSON.parse(storedData) : {};
+
+                                                // Update hanya bagian halaman 4
+                                                data.refreshment = refreshment;
+                                                data.pnTsnt = pnTsnt;
+                                                data.bnt = bnt;
+                                                data.refreshmentScore = refreshmentScore;
+                                                data.pnTsntScore = pnTsntScore;
+                                                data.bntScore = bntScore;
+                                                data.totalCapaian = totalCapaian;
+                                                data.indeksIKI = indeksIKI;
+                                                data.keterangan4 = keterangan4hasil;
+                                                // Simpan kembali ke localStorage
+                                                localStorage.setItem("indeks_data", JSON.stringify(data));
+
+                                                alert("Data dari Indeks implementasi standardisasi kompetensi pejabat perbendaharaan pada satker lingkup KPPN berhasil disimpan!");
+                                            }
+                                        </script>
+                                        <!-- <button onclick="submitData4()">Simpan Data Halaman 4</button> -->
                                     </div>
 
                                 </body>

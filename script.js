@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             const fullName = document.getElementById("fullName").value;
             const email = document.getElementById("email").value;
+            let alamat = document.getElementById("alamat").value;
             const password = document.getElementById("registerPwd").value;
             
             let users = JSON.parse(localStorage.getItem("users")) || {};
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("registerMessage").innerText = "Email sudah terdaftar! Silakan login.";
                 document.getElementById("registerMessage").style.color = "red";
             } else {
-                users[email] = { fullName, password };
+                users[email] = { fullName, password, alamat };
                 localStorage.setItem("users", JSON.stringify(users));
                 localStorage.setItem(`data_${email}`, JSON.stringify({})); // Simpan data kosong untuk pengguna
                 

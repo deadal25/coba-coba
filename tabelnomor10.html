@@ -121,11 +121,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="settings.html"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" id="logout" href="index.html" onclick="logout()"><i
+                                    class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -172,17 +173,22 @@
                                     <option value="1a-CP">Nilai Kinerja Pelaksanaan Anggaran K/L</option>
                                     <option value="1b-N">Indeks Kualitas LK Kuasa BUN KPPN</option>
                                     <option value="2a-N">Indeks Kepuasan Satker terhadap Layanan KPPN</option>
-                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat Perbendaharaan pada satker lingkup KPPN </option>
-                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan Perbendaharaan</option>
+                                    <option value="3a-N">Indeks Implementasi Standardisasi Kompetensi Pejabat
+                                        Perbendaharaan pada satker lingkup KPPN </option>
+                                    <option value="3b-N">Tingkat Efektivitas Edukasi di Bidang Pengelolaan
+                                        Perbendaharaan</option>
                                     <option value="4a-CP">Persentase Akurasi perencanaan Kas</option>
                                     <option value="4b-N">Tingkat Kualitas penyelesaian SP2D</option>
                                     <option value="5a-CP">Nilai Kinerja Penyaluran Dana Transfer ke Daerah</option>
                                     <option value="5b-N">Indeks Digitalisasi Pengelolaan Keuangan KPPN</option>
-                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L </option>
-                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory</option>
+                                    <option value="6a-N">Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L
+                                    </option>
+                                    <option value="7a-N">Tingkat implementasi penajaman tugas Financial Advisory
+                                    </option>
                                     <option value="8a-N">Tingkat Kualitas Pengelolaan Kinerja Organisasi</option>
                                     <option value="8b-N">Nilai kualitas pengelolaan SDM </option>
-                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal</option>
+                                    <option value="8c-N">Nilai hasil evaluasi pelaksanaan tugas kepatuhan internal
+                                    </option>
                                     <option value="9a-CP">Persentase Kualitas Pelaksanaan anggaran KPPN</option>
                                     <option value="9b-N">Persentase Kualitas pengelolaan BMN dan Pengadaan</option>
                                 </select>
@@ -192,29 +198,32 @@
                                     <div id="6a-N" class="content">
                                         <br>
                                         <h3><b>Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L</b></h3>
-                                
+
                                         <label for="sept">LPJ Tepat Waktu: </label>
-                                        <input type="number" id="sept" min="1" max="100" value="0" oninput="hitungIndeks10()">
-                                            
+                                        <input type="number" id="sept" min="1" max="100" value="0"
+                                            oninput="hitungIndeks10()">
+
                                         <label for="okt">LPJ Disampaikan ke KPPN: </label>
-                                        <input type="number" id="okt" min="1" max="100" value="0" oninput="hitungIndeks10()">
-                                        
+                                        <input type="number" id="okt" min="1" max="100" value="0"
+                                            oninput="hitungIndeks10()">
+
                                         <label for="keterangan10">Masukkan Keterangan:</label>
-                                            <textarea id="inputArea10" class="form-control" rows="3" placeholder="Masukkan teks keterangan..." oninput="updateKeterangan10()"></textarea>
-                                            
-                                            <script>
-                                                function updateKeterangan10() {
-                                                    let inputText10 = document.getElementById("inputArea10").value;
-                                                    document.getElementById("keterangan10").innerHTML = inputText10.replace(/\n/g, "<br>");
-                                                    
-                                                }
-                                            </script>
-                                            
-                                        
+                                        <textarea id="inputArea10" class="form-control" rows="3"
+                                            placeholder="Masukkan teks keterangan..."
+                                            oninput="updateKeterangan10()"></textarea>
+
+                                        <script>
+                                            function updateKeterangan10() {
+                                                let inputText10 = document.getElementById("inputArea10").value;
+                                                document.getElementById("keterangan10").innerHTML = inputText10.replace(/\n/g, "<br>");
+
+                                            }
+                                        </script>
+
+
                                         <div style="text-align: right; margin-bottom: 10px;">
                                             <button onclick="submitData10()" class="btn-simpan">
-                                                <img src="savedata.png"
-                                                    alt="save"> Simpan </button>
+                                                <img src="savedata.png" alt="save"> Simpan </button>
                                         </div>
                                         <table>
                                             <tbody>
@@ -225,50 +234,45 @@
                                                     <th colspan="3" class="hal2">DATA</th>
                                                     <th rowspan="1" class="hal2">KETERANGAN</th>
                                                 </tr>
-                                                </tbody>
+                                            </tbody>
                                             <tbody>
                                                 <tr>
                                                     <td rowspan="4" valign="top">10</td>
-                                                        <td rowspan="4" valign="top"> 6a-N </td>
-                                                        <td rowspan="4" valign="top" class="left-align">Indeks kualitas 
-                                                            Laporan 
-                                                            Pertanggungjawaban 
-                                                            Bendahara K/L</td>
-                                                        <td><b>Komponen</b></td>
-                                                        <td colspan="3"><b>Nilai</b></td>
-                                                        <td>Triwulan/Average</td>      
+                                                    <td rowspan="4" valign="top"> 6a-N </td>
+                                                    <td rowspan="4" valign="top" class="left-align">Indeks kualitas
+                                                        Laporan
+                                                        Pertanggungjawaban
+                                                        Bendahara K/L</td>
+                                                    <td><b>Komponen</b></td>
+                                                    <td colspan="3"><b>Nilai</b></td>
+                                                    <td>Triwulan/Average</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="left-align">∑ LPJ Bendahara yang 
-                                                        andal dan tepat waktu  </td>
+                                                    <td class="left-align">∑ LPJ Bendahara yang
+                                                        andal dan tepat waktu </td>
                                                     <td colspan="3" id="indeksSept">4</td>
-                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan10">Seluruh LPJ telah disampaikan tepat waktu dan telah 
-                                                        divalidasi Indeks kualitas LPJ Bendahara K/L sebagai berikut: 
-                                                         
-                                                        Indeks 4: Jika memperoleh nilai 99,5% < x ≤ 100% LPJ 
-                                                        Bendahara yang divalidasi KPPN tepat waktu 
-                                                        Indeks 3,5: Jika memperoleh nilai 99% < x ≤ 99,5% LPJ 
-                                                        Bendahara yang divalidasi KPPN tepat waktu 
-                                                        Indeks 3: Jika memperoleh nilai 98,5% ≤ x ≤ 99% LPJ 
-                                                        Bendahara yang divalidasi KPPN tepat waktu 
-                                                        Indeks 2,5: Jika memperoleh nilai 95% < x < 98,5% LPJ 
-                                                        Bendahara yang divalidasi KPPN tepat waktu 
-                                                        Indeks 2: Jika memperoleh nilai 90% < x ≤ 95% LPJ 
-                                                        Bendahara yang divalidasi KPPN tepat waktu 
-                                                        Indeks 1: Jika memperoleh nilai ≤ 90% LPJ Bendahara yang 
-                                                        divalidasi KPPN tepat waktu 
-                                                        September: 
-                                                         LPJ pengeluaran 63 dari 63 wajib LPJ 
-                                                        LPJ Penerimaan 18 dari 18 wajib LPJ 
-                                                        Oktober:  
-                                                        LPJ pengeluaran 63 dari 63 wajib LPJ 
-                                                        LPJ Penerimaan 17 dari 17 wajib LPJ 
-                                                        November: LPJ pengeluaran 63 dari 63 wajib LPJ 
-                                                        LPJ Penerimaan 17 dari 17 wajib LPJ </td>
+                                                    <td rowspan="3" valign="top" class="left-align" id="keterangan10">
+                                                        Seluruh LPJ telah disampaikan tepat waktu dan telah
+                                                        divalidasi Indeks kualitas LPJ Bendahara K/L sebagai berikut:
+
+                                                        Indeks 4: Jika memperoleh nilai 99,5% < x ≤ 100% LPJ Bendahara
+                                                            yang divalidasi KPPN tepat waktu Indeks 3,5: Jika memperoleh
+                                                            nilai 99% < x ≤ 99,5% LPJ Bendahara yang divalidasi KPPN
+                                                            tepat waktu Indeks 3: Jika memperoleh nilai 98,5% ≤ x ≤ 99%
+                                                            LPJ Bendahara yang divalidasi KPPN tepat waktu Indeks 2,5:
+                                                            Jika memperoleh nilai 95% < x < 98,5% LPJ Bendahara yang
+                                                            divalidasi KPPN tepat waktu Indeks 2: Jika memperoleh nilai
+                                                            90% < x ≤ 95% LPJ Bendahara yang divalidasi KPPN tepat waktu
+                                                            Indeks 1: Jika memperoleh nilai ≤ 90% LPJ Bendahara yang
+                                                            divalidasi KPPN tepat waktu September: LPJ pengeluaran 63
+                                                            dari 63 wajib LPJ LPJ Penerimaan 18 dari 18 wajib LPJ
+                                                            Oktober: LPJ pengeluaran 63 dari 63 wajib LPJ LPJ Penerimaan
+                                                            17 dari 17 wajib LPJ November: LPJ pengeluaran 63 dari 63
+                                                            wajib LPJ LPJ Penerimaan 17 dari 17 wajib LPJ </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="left-align">∑ LPJ Bendahara yang 
-                                                        seharusnya disampaikan 
+                                                    <td class="left-align">∑ LPJ Bendahara yang
+                                                        seharusnya disampaikan
                                                         ke KPPN </td>
                                                     <td colspan="3" id="indeksOkt">4</td>
                                                 </tr>
@@ -276,9 +280,9 @@
                                                     <td><b>Indeks</b></td>
                                                     <td colspan="3" id="indeksTotal10"><b>4</b></td>
                                                 </tr>
-                                        </tbody>
+                                            </tbody>
                                         </table>
-                                        
+
                                         <script>
                                             function hitungIndeks10() {
                                                 function getIndex10(value) {
@@ -289,13 +293,13 @@
                                                     else if (value > 90 && value <= 95) return 2;
                                                     else return 1;
                                                 }
-                                    
+
                                                 let indeksSept = getIndex10(parseFloat(document.getElementById('sept').value));
                                                 let indeksOkt = getIndex10(parseFloat(document.getElementById('okt').value));
-                                    
+
                                                 document.getElementById('indeksSept').innerText = indeksSept;
                                                 document.getElementById('indeksOkt').innerText = indeksOkt;
-                                    
+
                                                 let indeksTotal10 = ((indeksSept + indeksOkt) / 2).toFixed(2);
                                                 document.getElementById('indeksTotal10').innerHTML = `<strong>${indeksTotal10}</strong>`;
                                             }
@@ -305,12 +309,12 @@
                                                 let indeksSept = document.getElementById("indeksSept").innerText;
                                                 let indeksOkt = document.getElementById("indeksOkt").innerText;
                                                 let indeksTotal10 = document.getElementById("indeksTotal10").innerText;
-                                                let keterangan10hasil = document.getElementById("keterangan10").innerText;   
-                                            
+                                                let keterangan10hasil = document.getElementById("keterangan10").innerText;
+
                                                 // Cek apakah ada data lama di localStorage
                                                 let storedData = localStorage.getItem("indeks_data");
                                                 let data = storedData ? JSON.parse(storedData) : {};
-                                        
+
                                                 // Update hanya bagian halaman 12
                                                 data.indeksSept = indeksSept;
                                                 data.indeksOkt = indeksOkt;
@@ -318,12 +322,12 @@
                                                 data.keterangan10 = keterangan10hasil;
                                                 // Simpan kembali ke localStorage
                                                 localStorage.setItem("indeks_data", JSON.stringify(data));
-                                        
+
                                                 alert("Data dari Indeks kualitas Laporan Pertanggungjawaban Bendahara K/L berhasil disimpan!");
                                             }
                                         </script>
                                         <!-- <button onclick="submitData10()">Simpan Data Halaman 10</button> -->
-                                </div>
+                                    </div>
 
                                 </body>
                             </div>
